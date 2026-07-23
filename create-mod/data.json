@@ -2,12 +2,12 @@
   "modName": "NewCow",
   "modId": "1000",
   "authorName": "Sad_Tech",
-  "code_name": "new_cow",
-  "description": "Add Winnie the Moo the Red Angus Cow from Alveus Sanctuary.",
+  "codeName": "new_cow",
+  "description": "Add a new cow.",
   "translations": {
     "en": {
-      "name": "Alveus Cow",
-      "description": "Add Winnie the Moo the Red Angus Cow from Alveus Sanctuary."
+      "name": "New Cow",
+      "description": "Add a new cow."
     },
     "zh": {
       "name": "阿尔维斯牛",
