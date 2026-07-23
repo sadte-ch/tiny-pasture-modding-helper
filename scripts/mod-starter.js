@@ -188,6 +188,22 @@ const updateTresFiles = (newModInnerPath, newModId, data) => {
   fs.writeFileSync(animalDataTresFilePath, animalDataTresFileContents, 'utf8');
 };
 
+// update translations
+const updateTranslations = (newModInnerPath, data) => {
+  const fs = require('fs');
+  const path = require('path');
+
+  const translationsPath = path.join(newModInnerPath, 'translations/translations.csv');
+  // generate a csv file
+  const csvContent = `key,zh,zh-HK,en
+ANIMAL_NAME_${data.modId},${data.translations.zh.name},${data.translations['zh-HK'].name},${data.translations.en.name}
+ANIMAL_DESC_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}
+  `;
+
+  fs.writeFileSync(translationsPath, csvContent, 'utf8');
+  console.log(`Updated translations file: ${translationsPath}`);
+};
+
 const createNewModFromData = () => {
   const path = require('path');
   const data = getModData();
@@ -206,8 +222,8 @@ const createNewModFromData = () => {
   moveNewAssetsToModFolder(modInnerPath);
   updateManifestFile(modInnerPath, data);
   updateTresFiles(modInnerPath, newModId, data);
+  updateTranslations(modInnerPath, data);
 
-  // do translations
   // new_cow.tscn + new_cow.res
   console.log(`New mod created at ${newModPath}`);
 };
