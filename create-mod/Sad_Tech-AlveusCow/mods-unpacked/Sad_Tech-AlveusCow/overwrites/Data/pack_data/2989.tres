@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalPackData" load_steps=2 format=3 uid="uid://c1qtmad6janiw"]
+
+[ext_resource type="Script" path="res://Data/pack_data.gd" id="1_yyyud"]
+
+[resource]
+script = ExtResource("1_yyyud")
+type_id = 2989
+name = "Alveus cow"
+unlock_condition = {}
+price = 24000.0
+animal_id = 2989
+locked_tex_p = "res://mods-unpacked/Sad_Tech-AlveusCow/overwrites/Assets/UI/PopupUI/Shop/animal/alveus_cow_lock.png"
+unlock_tex_p = "res://mods-unpacked/Sad_Tech-AlveusCow/overwrites/Assets/UI/PopupUI/Shop/animal/alveus_cow_unlock.png"
