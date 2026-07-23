@@ -134,6 +134,22 @@ const moveNewAssetsToModFolder = (newModInnerPath) => {
   });
 }
 
+// update the manifest.json file with the new mod data
+const updateManifestFile = (newModInnerPath, data) => {
+  const fs = require('fs');
+  const path = require('path');
+
+  const manifestPath = path.join(newModInnerPath, 'manifest.json');
+  const manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+  manifestData.name = data.modName;
+  manifestData.namespace = data.authorName;
+  manifestData.description = data.description;
+  manifestData.extra.godot.authors = [data.authorName];
+
+  fs.writeFileSync(manifestPath, JSON.stringify(manifestData, null, 2), 'utf8');
+};
+
 const createNewModFromData = () => {
   const path = require('path');
   const data = getModData();
@@ -150,9 +166,9 @@ const createNewModFromData = () => {
 
   const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
   moveNewAssetsToModFolder(modInnerPath);
+  updateManifestFile(modInnerPath, data);
 
   // update tres files
-  // manifest.json file
   // do translations
   // new_cow.tscn + new_cow.res
   console.log(`New mod created at ${newModPath}`);
