@@ -1,0 +1,7 @@
+{
+  "name": "tiny-pastures-modding-helper",
+  "version": "1.0.0",
+  "scripts": {
+    "process": "node scripts/mod-starter.js"
+  }
+}
