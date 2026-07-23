@@ -19,6 +19,12 @@ const duplicateModFolderWithNewName = (newFolderName, oldFolderName) => {
 
   // Copy the mod-starter folder to the new mod folder
   fs.cpSync(modStarterPath, newModPath, { recursive: true });
+
+  // update inner folder name in the new mod folder
+  const newModInnerPath = path.join(newModPath, `/mods-unpacked/${oldFolderName}`);
+  const newModInnerPathRenamed = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
+  fs.renameSync(newModInnerPath, newModInnerPathRenamed);
+
   return newModPath;
 };
 
@@ -78,7 +84,58 @@ const renameFiles = (oldModId, newModId, newModPath, newFolderName, oldFolderNam
   });
 }
 
+// move images from new-assets folder to the new mod folder
+const moveNewAssetsToModFolder = (newModInnerPath) => {
+  const fs = require('fs');
+  const path = require('path');
+
+  const newAssetsPath = path.join(__dirname, '../create-mod/new-assets');
+  const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
+  // move files from new-assets to new mod assets folder
+
+  // animal spritesheets
+  const animalSpritesheetsPath = path.join(newAssetsPath, 'animal-spritesheets');
+  const modAnimalSpritesheetsPath = path.join(newModAssetsPath, 'Animals');
+  const animalSpritesheetsFiles = fs.readdirSync(animalSpritesheetsPath);
+  animalSpritesheetsFiles.forEach((file) => {
+    const oldPath = path.join(animalSpritesheetsPath, file);
+    const newPath = path.join(modAnimalSpritesheetsPath, file);
+    fs.cpSync(oldPath, newPath, { recursive: true });
+  });
+
+  // animal idle spritesheets
+  const animalIdleSpritesheetsPath = path.join(newAssetsPath, 'animal-idle-spritesheets');
+  const modAnimalIdleSpritesheetsPath = path.join(newModAssetsPath, 'UI/PopupUI/AnimalIdle');
+  const animalIdleSpritesheetsFiles = fs.readdirSync(animalIdleSpritesheetsPath);
+  animalIdleSpritesheetsFiles.forEach((file) => {
+    const oldPath = path.join(animalIdleSpritesheetsPath, file);
+    const newPath = path.join(modAnimalIdleSpritesheetsPath, file);
+    fs.cpSync(oldPath, newPath, { recursive: true });
+  });
+
+  // portraits
+  const portraitsPath = path.join(newAssetsPath, 'portraits');
+  const modPortraitsPath = path.join(newModAssetsPath, 'UI/PopupUI/Portrait');
+  const portraitFiles = fs.readdirSync(portraitsPath);
+  portraitFiles.forEach((file) => {
+    const oldPath = path.join(portraitsPath, file);
+    const newPath = path.join(modPortraitsPath, file);
+    fs.cpSync(oldPath, newPath, { recursive: true });
+  });
+
+  // shop
+  const shopPath = path.join(newAssetsPath, 'shop');
+  const modShopPath = path.join(newModAssetsPath, 'UI/PopupUI/Shop/animal');
+  const shopFiles = fs.readdirSync(shopPath);
+  shopFiles.forEach((file) => {
+    const oldPath = path.join(shopPath, file);
+    const newPath = path.join(modShopPath, file);
+    fs.cpSync(oldPath, newPath, { recursive: true });
+  });
+}
+
 const createNewModFromData = () => {
+  const path = require('path');
   const data = getModData();
 
   const oldModId = '2989'
@@ -91,6 +148,13 @@ const createNewModFromData = () => {
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
+  const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
+  moveNewAssetsToModFolder(modInnerPath);
+
+  // update tres files
+  // manifest.json file
+  // do translations
+  // new_cow.tscn + new_cow.res
   console.log(`New mod created at ${newModPath}`);
 };
 
