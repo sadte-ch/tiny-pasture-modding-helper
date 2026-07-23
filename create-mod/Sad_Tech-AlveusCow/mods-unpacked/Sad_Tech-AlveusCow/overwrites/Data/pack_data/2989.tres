@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_yyyud")
 type_id = 2989
-name = "Alveus cow"
+name = "AlveusCow"
 unlock_condition = {}
 price = 24000.0
 animal_id = 2989

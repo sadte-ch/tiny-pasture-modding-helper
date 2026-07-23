@@ -17,5 +17,19 @@
       "name": "阿爾維斯牛",
       "description": "添加來自阿爾維斯庇護所的紅安格斯牛「維尼·哞」。"
     }
-  }
+  },
+  "price": 2000.0,
+  "adult_price": [12000.0, 24000.0, 35000.0, 40000.0, 48000.0],
+  "child_price": [100.0, 2000.0, 4000.0, 8000.0, 12000.0],
+  "adult_time": [300, 450, 1500, 3000, 6000],
+  "drop_time": [300, 900, 1800, 2700, 3600],
+  "second_coin": [166.73, 200.08, 277.88, 625.25, 1667.33],
+  "poop_time": 800,
+  "max_hunger": 100.0,
+  "hungry_speed": 1.0,
+  "poop_endure": 15,
+  "max_move_speed": 40,
+  "min_move_speed": 30,
+  "color_pool": [0],
+  "is_fish": false
 }

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ke38x")
-name = "Alveus cow"
+name = "AlveusCow"
 code_name = "alveus_cow"
 type_id = 2989
 adult_price = [12000.0, 24000.0, 35000.0, 40000.0, 48000.0]

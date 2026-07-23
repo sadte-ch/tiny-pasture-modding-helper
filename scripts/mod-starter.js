@@ -150,6 +150,44 @@ const updateManifestFile = (newModInnerPath, data) => {
   fs.writeFileSync(manifestPath, JSON.stringify(manifestData, null, 2), 'utf8');
 };
 
+// update tres files
+const updateTresFiles = (newModInnerPath, newModId, data) => {
+  const fs = require('fs');
+  const path = require('path');
+
+  const animalDataTresFilePath = path.join(newModInnerPath, `overwrites/Data/animal_data/${newModId}.tres`);
+  const packDataTresFilePath = path.join(newModInnerPath, `overwrites/Data/pack_data/${newModId}.tres`);
+
+  // pack data
+  let packDataTresFileContents = fs.readFileSync(packDataTresFilePath, 'utf8');
+  packDataTresFileContents = packDataTresFileContents.replace(/type_id = .*/, `type_id = ${data.modId}`);
+  packDataTresFileContents = packDataTresFileContents.replace(/name = ".*"/, `name = "${data.modName}"`);
+  packDataTresFileContents = packDataTresFileContents.replace(/animal_id = .*/, `animal_id = ${data.modId}`);
+  packDataTresFileContents = packDataTresFileContents.replace(/price = .*/, `price = ${data.price}`);
+  console.log(`Updated pack data tres file: ${packDataTresFilePath}`);
+  fs.writeFileSync(packDataTresFilePath, packDataTresFileContents, 'utf8');
+
+  // animal data
+  let animalDataTresFileContents = fs.readFileSync(animalDataTresFilePath, 'utf8');
+  animalDataTresFileContents = animalDataTresFileContents.replace(/name = ".*"/, `name = "${data.modName}"`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/code_name = ".*"/, `code_name = "${data.codeName}"`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/type_id = .*/, `type_id = ${data.modId}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/adult_price = .*/, `adult_price = [${data.adult_price}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/child_price = .*/, `child_price = [${data.child_price}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/adult_time = .*/, `adult_time = [${data.adult_time}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/drop_time = .*/, `drop_time = [${data.drop_time}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/second_coin = .*/, `second_coin = [${data.second_coin}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/poop_time = .*/, `poop_time = ${data.poop_time}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/max_hunger = .*/, `max_hunger = ${data.max_hunger}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/hungry_speed = .*/, `hungry_speed = ${data.hungry_speed}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/poop_endure = .*/, `poop_endure = ${data.poop_endure}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/max_move_speed = .*/, `max_move_speed = ${data.max_move_speed}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/min_move_speed = .*/, `min_move_speed = ${data.min_move_speed}`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/color_pool = .*/, `color_pool = [${data.color_pool}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/is_fish = .*/, `is_fish = ${data.is_fish}`);
+  fs.writeFileSync(animalDataTresFilePath, animalDataTresFileContents, 'utf8');
+};
+
 const createNewModFromData = () => {
   const path = require('path');
   const data = getModData();
@@ -167,8 +205,8 @@ const createNewModFromData = () => {
   const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
   moveNewAssetsToModFolder(modInnerPath);
   updateManifestFile(modInnerPath, data);
+  updateTresFiles(modInnerPath, newModId, data);
 
-  // update tres files
   // do translations
   // new_cow.tscn + new_cow.res
   console.log(`New mod created at ${newModPath}`);
