@@ -16,8 +16,8 @@ The following is an expansion on [this](https://bcnege18gifk.feishu.cn/docx/MVh1
 There are 4 types of assets that are required to create a mod for a new animal in Tiny Pasture:
 - [**animal animation spritesheets**](#animal-animation-spritesheets) (contains all the animations for the animal in the pasture)
 - [**animal idle animation spritesheets**](#animal-idle-animation-spritesheets) (used for the idle animation when buying the animal)
-- [**animal portraits**](#animal-portraits) (used in the pasture menu to show eaach animal you own)
-- [**animal shop page images**](#animal-shop-page-images) (used in the shop or each animal - a locked ghost version and an unlocked full colour version)
+- [**animal portraits**](#animal-portraits) (used in the pasture menu to show each animal you own)
+- [**animal shop page images**](#animal-shop-page-images) (used in the shop for each animal - a locked ghost version and an unlocked full colour version)
 
 It is required to create one of each of these assets for the juvenile and adult version of each colour variation you create (apart from the shop lock/unlock images). The juvenile and adult spritesheets can be the same (if you don't want to support both) but they need to be named correctly.
 
@@ -69,6 +69,10 @@ Before creating your animal, you should choose how big each frame needs to be to
 
 ## Animal animation spritesheets
 This is the most time intensive part of the whole process, the less frames you create for each animation the quicker it will be. Use a pixel art tool of your choice to create your spritesheets.
+
+I created my first mod by drawing over the top of an existing spritesheet so it was a bit easier to understand how things are animated.
+
+You need to create the following animation spritesheets for both juvenile and adult versions of every colour variant you want to add.
 
 The animations available are listed below, some are optional (*):
 - [idle_0](#idle_0)
@@ -147,10 +151,25 @@ Keep track of the start and end frame position/indexes for each animation to hel
 ie: idle_0 is frame 0-7, idle_1 is frame 9-12, etc
 
 ## Animal idle animation spritesheets
-You can just use the first row of each spritesheet you created in the previous step for the idle animation by cropping the images (make sure the sprite height stays the same). You can also create new frames for the idle animation if you want.
+You can just use the first row of each spritesheet (or wherever you placed [idle_0](#idle_0) you created in the previous step for the idle animation by cropping the images (make sure the sprite/frame height stays the same). You can also create new frames for the idle animation if you want.
+
+You need to export an idle spritesheet for both juvenile and adult in every colour variant you want to add.
 
 ## Animal portraits
+These are the images used in the pasture menu to show each animal you own.
+
+You need to create a portrait for both the juvenile and adult of every colour variant.
+
+**Image specifications:**
+- 36px x 36px
+- transparent background
+- crop the frame you want to use to feature the head of the animal in the portrait
+- the adult version is more zoomed in
 
 ## Animal shop page images
+These are the images used in the shop for each animal, before you click on it to buy one. Locked animals are greyed out before you are allowed to buy them.
+
+1. You need to create one locked version which is a silhouette of the juvenile animal with the dashed line at its feet.
+2. And then one unlocked version which is a full colour image of the juvenile animal with the dashed line at its feet.
 
 ## Next steps [Create and configure your mod](docs/create-mod.md)
