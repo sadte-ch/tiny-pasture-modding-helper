@@ -47,7 +47,7 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 1. Find and open the tiny-pastures-modding-helper folder in your file system
 2. Go to the create-mod folder > new-assets
 3. Delete the assets in each of the four folders
-4. Paste your new correctly named [spritesheets and assets](docs/assets.md) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
+4. Paste your new correctly named [spritesheets and assets](assets.md#overview) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
 
 ### Update data.json
 1. Open the data.json file in the create-mod folder
@@ -82,7 +82,7 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 3. This should launch another instance of the game over the top of the actual game.
 4. If it doesn't, check the output/error console to see if there are any issues you need to resolve.
 5. If you are still experiencing issues, delete the mod folder from mods-unpacked and try again.
-6. You can also try adding my [mod](create-mod/Sad_Tech-AlveusCow/mods-unpacked) (Sad_Tech-AlveusCow folder) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved.
+6. You can also try adding my [mod](/create-mod/Sad_Tech-AlveusCow/mods-unpacked) (Sad_Tech-AlveusCow folder) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved.
 7. Once its working, its time to export your mod so you can publish it on the Steam Workshop
 
-## Next steps [Export your mod](docs/export-mod.md)
+## Next steps [Export your mod](export-mod.md)
