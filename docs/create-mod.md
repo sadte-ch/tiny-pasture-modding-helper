@@ -59,8 +59,8 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
   - ```cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}
 2. If you are using a code editor with a terminal built in (ie: VSCode), open it
 3. Type the following command to run the script
-  - ```npm run process```
-  - or if you don't have npm installed: ```node scripts/mod-starter.js```
+  - `npm run process`
+  - or if you don't have npm installed: `node scripts/mod-starter.js`
 
 ### Copy the exported folder
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
@@ -82,7 +82,7 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 3. This should launch another instance of the game over the top of the actual game.
 4. If it doesn't, check the output/error console to see if there are any issues you need to resolve.
 5. If you are still experiencing issues, delete the mod folder from mods-unpacked and try again.
-6. You can also try adding my [mod](create-mod/Sad_Tech-AlveusCow/mods-unpacked) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved.
+6. You can also try adding my [mod]([create-mod/Sad_Tech-AlveusCow/mods-unpacked](https://github.com/sadte-ch/tiny-pastures-modding-helper/tree/main/create-mod/Sad_Tech-AlveusCow/mods-unpacked)) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved.
 7. Once its working, its time to export your mod so you can publish it on the Steam Workshop
 
 ## Next steps [Export your mod](docs/export-mod.md)
