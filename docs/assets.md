@@ -41,10 +41,23 @@ It is required to create one of each of these assets for the juvenile and adult 
 You don't need to create additional shop lock/unlock images
 
 ## A quick test
+To start with I would recommend looking at the assets that already exist for other animals and try to edit one.
+
+1. Open your decompiled Tiny Pasture game folder in your file system
+2. Navigate to > Assetes > Animals
+3. Choose one of the spritesheets, `cat_0_0.png` might be a good start as its a smaller sheet and is simple)
+4. Open the spritesheet in your design tool of choice and try to replace the white colour with a different one
+5. Save your upated design over the original image or just replace it (making sure the file name doesn't change)
+6. Open your decompiled Tiny Pasture game folder in Godot
+7. Run the game by pressing the play button in the top right, another instance of the game should open over the top of the normal Tiny Pasture game
+8. Buy the cat until you get a white one and you should see that the juvenile version colours are updated
+9. You can try to experiment with other stuff like changing/removing frames from the spritesheet, etc to see what happens
 
 ## Animal animation spritesheets
+Use a pixel art tool of your choice to create your spritesheets.
 
 ## Animal idle animation spritesheets
+You can just use the first row of each spritesheet you created in the previous step for the idle animation by cropping the images (make sure the sprite height stays the same). You can also create new frames for the idle animation if you want.
 
 ## Animal portraits
 
