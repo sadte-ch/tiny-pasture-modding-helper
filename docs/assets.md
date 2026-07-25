@@ -172,4 +172,4 @@ These are the images used in the shop for each animal, before you click on it to
 1. You need to create one locked version which is a silhouette of the juvenile animal with the dashed line at its feet.
 2. And then one unlocked version which is a full colour image of the juvenile animal with the dashed line at its feet.
 
-## Next steps [Create and configure your mod](docs/create-mod.md)
+## Next steps [Create and configure your mod](create-mod.md)
