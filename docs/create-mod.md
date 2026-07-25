@@ -45,7 +45,7 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 
 ### Add your assets
 1. Find and open the tiny-pastures-modding-helper folder in your file system
-2. Go to the create-mod folder > new-assets
+2. Go to the create-mod folder > [new-assets](/create-mod/new-assets)
 3. Delete the assets in each of the four folders
 4. Paste your new correctly named [spritesheets and assets](assets.md#overview) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
 
