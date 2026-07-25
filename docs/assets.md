@@ -89,54 +89,54 @@ The animations available are listed below, some are optional (*):
 There are 2 different options for idle_1  - you can either do `idle_1` as a one shot or `idle_1_pre`, `idle_1_loop` and `idle_1_end`.
 The same applies for the eat animation - you can do one `eat` animation or `eat_pre`, `eat_loop` and `eat_end`.
 
-### idle_0
+#### idle_0
 The basic standing and breathing idle animation.
 Try to animate the top of the animal moving up and down by 1 pixel, so its subtle. You can also do subtle animations like tail swooshing, ears moving, etc.
 
-### idle_1
+#### idle_1
 The idle animation for the animal which will play randomly - freedom to do whatever you want to add character to your animal.
 Use `idle_1` on its own to do a one shot animation that only plays once (ie: a hop)
 
-### idle_1_pre
+#### idle_1_pre
 Start of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and `idle_1_end` together instead of just `idle_1`.
 
-### idle_1_loop
+#### idle_1_loop
 The looping section of the idle animation.
 You can either do one `idle_1` animation OR do 3 separate ones `idle_1_pre`, `idle_1_loop` and `idle_1_end`
 
-### idle_1_end
+#### idle_1_end
 The end of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and `idle_1_end` together instead of just `idle_1`.
 
-### sleep_pre
+#### sleep_pre
 Animation for the animal lying down or getting ready to sleep.
 
-### sleep_loop
+#### sleep_loop
 Animation which will be looped while the animal is sleeping.
 
-### sleep_end
+#### sleep_end
 Animation for the animal getting up from sleeping.
 End frame should be similar to a start frame from the start idle frame so they can be joined seemlessly.
 
-### move
+#### move
 Movement animation like walking or flying.
 Create the animation as if it's on the spot (keep the animal centered as much as possible).
 
-### interact_0
+#### interact_0
 Petting animation for when you click on the animal.
 To match the other animals, include the hand from the other animal spritesheets.
 
-### eat
+#### eat
 A one shot animation for the animal eating.
 You can either do one `eat` animation OR do 3 separate ones `eat_pre`, `eat_loop` and `eat_end`
 
-### eat_pre
+#### eat_pre
 Animation for getting into an eating position (like sitting down).
 If you do `eat_pre` you will need to also do `eat_loop` and `eat_end`
 
-### eat_loop
+#### eat_loop
 Eating animation that is looped inbetween `eat_pre` and `eat_end`
 
-### eat_end
+#### eat_end
 Animation for the animal getting out of its eating position (like getting up).
 Played after the `eat_loop` is done. If you do `eat_end` you will need to also do `eat_pre` and `eat_end`
 
