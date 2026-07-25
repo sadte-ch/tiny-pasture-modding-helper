@@ -21,7 +21,7 @@ How to decompile Tiny Pasture and get the Godot game engine setup ready to creat
 How to create the assets and spritesheets for your new mod
 
 ## [Create and configure your mod](docs/create-mod.md)
-Create the new mod in Godot ready to be tested and submitted
+Create the new mod in Godot (or using my script) ready to be tested and submitted
 
 ## [Export your mod](docs/export-mod.md)
 Export your mod from Godot, test it locally and then upload it to the Steam workshop
