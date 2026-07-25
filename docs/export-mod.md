@@ -6,7 +6,8 @@ The following is an expansion on [this](https://bcnege18gifk.feishu.cn/docx/MVh1
 1. [Export from Godot](#export-from-godot)
 2. [Test the mod](#test-the-mod)
 3. [Submit to Steam Workshop](#submit-to-steam-workshop)
-4. [Troubleshooting](#troubleshooting)
+4. [Submitting a mod update](#submitting-a-mod-update)
+5. [Troubleshooting](#troubleshooting)
 
 Make sure you have the mod [setup](create-mod.md) complete and that it is running correctly when you run the decompiled game files in Godot.
 
