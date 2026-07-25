@@ -20,6 +20,15 @@ You can then copy the new mod folder created by the script and open it in Godot 
 
 There are some things the script doesn't support yet like the alternate idle animation (2 steps instead of 3) and unlock conditions. You can set these up in Godot afterwards when you import the generated files. Check back for updates as I build support for more stuff!
 
+1. [Setup](#setup)
+2. [Add your assets](#add-your-assets)
+3. [Update data.json](#update-datajson)
+4. [Run the script](#run-the-script)
+5. [Copy the exported folder](#copy-the-exported-folder)
+6. [Add your mod to your decompiled game files](#add-your-mod-to-your-decompiled-game-files)
+7. [Open decompiled files in Godot](#open-decompiled-files-in-godot)
+8. [Run the game](#run-the-game)
+
 ### Setup
 
 #### Clone this git repository
