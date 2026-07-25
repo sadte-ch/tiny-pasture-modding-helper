@@ -56,7 +56,7 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 
 ### Run the script
 1. If you are using terminal, open the terminal and then navigate to the correct directory
-  - ```cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}
+  - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}`
 2. If you are using a code editor with a terminal built in (ie: VSCode), open it
 3. Type the following command to run the script
   - `npm run process`
