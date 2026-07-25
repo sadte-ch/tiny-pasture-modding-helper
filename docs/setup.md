@@ -1,6 +1,14 @@
 # Setup
 How to decompile Tiny Pasture and get the Godot game engine setup ready to create your first mod
 
+1. [Backup your game save files](#backup-your-game-save-file)
+2. [Download the Godot decompile tool](#download-the-godot-decompile-tool)
+3. [Decompile the game](#decompile-the-game)
+4. [Download Godot steam extension/plugin](#download-godot-steam-extensionplugin)
+5. [Download the Godot Game Engine](#download-the-godot-game-engine)
+6. [Open the decompiled game files on Godot](#open-the-decompiled-game-files-on-godot)
+7. [Running the game in Godot](#running-the-game-in-godot)
+
 The following is an expansion of [this](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb) guide. I have a Mac Air M4 so I will provide more info for debugging on Mac and I first set this up in July 2026.
 
 ## Backup your game save file
@@ -18,7 +26,7 @@ The following is an expansion of [this](https://bcnege18gifk.feishu.cn/docx/MVh1
 
 Copy the 'save' folder and put it somewhere safe
 
-## Download a decompile tool
+## Download the Godot decompile tool
 The decompile tool will allow you to view the source files so you can run the game locally and make changes.
 
 1. Download the correct version of GDRE Tools
@@ -47,8 +55,8 @@ This is requires to get Godot to work with steam games
 
 1. Mine was added during the decompilation (/addons file added), if its the same for you, skip this bit
 2. But if that didn't happen for you, you can find it here:
-3. 1. Go to https://godotengine.org/asset-library/asset/3866 to download the correct version (Godot 4.3 Stable)
-2. Click 'Download' button on this page (Tiny pasture modding docs reference getting this straight from github but I found this version was no longer available)
+3. Go to https://godotengine.org/asset-library/asset/3866 to download the correct version (Godot 4.3 Stable)
+4. Click 'Download' button on this page (Tiny pasture modding docs reference getting this straight from github but I found this version was no longer available)
 
 ## Download the Godot Game Engine
 This program will let us run the decompiled game files locally so we can make updates and test
@@ -73,3 +81,6 @@ This program will let us run the decompiled game files locally so we can make up
 5. Click the play/run button in the top right of Godot
 6. If it loads successfully, you should now see two instances of the game, overlapping each other
 7. You're all set up, now we can do some mods!
+
+
+## Next steps: [Creating animal assets](docs/assets.md)
