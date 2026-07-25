@@ -6,7 +6,7 @@ I also created a script to automate as much of the modding process as possible. 
 
 Go straight to my script docs if you have modded before and want to streamline the process: [Using the script](docs/create-mod.md/#using-my-script).
 
-This repo is based off the [Tiny Pasture mod guide](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb).
+This information in this repo is based off the [Tiny Pasture mod guide](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb).
 
 You need to have bought and downloaded the Tiny Pasture game, as well as downloaded the Steam app in order to mod this game.
 
