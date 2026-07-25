@@ -71,23 +71,23 @@ Before creating your animal, you should choose how big each frame needs to be to
 This is the most time intensive part of the whole process, the less frames you create for each animation the quicker it will be. Use a pixel art tool of your choice to create your spritesheets.
 
 The animations available are listed below, some are optional (*):
-- [idle_0](#idle-0)
-- [idle_1](#idle-1) *
-- [idle_1_pre](#idle-1-pre) *
-- [idle_1_loop](#idle-1-loop) *
-- [idle_1_end](#idle-1-end) *
-- [sleep_pre](#sleep-pre)
-- [sleep_loop](#sleep-loop)
-- [sleep_end](#sleep-end)
-- [move](#sleep-move)
-- [interact_0](#interact-0)
+- [idle_0](#idle_0)
+- [idle_1](#idle_1) *
+- [idle_1_pre](#idle_1_pre) *
+- [idle_1_loop](#idle_1_loop) *
+- [idle_1_end](#idle_1_end) *
+- [sleep_pre](#sleep_pre)
+- [sleep_loop](#sleep_loop)
+- [sleep_end](#sleep_end)
+- [move](#sleep_move)
+- [interact_0](#interact_0)
 - [eat](#eat) *
-- [eat_pre](#eat-pre) *
-- [eat_loop](#eat-loop) *
-- [eat_end](#eat-end) *
-- [eat_pre](#eat-pre) *
-- [eat_loop](#eat-loop)
-- [eat_end](#eat-end)
+- [eat_pre](#eat_pre) *
+- [eat_loop](#eat_loop) *
+- [eat_end](#eat_end) *
+- [eat_pre](#eat_pre) *
+- [eat_loop](#eat_loop)
+- [eat_end](#eat_end)
 
 There are 2 different options for idle_1  - you can either do `idle_1` as a one shot or `idle_1_pre`, `idle_1_loop` and `idle_1_end`.
 The same applies for the eat animation - you can do one `eat` animation or `eat_pre`, `eat_loop` and `eat_end`.
