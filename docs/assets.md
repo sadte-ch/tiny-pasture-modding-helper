@@ -79,7 +79,7 @@ The animations available are listed below, some are optional (*):
 - [sleep_pre](#sleep_pre)
 - [sleep_loop](#sleep_loop)
 - [sleep_end](#sleep_end)
-- [move](#sleep_move)
+- [move](#move)
 - [interact_0](#interact_0)
 - [eat](#eat) *
 - [eat_pre](#eat_pre) *
