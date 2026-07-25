@@ -1,9 +1,14 @@
 # tiny-pastures-modding-helper
 
-A guide on how to create mods for the [Tiny Pasture steam game](https://store.steampowered.com/app/3167550/Tiny_Pasture/) (A cute animal idle desktop game).
+A thorough guide on how to create mods for the [Tiny Pasture steam game](https://store.steampowered.com/app/3167550/Tiny_Pasture/) (A cute animal idle desktop game).
+
+I also created a script to automate as much of the modding process as possible. It takes all your assets and mod data and exports a mod folder that you can use in Godot to finish the setup and export. It's saved me a lot of time!
+
+Go straight to my script docs if you have modded before and want to streamline the process: [Using the script](docs/create-mod.md/#using-my-script)
 
 1. You need to have bought and downloaded the Tiny Pasture game, as well as downloaded the Steam app in order to mod this game.
-2. Look at the Tiny pasture mod guide: https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb
+
+This repo is based off the [Tiny Pasture mod guide](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb)
 
 **Follow the steps below to get started:**
 
