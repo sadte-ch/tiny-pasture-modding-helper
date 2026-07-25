@@ -85,7 +85,6 @@ The animations available are listed below, some are optional (*):
 - [eat_pre](#eat_pre) *
 - [eat_loop](#eat_loop) *
 - [eat_end](#eat_end) *
-- [eat_pre](#eat_pre) *
 
 There are 2 different options for idle_1  - you can either do `idle_1` as a one shot or `idle_1_pre`, `idle_1_loop` and `idle_1_end`.
 The same applies for the eat animation - you can do one `eat` animation or `eat_pre`, `eat_loop` and `eat_end`.
