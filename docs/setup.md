@@ -83,4 +83,4 @@ This program will let us run the decompiled game files locally so we can make up
 7. You're all set up, now we can do some mods!
 
 
-## Next steps: [Creating animal assets](docs/assets.md)
+## Next steps: [Creating animal assets](assets.md)
