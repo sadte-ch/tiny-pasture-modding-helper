@@ -30,13 +30,14 @@ It is required to create one of each of these assets for the juvenile and adult 
 - shop locked: `your_animal_lock.png` (juvenile silhouette)
 - shop unlocked: `your_animal_unlock.png` (juvenile full colour)
 
-**If you add another colour varaint, you would need to create these as well:**
+**If you add another colour variant, you would need to create these as well:**
 - juvenile spritesheet: `your_animal_1_0.png`
 - adult spritesheet: `your_animal_1_1.png`
 - juvenile idle spritesheet: `idle_your_animal_1_0.png`
 - adult idle spritesheet: `idle_your_animal_1_1.png`
 - juvenile portrait: `portrait_your_animal_1_0.png`
 - adult portrait: `portrait_your_animal_1_1.png`
+
 You don't need to create additional shop lock/unlock images
 
 ## A quick test
