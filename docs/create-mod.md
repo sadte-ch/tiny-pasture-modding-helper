@@ -27,7 +27,8 @@ There are some things the script doesn't support yet like the alternate idle ani
 5. [Copy the exported folder](#copy-the-exported-folder)
 6. [Add your mod to your decompiled game files](#add-your-mod-to-your-decompiled-game-files)
 7. [Open decompiled files in Godot](#open-decompiled-files-in-godot)
-8. [Run the game](#run-the-game)
+8. [Finish the mod setup](#finish-the-mod-setup)
+9. [Run the game](#run-the-game)
 
 ### Setup
 
@@ -75,6 +76,13 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 ### Open decompiled files in Godot
 1. Open the Godot app
 2. Select the correct decompiled project with your files added
+
+### Finish the mod setup
+- Create res file
+- Check the position of the idle animation
+- Check the animations and adjust the frame spacing/rate as needed
+- Adjust the position of the bubble and arrow
+- Adjust mouse clickable area
 
 ### Run the game
 1. Make sure you have Steam open and that you are running the Tiny Pasture game before you do this.
