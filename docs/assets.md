@@ -13,10 +13,10 @@ The following is an expansion on [this](https://bcnege18gifk.feishu.cn/docx/MVh1
 
 ## Overview
 There are 4 types of assets that are required to create a mod for a new animal in Tiny Pasture:
-- **animal animation spritesheets** (contains all the animations for the animal in the pasture)
-- **animal idle animation spritesheets** (used for the idle animation when buying the animal)
-- **animal portraits** (used in the pasture menu to show eaach animal you own)
-- **animal shop page images** (used in the shop or each animal - a locked ghost version and an unlocked full colour version)
+- [**animal animation spritesheets**](#animal-animation-spritesheets) (contains all the animations for the animal in the pasture)
+- [**animal idle animation spritesheets**](#animal-idle-animation-spritesheets) (used for the idle animation when buying the animal)
+- [**animal portraits**](#animal-portraits) (used in the pasture menu to show eaach animal you own)
+- [**animal shop page images**](#animal-shop-page-images) (used in the shop or each animal - a locked ghost version and an unlocked full colour version)
 
 It is required to create one of each of these assets for the juvenile and adult version of each colour variation you create (apart from the shop lock/unlock images). The juvenile and adult spritesheets can be the same (if you don't want to support both) but they need to be named correctly.
 
@@ -54,7 +54,19 @@ To start with I would recommend looking at the assets that already exist for oth
 9. You can try to experiment with other stuff like changing/removing frames from the spritesheet, etc to see what happens
 
 ## Animal animation spritesheets
-Use a pixel art tool of your choice to create your spritesheets.
+This is the most time intensive part of the whole process, the less frames you create for each animation the quicker it will be. Use a pixel art tool of your choice to create your spritesheets.
+
+The animations you need to create:
+- idle_0
+- idle_1 (either idle_1_pre, idle_1_loop and idle_1_end (default) or just idle_1 for one shot version)
+- sleep_pre
+- sleep_loop
+- sleep_end
+- move
+- interact_0
+- eat_pre
+- eat_loop
+- eat_end
 
 ## Animal idle animation spritesheets
 You can just use the first row of each spritesheet you created in the previous step for the idle animation by cropping the images (make sure the sprite height stays the same). You can also create new frames for the idle animation if you want.
