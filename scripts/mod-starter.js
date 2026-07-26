@@ -218,8 +218,8 @@ const getIndexFromFrameCoordinates = (frame, spritesX) => {
   return y * spritesX + x;
 };
 
-const getAnimationDataFromData = (animData, spritesX) => {
-  let lengthLine, stepLine, timesLine, transitionsLine, valuesLine;
+const getFramesDataFromAnimationData = (animData, spritesX) => {
+  let framesNo, lengthSeconds, step, startIndex;
   if(animData?.startFrame && animData?.endFrame) {
     const startX = animData.startFrame[0];
     const endX = animData.endFrame[0];
@@ -227,42 +227,44 @@ const getAnimationDataFromData = (animData, spritesX) => {
     const endY = animData.endFrame[1];
     const xLength = endX - startX + 1;
     const yLength = endY - startY + 1;
-    const framesNo = (spritesX * yLength) - startX - (spritesX - endX - 1);
-    const lengthSeconds = framesNo / animData.fps;
-    const step = 1 / animData.fps;
-    const startIndex = getIndexFromFrameCoordinates(animData.startFrame, spritesX);
-
-    lengthLine = `length = ${lengthSeconds}`;
-    stepLine = `step = ${step}`;
-    timesLine = `"times": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => (i * step).toFixed(2)).join(', ')}),`;
-    transitionsLine = `"transitions": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => 1).join(', ')}),`;
-    valuesLine = `"values": [${Array.from({ length: framesNo }, (_, i) => startIndex + i).join(', ')}]`;
+    framesNo = (spritesX * yLength) - startX - (spritesX - endX - 1);
+    startIndex = getIndexFromFrameCoordinates(animData.startFrame, spritesX);
   } else if (animData?.frames) {
-    const framesNo = animData.frames.length;
-    const lengthSeconds = framesNo / animData.fps;
-    const step = 1 / animData.fps;
-
-    lengthLine = `length = ${lengthSeconds}`;
-    stepLine = `step = ${step}`;
-    timesLine = `"times": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => (i * step).toFixed(2)).join(', ')}),`;
-    transitionsLine = `"transitions": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => 1).join(', ')}),`;
-    valuesLine = `"values": [${animData.frames.map((frame) => getIndexFromFrameCoordinates(frame, spritesX)).join(', ')}]`;
+    framesNo = animData.frames.length;
+    startIndex = getIndexFromFrameCoordinates(animData.frames[0], spritesX);
   }
+  lengthSeconds = framesNo / animData.fps;
+  step = 1 / animData.fps;
+  return {framesNo, lengthSeconds, step, startIndex};
+}
+
+const getAnimationLinesFromData = (animData, spritesX) => {
+  const {framesNo, lengthSeconds, step, startIndex} = getFramesDataFromAnimationData(animData, spritesX);
+  const lengthLine = `length = ${lengthSeconds}`;
+  const stepLine = `step = ${step}`;
+  const timesLine = `"times": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => (i * step).toFixed(2)).join(', ')}),`;
+  const transitionsLine = `"transitions": PackedFloat32Array(${Array.from({ length: framesNo }, (_, i) => 1).join(', ')}),`;
+  const valuesLine = `"values": [${Array.from({ length: framesNo }, (_, i) => animData?.frames ? getIndexFromFrameCoordinates(animData.frames[i], spritesX) : startIndex + i).join(', ')}]`;
   return { lengthLine, stepLine, timesLine, transitionsLine, valuesLine };
 }
 
-// update scene .tscn file (config for animal animations)
-const updateAnimalAnimations = (newModInnerPath, data) => {
-  const animationsPath = path.join(newModInnerPath, `overwrites/Scene/Level/Animals/${data.codeName}.tscn`);
-  let contents = fs.readFileSync(animationsPath, 'utf8');
-
-  const spritesheet = path.join(newModInnerPath, `overwrites/Assets/Animals/${data.codeName}_0_0.png`);
+const getSpritesheetDimensions = (newModInnerPath, data, filePath) => {
+  const spritesheet = path.join(newModInnerPath, filePath);
   // get width and height of the spritesheet
   const dimensions = getPngSize(spritesheet);
   const width = dimensions.width;
   const height = dimensions.height;
   const spritesX = width/data.sprite.width;
   const spritesY = height/data.sprite.height;
+  return { width, height, spritesX, spritesY };
+};
+
+// update scene .tscn file (config for animal animations)
+const updateAnimalAnimations = (newModInnerPath, data) => {
+  const animationsPath = path.join(newModInnerPath, `overwrites/Scene/Level/Animals/${data.codeName}.tscn`);
+  let contents = fs.readFileSync(animationsPath, 'utf8');
+
+  const { spritesX } = getSpritesheetDimensions(newModInnerPath, data, `overwrites/Assets/Animals/${data.codeName}_0_0.png`);
 
   const lines = contents.split(/\r?\n/);
 
@@ -271,7 +273,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // eat
   const eat = data.animations.eat;
-  const eatLines = getAnimationDataFromData(eat, spritesX);
+  const eatLines = getAnimationLinesFromData(eat, spritesX);
   lines[69] = eatLines.lengthLine;
   lines[70] = eatLines.stepLine;
   lines[78] = eatLines.timesLine;
@@ -280,7 +282,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // idle_0
   const idle_0 = data.animations.idle_0;
-  const idle0Lines = getAnimationDataFromData(idle_0, spritesX);
+  const idle0Lines = getAnimationLinesFromData(idle_0, spritesX);
   lines[86] = idle0Lines.lengthLine;
   lines[88] = idle0Lines.stepLine;
   lines[96] = idle0Lines.timesLine;
@@ -289,7 +291,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // idle_1_end
   const idle_1_end = data.animations.idle_1_end;
-  const idle1EndLines = getAnimationDataFromData(idle_1_end, spritesX);
+  const idle1EndLines = getAnimationLinesFromData(idle_1_end, spritesX);
   lines[104] = idle1EndLines.lengthLine;
   lines[105] = idle1EndLines.stepLine;
   lines[113] = idle1EndLines.timesLine;
@@ -298,7 +300,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // idle_1_loop
   const idle_1_loop = data.animations.idle_1_loop;
-  const idle1LoopLines = getAnimationDataFromData(idle_1_loop, spritesX);
+  const idle1LoopLines = getAnimationLinesFromData(idle_1_loop, spritesX);
   lines[121] = idle1LoopLines.lengthLine;
   lines[123] = idle1LoopLines.stepLine;
   lines[131] = idle1LoopLines.timesLine;
@@ -307,7 +309,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // idle_1_pre
   const idle_1_pre = data.animations.idle_1_pre;
-  const idle1PreLines = getAnimationDataFromData(idle_1_pre, spritesX);
+  const idle1PreLines = getAnimationLinesFromData(idle_1_pre, spritesX);
   lines[139] = idle1PreLines.lengthLine;
   lines[140] = idle1PreLines.stepLine;
   lines[148] = idle1PreLines.timesLine;
@@ -316,7 +318,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // interact_0
   const interact_0 = data.animations.interact_0;
-  const interact0Lines = getAnimationDataFromData(interact_0, spritesX);
+  const interact0Lines = getAnimationLinesFromData(interact_0, spritesX);
   lines[156] = interact0Lines.lengthLine;
   lines[157] = interact0Lines.stepLine;
   lines[165] = interact0Lines.timesLine;
@@ -325,7 +327,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // move
   const move = data.animations.move;
-  const moveLines = getAnimationDataFromData(move, spritesX);
+  const moveLines = getAnimationLinesFromData(move, spritesX);
   lines[173] = moveLines.lengthLine;
   lines[175] = moveLines.stepLine;
   lines[183] = moveLines.timesLine;
@@ -334,7 +336,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // sleep_end
   const sleep_end = data.animations.sleep_end;
-  const sleepEndLines = getAnimationDataFromData(sleep_end, spritesX);
+  const sleepEndLines = getAnimationLinesFromData(sleep_end, spritesX);
   lines[191] = sleepEndLines.lengthLine;
   lines[192] = sleepEndLines.stepLine;
   lines[200] = sleepEndLines.timesLine;
@@ -343,7 +345,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // sleep_loop
   const sleep_loop = data.animations.sleep_loop;
-  const sleepLoopLines = getAnimationDataFromData(sleep_loop, spritesX);
+  const sleepLoopLines = getAnimationLinesFromData(sleep_loop, spritesX);
   lines[208] = sleepLoopLines.lengthLine;
   lines[210] = sleepLoopLines.stepLine;
   lines[218] = sleepLoopLines.timesLine;
@@ -352,7 +354,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
   // sleep_pre
   const sleep_pre = data.animations.sleep_pre;
-  const sleepPreLines = getAnimationDataFromData(sleep_pre, spritesX);
+  const sleepPreLines = getAnimationLinesFromData(sleep_pre, spritesX);
   lines[226] = sleepPreLines.lengthLine;
   lines[227] = sleepPreLines.stepLine;
   lines[235] = sleepPreLines.timesLine;
@@ -360,6 +362,31 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
   lines[238] = sleepPreLines.valuesLine;
 
   fs.writeFileSync(animationsPath, lines.join('\n'), 'utf8');
+}
+
+// generate a gd file to run inside godot (add a shop idle animation animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
+const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
+  const gdFilePath = path.join(__dirname,'../create-mod/generate_res_file.gd');
+
+  // update the gd file with the new mod data
+  let gdFileContents = fs.readFileSync(gdFilePath, 'utf8');
+  const spriteWidth = data.sprite.width;
+  const spriteHeight = data.sprite.height;
+  gdFileContents = gdFileContents.replace(/var tex_path = ".*"/, `var tex_path = "res://mods-unpacked/${newFolderName}/overwrites/Assets/UI/PopupUI/AnimalIdle/idle_${data.codeName}_0_0.png"`);
+  gdFileContents = gdFileContents.replace(/atlas_tex.region = Rect2\(.*\)/, `atlas_tex.region = Rect2(0, 0, ${spriteWidth}, ${spriteHeight})`);
+  gdFileContents = gdFileContents.replace(/var anim_name = ".*"/, `var anim_name = "${data.codeName}"`);
+  gdFileContents = gdFileContents.replace(/new_anim.resource_name = ".*"/, `new_anim.resource_name = "${data.codeName}"`);
+  const { spritesX, width, height } = getSpritesheetDimensions(newModInnerPath, data, `overwrites/Assets/UI/PopupUI/AnimalIdle/idle_${data.codeName}_0_0.png`);
+  const {step, lengthSeconds, framesNo} = getFramesDataFromAnimationData(data.shop_idle_animation, spritesX);
+  gdFileContents = gdFileContents.replace(/new_anim.length = .*/, `new_anim.length = ${lengthSeconds}`);
+  gdFileContents = gdFileContents.replace(/new_anim.step = .*/, `new_anim.step = ${step}`);
+  const timesLine = `var times = [${Array.from({ length: framesNo }, (_, i) => (i * step).toFixed(2)).join(', ')}]`;
+  const positionsLine = `var rect_x_positions = [${Array.from({ length: framesNo }, (_, i) => i*spriteWidth).join(', ')}]`;
+  const rectLine = `var rect = Rect2(rect_x_positions[i], 0, ${spriteWidth}, ${spriteHeight})`;
+  gdFileContents = gdFileContents.replace(/var times = .*/, timesLine);
+  gdFileContents = gdFileContents.replace(/var rect_x_positions = .*/, positionsLine);
+  gdFileContents = gdFileContents.replace(/var rect = .*/, rectLine);
+  fs.writeFileSync(gdFilePath, gdFileContents, 'utf8');
 }
 
 const createNewModFromData = () => {
@@ -381,8 +408,8 @@ const createNewModFromData = () => {
   updateTresFiles(modInnerPath, newModId, data);
   updateTranslations(modInnerPath, data);
   updateAnimalAnimations(modInnerPath, data);
+  updateGdForAnimalResFile(modInnerPath, data, newFolderName);
 
-  // new_cow.res - generate a gd file to run inside godot (creates idle animation and saves it to the overwrites/Animation folder) or do it in godot
   console.log(`New mod created at ${newModPath}`);
 };
 
