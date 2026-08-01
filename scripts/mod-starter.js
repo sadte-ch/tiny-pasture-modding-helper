@@ -264,12 +264,14 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
   const animationsPath = path.join(newModInnerPath, `overwrites/Scene/Level/Animals/${data.codeName}.tscn`);
   let contents = fs.readFileSync(animationsPath, 'utf8');
 
-  const { spritesX } = getSpritesheetDimensions(newModInnerPath, data, `overwrites/Assets/Animals/${data.codeName}_0_0.png`);
+  const { spritesX, spritesY } = getSpritesheetDimensions(newModInnerPath, data, `overwrites/Assets/Animals/${data.codeName}_0_0.png`);
 
   const lines = contents.split(/\r?\n/);
 
   // replace "Cow" with the new mod name in the node name line
   lines[762] = `[node name="${data.modName}" type="Node2D" groups=["ANIMAL"]]`;
+  lines[781] = `hframes = ${spritesX}` // hframes
+  lines[782] = `vframes = ${spritesY}` // vframes
 
   // eat
   const eat = data.animations.eat;
@@ -381,7 +383,7 @@ const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
   gdFileContents = gdFileContents.replace(/new_anim.length = .*/, `new_anim.length = ${lengthSeconds}`);
   gdFileContents = gdFileContents.replace(/new_anim.step = .*/, `new_anim.step = ${step}`);
   const timesLine = `var times = [${Array.from({ length: framesNo }, (_, i) => (i * step).toFixed(2)).join(', ')}]`;
-  const positionsLine = `var rect_x_positions = [${Array.from({ length: framesNo }, (_, i) => i*spriteWidth).join(', ')}]`;
+  const positionsLine = `var rect_x_positions = [${!data.shop_idle_animation.frames ? Array.from({ length: framesNo }, (_, i) => i*spriteWidth).join(', ') : data.shop_idle_animation.frames.map(f => f[0] * spriteWidth).join(', ')}]`;
   const rectLine = `var rect = Rect2(rect_x_positions[i], 0, ${spriteWidth}, ${spriteHeight})`;
   gdFileContents = gdFileContents.replace(/var times = .*/, timesLine);
   gdFileContents = gdFileContents.replace(/var rect_x_positions = .*/, positionsLine);
