@@ -51,6 +51,76 @@ const updateLinksWithOldPath = (newFolderName, oldFolderName, newFolderPath, old
   });
 }
 
+const addLinksForAdditionalVariations = (newModInnerPath, data) => {
+  const variationsNo = data.variations_no;
+  const codeName = data.codeName;
+  const newModId = data.modId;
+
+  const ogAssetsPath = `res://Assets/`;
+  const assetsPath = `res://mods-unpacked/${data.authorName}-${data.modName}/overwrites/Assets/`;
+  const animalsPath = `${assetsPath}Animals/`;
+  const idlePath = `${assetsPath}UI/PopupUI/AnimalIdle/`;
+  const portraitPath = `${assetsPath}UI/PopupUI/Portrait/`;
+  const ogAnimalsPath = `${ogAssetsPath}Animals/`;
+  const ogIdlePath = `${ogAssetsPath}UI/PopupUI/AnimalIdle/`;
+  const ogPortraitPath = `${ogAssetsPath}UI/PopupUI/Portrait/`;
+
+  const overwritesFilePath = path.join(newModInnerPath, 'overwrites.gd');
+  let overwritesFileContents = fs.readFileSync(overwritesFilePath, 'utf8');
+  const lines = overwritesFileContents.split(/\r?\n/);
+
+  const newOverwritesPathLines = [];
+  const animalVariableLines = [];
+
+  for (let i = 1; i <= variationsNo - 1; i++) {
+    const variationNameJuvenile = `${codeName}_${i}_0`;
+    const variationNameAdult = `${codeName}_${i}_1`;
+
+    const animalJuvenilePath = `"${animalsPath}${variationNameJuvenile}.png"`;
+    const animalAdultPath = `"${animalsPath}${variationNameAdult}.png"`;
+    const animalIdleJuvenilePath = `"${idlePath}idle_${variationNameJuvenile}.png"`;
+    const animalIdleAdultPath = `"${idlePath}idle_${variationNameAdult}.png"`;
+    const animalPortraitJuvenilePath = `"${portraitPath}portrait_${variationNameJuvenile}.png"`;
+    const animalPortraitAdultPath = `"${portraitPath}portrait_${variationNameAdult}.png"`;
+    const ogAnimalJuvenilePath = `"${ogAnimalsPath}${variationNameJuvenile}.png"`;
+    const ogAnimalAdultPath = `"${ogAnimalsPath}${variationNameAdult}.png"`;
+    const ogAnimalIdleJuvenilePath = `"${ogIdlePath}idle_${variationNameJuvenile}.png"`;
+    const ogAnimalIdleAdultPath = `"${ogIdlePath}idle_${variationNameAdult}.png"`;
+    const ogAnimalPortraitJuvenilePath = `"${ogPortraitPath}portrait_${variationNameJuvenile}.png"`;
+    const ogAnimalPortraitAdultPath = `"${ogPortraitPath}portrait_${variationNameAdult}.png"`;
+
+    // overwrites_path array
+    newOverwritesPathLines.push(`\t${animalJuvenilePath},`);
+    newOverwritesPathLines.push(`\t${animalAdultPath},`);
+    newOverwritesPathLines.push(`\t${animalIdleJuvenilePath},`);
+    newOverwritesPathLines.push(`\t${animalIdleAdultPath},`);
+    newOverwritesPathLines.push(`\t${animalPortraitJuvenilePath},`);
+    newOverwritesPathLines.push(`\t${animalPortraitAdultPath},`);
+
+    // animal
+    animalVariableLines.push(`\tvar animal_${i}_0 = preload(${animalJuvenilePath})`);
+    animalVariableLines.push(`\tvar animal_${i}_1 = preload(${animalAdultPath})`);
+    animalVariableLines.push(`\tanimal_${i}_0.take_over_path(${ogAnimalJuvenilePath})`);
+    animalVariableLines.push(`\tanimal_${i}_1.take_over_path(${ogAnimalAdultPath})`);
+
+    // portrait
+    animalVariableLines.push(`\tvar animal_portrait_${i}_0 = preload(${animalPortraitJuvenilePath})`);
+    animalVariableLines.push(`\tvar animal_portrait_${i}_1 = preload(${animalPortraitAdultPath})`);
+    animalVariableLines.push(`\tanimal_portrait_${i}_0.take_over_path(${ogAnimalPortraitJuvenilePath})`);
+    animalVariableLines.push(`\tanimal_portrait_${i}_1.take_over_path(${ogAnimalPortraitAdultPath})`);
+
+    // idle
+    animalVariableLines.push(`\tvar animal_idle_${i}_0 = preload(${animalIdleJuvenilePath})`);
+    animalVariableLines.push(`\tvar animal_idle_${i}_1 = preload(${animalIdleAdultPath})`);
+    animalVariableLines.push(`\tanimal_idle_${i}_0.take_over_path(${ogAnimalIdleJuvenilePath})`);
+    animalVariableLines.push(`\tanimal_idle_${i}_1.take_over_path(${ogAnimalIdleAdultPath})`);
+  }
+  // update overwrites_path, append path to every variation asset (animal, idle, portrait)
+  lines.splice(12, 0, ...newOverwritesPathLines);
+  lines.push(...animalVariableLines);
+  fs.writeFileSync(overwritesFilePath, lines.join('\n'), 'utf8');
+}
+
 // Rename folders with oldFolderName to newFolderName in the new mod folder
 // Rename the .tres files in the new mod folder to match the new modId
 // Rename files with oldCodeName to newCodeName in the new mod folder
@@ -169,7 +239,7 @@ const updateTresFiles = (newModInnerPath, newModId, data) => {
   animalDataTresFileContents = animalDataTresFileContents.replace(/poop_endure = .*/, `poop_endure = ${data.poop_endure}`);
   animalDataTresFileContents = animalDataTresFileContents.replace(/max_move_speed = .*/, `max_move_speed = ${data.max_move_speed}`);
   animalDataTresFileContents = animalDataTresFileContents.replace(/min_move_speed = .*/, `min_move_speed = ${data.min_move_speed}`);
-  animalDataTresFileContents = animalDataTresFileContents.replace(/color_pool = .*/, `color_pool = [${data.color_pool}]`);
+  animalDataTresFileContents = animalDataTresFileContents.replace(/color_pool = .*/, `color_pool = [${Array.from({ length: data.variations_no }, (_, i) => i).join(', ')}]`);
   animalDataTresFileContents = animalDataTresFileContents.replace(/is_fish = .*/, `is_fish = ${data.is_fish}`);
   fs.writeFileSync(animalDataTresFilePath, animalDataTresFileContents, 'utf8');
 };
@@ -406,6 +476,7 @@ const createNewModFromData = () => {
 
   const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
   moveNewAssetsToModFolder(modInnerPath);
+  addLinksForAdditionalVariations(modInnerPath, data);
   updateManifestFile(modInnerPath, data);
   updateTresFiles(modInnerPath, newModId, data);
   updateTranslations(modInnerPath, data);

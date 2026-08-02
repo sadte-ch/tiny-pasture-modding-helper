@@ -30,7 +30,7 @@
   "poop_endure": 15,
   "max_move_speed": 40,
   "min_move_speed": 30,
-  "color_pool": [0],
+  "variations_no": 1,
   "is_fish": false,
   "sprite": {
     "width": 50,
