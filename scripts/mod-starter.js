@@ -13,6 +13,13 @@ const getModData = () => {
   return require('../create-mod/data.json');
 };
 
+const deleteDuplicateExistingFolder = (newFolderName) => {
+  const modInnerPath = path.join(__dirname, `../create-mod/${newFolderName}`);
+  if (fs.existsSync(modInnerPath)) {
+    fs.rmSync(modInnerPath, { recursive: true, force: true });
+  }
+};
+
 // Create mod duplicate folder and rename it with the new authorName and modName
 const duplicateModFolderWithNewName = (newFolderName, oldFolderName) => {
   const modStarterPath = path.join(__dirname, `../create-mod/${oldFolderName}`);
@@ -470,6 +477,7 @@ const createNewModFromData = () => {
   const newCodeName = data.codeName;
   const oldFolderName = 'Sad_Tech-AlveusCow';
   const newFolderName = `${data.authorName}-${data.modName}`;
+  deleteDuplicateExistingFolder(newFolderName);
   const newModPath = duplicateModFolderWithNewName(newFolderName, oldFolderName);
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
