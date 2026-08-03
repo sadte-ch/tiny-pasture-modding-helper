@@ -14,7 +14,7 @@ func _run() -> void:
 	var root_node = packed_scene.instantiate()
 
 	# --- LOAD EXTERNAL TEXTURE ---
-	var tex_path = "res://mods-unpacked/Sad_Tech-AlveusCow/overwrites/Assets/UI/PopupUI/AnimalIdle/idle_alveus_cow_0_0.png"
+	var tex_path = "res://mods-unpacked/Sad_Tech-NewCow/overwrites/Assets/UI/PopupUI/AnimalIdle/idle_new_cow_0_0.png"
 	var base_tex = load(tex_path)
 	
 	# Find the TEX_AnimalAvatar node (assuming it's a unique % node or named exactly this)
@@ -62,7 +62,7 @@ func _run() -> void:
 	
 	# 5. BUILD THE NEW ANIMATION
 	var new_anim = Animation.new()
-	new_anim.resource_name = "alveus_cow"
+	new_anim.resource_name = "new_cow"
 	new_anim.length = 1.6
 	new_anim.loop_mode = Animation.LOOP_LINEAR # Set to loop
 	new_anim.step = 0.2
@@ -98,7 +98,7 @@ func _run() -> void:
 	new_anim.track_set_key_transition(track_1, pos_key, 1.0)
 	
 	# 6. ADD THE ANIMATION TO THE LIBRARY
-	var anim_name = "alveus_cow"
+	var anim_name = "new_cow"
 	# Remove it first if we are overwriting an existing animation of the same name
 	if library.has_animation(anim_name):
 		library.remove_animation(anim_name)

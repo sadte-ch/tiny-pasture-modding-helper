@@ -5,16 +5,18 @@
  * This is developed based off the instructions in the Tiny Pastures Modding Guide, which can be found here: https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb
  */
 
+const ANIMAL_MOD_FOLDER_NAME = 'create-animal-mod';
+
 const fs = require('fs');
 const path = require('path');
 
 // Get the data from the data.json file
 const getModData = () => {
-  return require('../create-mod/data.json');
+  return require(`../${ANIMAL_MOD_FOLDER_NAME}/data.json`);
 };
 
 const deleteDuplicateExistingFolder = (newFolderName) => {
-  const modInnerPath = path.join(__dirname, `../create-mod/${newFolderName}`);
+  const modInnerPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${newFolderName}`);
   if (fs.existsSync(modInnerPath)) {
     fs.rmSync(modInnerPath, { recursive: true, force: true });
   }
@@ -22,10 +24,10 @@ const deleteDuplicateExistingFolder = (newFolderName) => {
 
 // Create mod duplicate folder and rename it with the new authorName and modName
 const duplicateModFolderWithNewName = (newFolderName, oldFolderName) => {
-  const modStarterPath = path.join(__dirname, `../create-mod/${oldFolderName}`);
-  const newModPath = path.join(__dirname, `../create-mod/${newFolderName}`);
+  const modStarterPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${oldFolderName}`);
+  const newModPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${newFolderName}`);
 
-  // Copy the mod-starter folder to the new mod folder
+  // Copy the animal-mod-starter folder to the new mod folder
   fs.cpSync(modStarterPath, newModPath, { recursive: true });
 
   // update inner folder name in the new mod folder
@@ -158,7 +160,7 @@ const renameFiles = (oldModId, newModId, newModPath, newFolderName, oldFolderNam
 
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath) => {
-  const newAssetsPath = path.join(__dirname, '../create-mod/new-assets');
+  const newAssetsPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
@@ -445,7 +447,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
 // generate a gd file to run inside godot (add a shop idle animation animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
 const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
-  const gdFilePath = path.join(__dirname,'../create-mod/generate_res_file.gd');
+  const gdFilePath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/generate_res_file.gd`);
 
   // update the gd file with the new mod data
   let gdFileContents = fs.readFileSync(gdFilePath, 'utf8');
@@ -468,7 +470,7 @@ const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
   fs.writeFileSync(gdFilePath, gdFileContents, 'utf8');
 }
 
-const createNewModFromData = () => {
+const createNewAnimalModFromData = () => {
   const data = getModData();
 
   const oldModId = '2989'
@@ -494,4 +496,4 @@ const createNewModFromData = () => {
   console.log(`New mod created at ${newModPath}`);
 };
 
-createNewModFromData();
+createNewAnimalModFromData();

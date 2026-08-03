@@ -46,12 +46,12 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
 
 ### Add your assets
 1. Find and open the tiny-pastures-modding-helper folder in your file system
-2. Go to the create-mod folder > [new-assets](/create-mod/new-assets)
+2. Go to the create-animal-mod folder > [new-assets](/create-animal-mod/new-assets)
 3. Delete the assets in each of the four folders
 4. Paste your new correctly named [spritesheets and assets](assets.md#overview) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
 
 ### Update data.json
-1. Open the data.json file in the create-mod folder
+1. Open the data.json file in the create-animal-mod folder
 2. Update the values you want to change
 3. I have tried to add as much info about these values in the comments but also refer to the [Tiny Pasture mod docs](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb#SUwtdwsgvo3xyPx3bogcxotIn2d) for extra info
 
@@ -60,13 +60,13 @@ I recommend using a free code editor (like [VSCode](https://code.visualstudio.co
   - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}`
 2. If you are using a code editor with a terminal built in (ie: VSCode), open it
 3. Type the following command to run the script
-  - `npm run process`
-  - or if you don't have npm installed: `node scripts/mod-starter.js`
+  - `npm run create-animal-mod`
+  - or if you don't have npm installed: `node scripts/animal-mod-starter.js`
 
 ### Copy the exported folder
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
-3. Inside the folder 'create-mod', you should see a new folder with your authorName and modName ie: AuthorName-ModName
+3. Inside the folder 'create-animal-mod', you should see a new folder with your authorName and modName ie: AuthorName-ModName
 4. Inside the AuthorName-ModName folder, copy the mods-unpacked folder
 
 ### Add your mod to your decompiled game files
@@ -84,7 +84,7 @@ The script creates a gd file that you can run inside Godot to automate creating 
 
 Alternatively, you can do this section manually if you prefer - see [guide](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb#M7sPdTWcXoRfWdxGT5nceF1Dnib), scroll down to step 6. Import Animation for Animal Acquisition Interface)
 
-1. Copy the `generate_res_file.gd` file from inside `create-mod` in the repo
+1. Copy the `generate_res_file.gd` file from inside `create-animal-mod` in the repo
 2. Paste the script inside the decompiled files folder in the Scene folder (you don't want this file to get uploaded with your mod)
 3. Locate the `generate_res_file.gd` file in the Godot file system
 4. Double click file and it should open in Script mode
@@ -142,7 +142,7 @@ Alternatively, you can do this section manually if you prefer - see [guide](http
 3. This should launch another instance of the game
 4. If it doesn't, check the output/error console to see if there are any issues you need to resolve
 5. If you are still experiencing issues, delete the mod folder from mods-unpacked and try again
-6. You can also try adding my [mod](/create-mod/Sad_Tech-AlveusCow/mods-unpacked) (Sad_Tech-AlveusCow folder) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved
+6. You can also try adding my [mod](/create-animal-mod/Sad_Tech-AlveusCow/mods-unpacked) (Sad_Tech-AlveusCow folder) or another mod that you know works to try to get to the bottom of the issue. Gradually change things in data.json, run the script and repeat the process until the issue is resolved
 7. Once its working, its time to export your mod so you can publish it on the Steam Workshop
 
 ## Next steps [Export your mod](export-mod.md)
