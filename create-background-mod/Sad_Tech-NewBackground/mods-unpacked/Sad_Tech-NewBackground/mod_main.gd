@@ -19,8 +19,8 @@ func _ready() -> void:
 
 
 func install_script_extensions():
-	ModLoaderMod.install_script_extension("res://mods-unpacked/Sad_Tech-NewBackground/extension/shop/ui_shop_page_decoration.gd")
-	ModLoaderMod.install_script_extension("res://mods-unpacked/Sad_Tech-NewBackground/extension/shop/bg_manager.gd")
+	ModLoaderMod.install_script_extension("res://mods-unpacked/Sad_Tech-NewBackground/extension/Manager/ui_shop_page_decoration.gd")
+	ModLoaderMod.install_script_extension("res://mods-unpacked/Sad_Tech-NewBackground/extension/Manager/bg_manager.gd")
 
 func add_translations():
 	ModLoaderMod.add_translation("res://mods-unpacked/Sad_Tech-NewBackground/translations/translations.zh.translation")
