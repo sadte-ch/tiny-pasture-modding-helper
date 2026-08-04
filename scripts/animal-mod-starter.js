@@ -1,5 +1,5 @@
 /**
- * Automates as much of the process of creating a new mod for tiny pasture as possible.
+ * Automates as much of the process of creating a new animal mod for tiny pasture as possible.
  * It requires that you put all your new assets in the "new-assets" folder and that you have filled out the data.json file with the correct information for your mod.
  * It will create a new folder with the updated files that you can then open in Godot to finish off the mod and test it.
  * This is developed based off the instructions in the Tiny Pastures Modding Guide, which can be found here: https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb
@@ -15,6 +15,7 @@ const getModData = () => {
   return require(`../${ANIMAL_MOD_FOLDER_NAME}/data.json`);
 };
 
+// Delete new folder if it already exists to avoid errors when creating a new mod
 const deleteDuplicateExistingFolder = (newFolderName) => {
   const modInnerPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${newFolderName}`);
   if (fs.existsSync(modInnerPath)) {
