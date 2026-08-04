@@ -1,0 +1,22 @@
+{
+  "modName": "NewBackground",
+  "modId": "1000",
+  "authorName": "Sad_Tech",
+  "codeName": "bg_new",
+  "description": "Add a new background",
+  "translations": {
+    "en": {
+      "name": "New Background",
+      "description": "Add a new background"
+    },
+    "zh": {
+      "name": "新背景",
+      "description": "添加新背景"
+    },
+    "zh-HK": {
+      "name": "新背景",
+      "description": "添加新背景"
+    }
+  },
+  "price": 2000.0
+}
