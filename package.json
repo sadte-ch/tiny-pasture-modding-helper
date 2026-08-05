@@ -2,6 +2,7 @@
   "name": "tiny-pastures-modding-helper",
   "version": "1.0.0",
   "scripts": {
-    "create-animal-mod": "node scripts/animal-mod-starter.js"
+    "create-animal-mod": "node scripts/animal-mod-starter.js",
+    "create-bg-mod": "node scripts/background-mod-starter.js"
   }
 }
