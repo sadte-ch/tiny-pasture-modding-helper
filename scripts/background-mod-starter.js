@@ -133,8 +133,7 @@ const updateTranslations = (newModInnerPath, data) => {
   // generate a csv file
   const csvContent = `key,zh,zh-HK,en
 DECO_NAME_BG_${data.modId},${data.translations.zh.name},${data.translations['zh-HK'].name},${data.translations.en.name}
-DECO_DESC_BG_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}
-  `;
+DECO_DESC_BG_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}`;
 
   fs.writeFileSync(translationsPath, csvContent, 'utf8');
   console.log(`Updated translations file: ${translationsPath}`);
@@ -165,20 +164,28 @@ const createTtscnFileForBackground = (modInnerPath, data) => {
   const backgroundFiles = fs.readdirSync(backgroundAssetsPath);
   const layers = [];
 
-  // autoscroll = Vector2(0.5, 0)
+  const layersData = data?.layers;
+  const orderedFiles = backgroundFiles.filter((file) => file.includes(data.codeName));
+  if (layersData) {
+    orderedFiles.sort((a, b) => {
+      const layerA = layersData[a];
+      const layerB = layersData[b];
+      return layerA.order - layerB.order;
+    });
+  }
 
-  backgroundFiles.forEach((file, index) => {
-    const textureId = randomUUID();
-    textureImports.push(`[ext_resource type="Texture2D" path="res://mods-unpacked/${data.authorName}-${data.modName}/overwrites/Assets/Deco/Background/${data.codeName}/${file}" id="${textureId}"]`);
+  orderedFiles.forEach((file, index) => {
+    textureImports.push(`[ext_resource type="Texture2D" path="res://mods-unpacked/${data.authorName}-${data.modName}/overwrites/Assets/Deco/Background/${data.codeName}/${file}" id="${index}"]`);
 
     const layer = `[node name="Layer_${index}" type="Parallax2D" parent="."] 
 scroll_offset = Vector2(0, 25)
 repeat_size = Vector2(960, 0)
 repeat_times = 5
+${layersData[file]?.autoscroll ? `autoscroll = Vector2(${layersData[file].autoscroll.x}, ${layersData[file].autoscroll.y})` : ''}
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer_${index}"]
 position = Vector2(0, 2)
-texture = ExtResource("${textureId}")
+texture = ExtResource("${index}")
 `;
     layers.push(layer);
   });
@@ -205,7 +212,7 @@ const createNewBackgroundModFromData = () => {
   const newModId = data.modId;
   const oldCodeName = 'bg_new';
   const newCodeName = data.codeName;
-  const oldFolderName = 'Sad_Tech-NewBackground';
+  const oldFolderName = 'Your_Name-NewBackground';
   const newFolderName = `${data.authorName}-${data.modName}`;
 
   deleteDuplicateExistingFolder(newFolderName);

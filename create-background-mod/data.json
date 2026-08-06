@@ -1,7 +1,7 @@
 {
   "modName": "NewBackground",
   "modId": "1000",
-  "authorName": "Sad_Tech",
+  "authorName": "Your_Name",
   "codeName": "bg_new",
   "description": "Add a new background",
   "translations": {
@@ -18,5 +18,24 @@
       "description": "添加新背景"
     }
   },
-  "price": 2000.0
+  "price": 200.0,
+  "layers": {
+    "bg_new_00.png": {
+      "order": 0,
+      "autoscroll": {
+        "x": 0.5,
+        "y": 0
+      }
+    },
+    "bg_new_01.png": {
+      "order": 1
+    },
+    "bg_new_02.png": {
+      "order": 2,
+      "autoscroll": {
+        "x": 2,
+        "y": 0
+      }
+    }
+  }
 }

@@ -260,8 +260,7 @@ const updateTranslations = (newModInnerPath, data) => {
   // generate a csv file
   const csvContent = `key,zh,zh-HK,en
 ANIMAL_NAME_${data.modId},${data.translations.zh.name},${data.translations['zh-HK'].name},${data.translations.en.name}
-ANIMAL_DESC_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}
-  `;
+ANIMAL_DESC_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}`;
 
   fs.writeFileSync(translationsPath, csvContent, 'utf8');
   console.log(`Updated translations file: ${translationsPath}`);
