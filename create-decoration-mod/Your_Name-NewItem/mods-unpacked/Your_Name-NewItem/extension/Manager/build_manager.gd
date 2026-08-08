@@ -1,5 +1,5 @@
 extends "res://Scene/Level/build_manager.gd"
-const new_item = preload("res://mods-unpacked/Sad_Tech-StardewValleyBackground/overwrites/Scene/Level/Buildings/Decos/new_item.tscn")
+const new_item = preload("res://mods-unpacked/Your_Name-NewItem/overwrites/Scene/Level/Buildings/Decos/new_item.tscn")
 
 func _ready() -> void:
 	super()

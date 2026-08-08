@@ -9,11 +9,16 @@ import { updateTranslations } from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
+import { randomUUID } from 'crypto';
 
 const ANIMAL_MOD_FOLDER_NAME = 'create-animal-mod';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 
 const addLinksForAdditionalVariations = (newModInnerPath, data) => {
   const variationsNo = data.variations_no;
@@ -87,7 +92,7 @@ const addLinksForAdditionalVariations = (newModInnerPath, data) => {
 
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath) => {
-  const newAssetsPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../../${ANIMAL_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
@@ -348,7 +353,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
 
 // generate a gd file to run inside godot (add a shop idle animation animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
 const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
-  const gdFilePath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/generate_res_file.gd`);
+  const gdFilePath = path.join(__dirname, `../../${ANIMAL_MOD_FOLDER_NAME}/generate_res_file.gd`);
 
   // update the gd file with the new mod data
   let gdFileContents = fs.readFileSync(gdFilePath, 'utf8');

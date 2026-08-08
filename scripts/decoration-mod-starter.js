@@ -4,16 +4,20 @@
  * It will create a new folder with the updated files that you can then open in Godot to finish off the mod and test it.
  */
 
+import { randomUUID } from 'crypto';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
+
 import { updateTranslations } from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod';
-
-const { randomUUID } = require('crypto');
-const fs = require('fs');
-const path = require('path');
 
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
@@ -24,7 +28,7 @@ const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
     fs.rmSync(oldBackgroundPath, { recursive: true, force: true });
   }
 
-  const newAssetsPath = path.join(__dirname, `../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
@@ -70,7 +74,7 @@ const createTtscnFileForBackground = (modInnerPath, data) => {
   const scriptId = randomUUID();
 
   const textureImports = [];
-  const backgroundAssetsPath = path.join(__dirname, `../${BACKGROUND_MOD_FOLDER_NAME}/new-assets/background`);
+  const backgroundAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets/background`);
   const backgroundFiles = fs.readdirSync(backgroundAssetsPath);
   const layers = [];
 

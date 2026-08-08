@@ -1,5 +1,8 @@
+import fs from 'fs';
+import path from 'path';
+
 // update translations
-const updateTranslations = (newModInnerPath, data, prefix, suffix) => {
+export const updateTranslations = (newModInnerPath, data, prefix, suffix) => {
   const translationsPath = path.join(newModInnerPath, 'translations/translations.csv');
   // generate a csv file
   const nameKey = `${prefix}_NAME${suffix ? `_${suffix}` : ''}_${data.modId}`;

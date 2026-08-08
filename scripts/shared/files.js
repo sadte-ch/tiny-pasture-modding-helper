@@ -1,9 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 
 // Delete new folder if it already exists to avoid errors when creating a new mod
 export const deleteDuplicateExistingFolder = (newFolderName, folderPath) => {
-  const modInnerPath = path.join(__dirname, `../${folderPath}/${newFolderName}`);
+  const modInnerPath = path.join(__dirname, `../../${folderPath}/${newFolderName}`);
   if (fs.existsSync(modInnerPath)) {
     fs.rmSync(modInnerPath, { recursive: true, force: true });
   }
@@ -11,8 +15,8 @@ export const deleteDuplicateExistingFolder = (newFolderName, folderPath) => {
 
 // Create mod duplicate folder and rename it with the new authorName and modName
 export const duplicateModFolderWithNewName = (newFolderName, oldFolderName, pathname) => {
-  const modStarterPath = path.join(__dirname, `../${pathname}/${oldFolderName}`);
-  const newModPath = path.join(__dirname, `../${pathname}/${newFolderName}`);
+  const modStarterPath = path.join(__dirname, `../../${pathname}/${oldFolderName}`);
+  const newModPath = path.join(__dirname, `../../${pathname}/${newFolderName}`);
 
   // Copy the background-mod-starter folder to the new mod folder
   fs.cpSync(modStarterPath, newModPath, { recursive: true });
