@@ -5,61 +5,15 @@
  * This is developed based off the instructions in the Tiny Pastures Modding Guide, which can be found here: https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb
  */
 
+import { updateTranslations } from './shared/translations.js';
+import { getModData, updateManifestFile } from './shared/data.js';
+import { deleteDuplicateExistingFolder } from './shared/files.js';
+import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
+
 const ANIMAL_MOD_FOLDER_NAME = 'create-animal-mod';
 
 const fs = require('fs');
 const path = require('path');
-
-// Get the data from the data.json file
-const getModData = () => {
-  return require(`../${ANIMAL_MOD_FOLDER_NAME}/data.json`);
-};
-
-// Delete new folder if it already exists to avoid errors when creating a new mod
-const deleteDuplicateExistingFolder = (newFolderName) => {
-  const modInnerPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${newFolderName}`);
-  if (fs.existsSync(modInnerPath)) {
-    fs.rmSync(modInnerPath, { recursive: true, force: true });
-  }
-};
-
-// Create mod duplicate folder and rename it with the new authorName and modName
-const duplicateModFolderWithNewName = (newFolderName, oldFolderName) => {
-  const modStarterPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${oldFolderName}`);
-  const newModPath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/${newFolderName}`);
-
-  // Copy the animal-mod-starter folder to the new mod folder
-  fs.cpSync(modStarterPath, newModPath, { recursive: true });
-
-  // update inner folder name in the new mod folder
-  const newModInnerPath = path.join(newModPath, `/mods-unpacked/${oldFolderName}`);
-  const newModInnerPathRenamed = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  fs.renameSync(newModInnerPath, newModInnerPathRenamed);
-
-  return newModPath;
-};
-
-// find and replace all instances of the old mod path with the new mod path in the new mod folder
-const updateLinksWithOldPath = (newFolderName, oldFolderName, newFolderPath, oldCodeName, newCodeName) => {
-  // Get all files in the new mod folder
-  const files = fs.readdirSync(newFolderPath, { withFileTypes: true });
-
-  // Loop through all files and update the links
-  files.forEach((file) => {
-    const filePath = path.join(newFolderPath, file.name);
-
-    if (file.isDirectory()) {
-      // If the file is a directory, recursively call this function
-      updateLinksWithOldPath(newFolderName, oldFolderName, filePath, oldCodeName, newCodeName);
-    } else {
-      // If the file is a file, read it and replace the old mod path with the new mod path
-      let fileContents = fs.readFileSync(filePath, 'utf8');
-      fileContents = fileContents.replace(new RegExp(oldFolderName, 'g'), newFolderName);
-      fileContents = fileContents.replace(new RegExp(oldCodeName, 'g'), newCodeName);
-      fs.writeFileSync(filePath, fileContents, 'utf8');
-    }
-  });
-}
 
 const addLinksForAdditionalVariations = (newModInnerPath, data) => {
   const variationsNo = data.variations_no;
@@ -129,35 +83,7 @@ const addLinksForAdditionalVariations = (newModInnerPath, data) => {
   lines.splice(12, 0, ...newOverwritesPathLines);
   lines.push(...animalVariableLines);
   fs.writeFileSync(overwritesFilePath, lines.join('\n'), 'utf8');
-}
-
-// Rename folders with oldFolderName to newFolderName in the new mod folder
-// Rename the .tres files in the new mod folder to match the new modId
-// Rename files with oldCodeName to newCodeName in the new mod folder
-const renameFiles = (oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName) => {
-  // loop through files and rename any files with the oldFolderName or oldCodeName
-  const files = fs.readdirSync(newModPath, { withFileTypes: true });
-  files.forEach((file) => {
-    const filePath = path.join(newModPath, file.name);
-
-    if (file.isDirectory()) {
-      // If the file is a directory, recursively call this function
-      renameFiles(oldModId, newModId, filePath, newFolderName, oldFolderName, oldCodeName, newCodeName);
-    } else {
-      // If the file is a file, rename it if it contains the oldFolderName or oldCodeName
-      if (file.name.includes(oldFolderName)) {
-        const newFilePath = path.join(newModPath, file.name.replace(oldFolderName, newFolderName));
-        fs.renameSync(filePath, newFilePath);
-      } else if (file.name.includes(oldCodeName)) {
-        const newFilePath = path.join(newModPath, file.name.replace(oldCodeName, newCodeName));
-        fs.renameSync(filePath, newFilePath);
-      } else if (file.name.includes(oldModId)) {
-        const newFilePath = path.join(newModPath, file.name.replace(oldModId, newModId));
-        fs.renameSync(filePath, newFilePath);
-      }
-    }
-  });
-}
+};
 
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath) => {
@@ -206,19 +132,6 @@ const moveNewAssetsToModFolder = (newModInnerPath) => {
   });
 }
 
-// update the manifest.json file with the new mod data
-const updateManifestFile = (newModInnerPath, data) => {
-  const manifestPath = path.join(newModInnerPath, 'manifest.json');
-  const manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-
-  manifestData.name = data.modName;
-  manifestData.namespace = data.authorName;
-  manifestData.description = data.description;
-  manifestData.extra.godot.authors = [data.authorName];
-
-  fs.writeFileSync(manifestPath, JSON.stringify(manifestData, null, 2), 'utf8');
-};
-
 // update tres files
 const updateTresFiles = (newModInnerPath, newModId, data) => {
   const animalDataTresFilePath = path.join(newModInnerPath, `overwrites/Data/animal_data/${newModId}.tres`);
@@ -252,18 +165,6 @@ const updateTresFiles = (newModInnerPath, newModId, data) => {
   animalDataTresFileContents = animalDataTresFileContents.replace(/color_pool = .*/, `color_pool = [${Array.from({ length: data.variations_no }, (_, i) => i).join(', ')}]`);
   animalDataTresFileContents = animalDataTresFileContents.replace(/is_fish = .*/, `is_fish = ${data.is_fish}`);
   fs.writeFileSync(animalDataTresFilePath, animalDataTresFileContents, 'utf8');
-};
-
-// update translations
-const updateTranslations = (newModInnerPath, data) => {
-  const translationsPath = path.join(newModInnerPath, 'translations/translations.csv');
-  // generate a csv file
-  const csvContent = `key,zh,zh-HK,en
-ANIMAL_NAME_${data.modId},${data.translations.zh.name},${data.translations['zh-HK'].name},${data.translations.en.name}
-ANIMAL_DESC_${data.modId},${data.translations.zh.description},${data.translations['zh-HK'].description},${data.translations.en.description}`;
-
-  fs.writeFileSync(translationsPath, csvContent, 'utf8');
-  console.log(`Updated translations file: ${translationsPath}`);
 };
 
 const getPngSize = (filePath) => {
@@ -471,7 +372,7 @@ const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
 }
 
 const createNewAnimalModFromData = () => {
-  const data = getModData();
+  const data = getModData(ANIMAL_MOD_FOLDER_NAME);
 
   const oldModId = '2989'
   const newModId = data.modId;
@@ -479,8 +380,8 @@ const createNewAnimalModFromData = () => {
   const newCodeName = data.codeName;
   const oldFolderName = 'Sad_Tech-AlveusCow';
   const newFolderName = `${data.authorName}-${data.modName}`;
-  deleteDuplicateExistingFolder(newFolderName);
-  const newModPath = duplicateModFolderWithNewName(newFolderName, oldFolderName);
+  deleteDuplicateExistingFolder(newFolderName, ANIMAL_MOD_FOLDER_NAME);
+  const newModPath = duplicateModFolderWithNewName(newFolderName, oldFolderName, ANIMAL_MOD_FOLDER_NAME);
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
@@ -489,7 +390,7 @@ const createNewAnimalModFromData = () => {
   addLinksForAdditionalVariations(modInnerPath, data);
   updateManifestFile(modInnerPath, data);
   updateTresFiles(modInnerPath, newModId, data);
-  updateTranslations(modInnerPath, data);
+  updateTranslations(modInnerPath, data, 'ANIMAL');
   updateAnimalAnimations(modInnerPath, data);
   updateGdForAnimalResFile(modInnerPath, data, newFolderName);
 
