@@ -1,0 +1,27 @@
+{
+  "name": "NewDecoration",
+  "namespace": "Your_Name",
+  "version_number": "1.0.0",
+  "description": "Add a new decoration to the game.",
+  "website_url": "",
+  "dependencies": [],
+  "extra": {
+    "godot": {
+      "authors": [
+        "Your_Name"
+      ],
+      "tags": [],
+      "description_rich": "",
+      "optional_dependencies": [],
+      "load_before": [],
+      "incompatibilities": [],
+      "compatible_mod_loader_version": [
+        "7.0.1"
+      ],
+      "compatible_game_version": [
+        "1.0.10"
+      ],
+      "config_schema": {}
+    }
+  }
+}
