@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd53folcqu6da"]
 
 [ext_resource type="Script" path="res://Scene/Level/Buildings/Decos/bd_deco.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bpd5fvid274jm" path="res://Assets/Deco/Buildings/chair_0.png" id="2"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Your_Name-NewDecoration/overwrites/Assets/Deco/Buildings/new_deco.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yscbw"]
 size = Vector2(0, 0)
 
 [node name="BD_Deco_0" type="Node2D" node_paths=PackedStringArray("sprite", "detecter")]
 script = ExtResource("1")
+type_id = 1000
 sprite = NodePath("Sprite")
 detecter = NodePath("Detecter")
 

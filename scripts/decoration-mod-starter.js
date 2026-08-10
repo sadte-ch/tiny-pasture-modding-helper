@@ -18,27 +18,24 @@ import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod';
+const oldModId = '1000';
+const oldCodeName = 'deco_new';
+const oldFolderName = 'Your_Name-NewDecoration';
+const oldPrice = '100';
 
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
-  // delete bg_new folder from Assets/Deco/Background if it exists
-  const modBackgroundPath = path.join(newModInnerPath, '/overwrites/Assets/Deco/Background');
-  const oldBackgroundPath = path.join(modBackgroundPath, 'bg_new');
-  if (fs.existsSync(oldBackgroundPath)) {
-    fs.rmSync(oldBackgroundPath, { recursive: true, force: true });
-  }
-
-  const newAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../${DECORATION_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
-  // background images
-  const backgroundPath = path.join(newAssetsPath, 'background');
-  const modBackgroundFolderPath = path.join(newModAssetsPath, `Deco/Background/${newCodeName}`);
-  const backgroundFiles = fs.readdirSync(backgroundPath);
-  backgroundFiles.forEach((file) => {
-    const oldPath = path.join(backgroundPath, file);
-    const newPath = path.join(modBackgroundFolderPath, file);
+  // decoration images
+  const decorationPath = path.join(newAssetsPath, 'decoration');
+  const modDecorationFolderPath = path.join(newModAssetsPath, `Deco/Buildings`);
+  const decorationFiles = fs.readdirSync(decorationPath);
+  decorationFiles.forEach((file) => {
+    const oldPath = path.join(decorationPath, file);
+    const newPath = path.join(modDecorationFolderPath, file);
     fs.cpSync(oldPath, newPath, { recursive: true });
   });
 
@@ -53,83 +50,59 @@ const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
   });
 }
 
+const updateOverwritesGdFile = (modInnerPath, data) => {
+  const overwritesGdPath = path.join(modInnerPath, 'overwrites.gd');
+  let overwritesGdContents = fs.readFileSync(overwritesGdPath, 'utf8');
+
+  // replace the old modId with the new modId
+  overwritesGdContents = overwritesGdContents.replace(new RegExp(oldModId, 'g'), data.modId);
+
+  fs.writeFileSync(overwritesGdPath, overwritesGdContents, 'utf8');
+  console.log(`Updated overwrites.gd file: ${overwritesGdPath}`);
+};
+
 // update ui_shop_page_decoration.gd with stuff from data.json
 const updateShopPageDecorationFile = (modInnerPath, data) => {
   const shopPageDecorationPath = path.join(modInnerPath, 'extension/Manager/ui_shop_page_decoration.gd');
   let shopPageDecorationContents = fs.readFileSync(shopPageDecorationPath, 'utf8');
 
   // replace the old modId with the new modId
-  shopPageDecorationContents = shopPageDecorationContents.replace(/DECO_NAME_BG_1000/g, `DECO_NAME_BG_${data.modId}`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/DECO_DESC_BG_1000/g, `DECO_DESC_BG_${data.modId}`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/BG1000_01/g, `BG${data.modId}_01`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/2000/g, data.price);
+  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldPrice, 'g'), data.price);
+  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldModId, 'g'), data.modId);
 
   fs.writeFileSync(shopPageDecorationPath, shopPageDecorationContents, 'utf8');
   console.log(`Updated shop page decoration file: ${shopPageDecorationPath}`);
 };
 
-const createTtscnFileForBackground = (modInnerPath, data) => {
-  const tscnFilePath = path.join(modInnerPath, 'overwrites/Scene/Level/background', `${data.codeName}.tscn`);
+const updateBuildManagerFile = (modInnerPath, data) => {
+  const buildManagerFilePath = path.join(modInnerPath, 'extension/Manager/build_manager.gd');
+  let buildManagerFileContents = fs.readFileSync(buildManagerFilePath, 'utf8');
+  
+  // replace the old modId with the new modId
+  buildManagerFileContents = buildManagerFileContents.replace(new RegExp(oldModId, 'g'), data.modId);
+  buildManagerFileContents = buildManagerFileContents.replace(new RegExp(oldCodeName, 'g'), data.codeName);
 
-  const scriptId = randomUUID();
+  fs.writeFileSync(buildManagerFilePath, buildManagerFileContents, 'utf8');
+  console.log(`Updated build manager file: ${buildManagerFilePath}`);
+};
 
-  const textureImports = [];
-  const backgroundAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets/background`);
-  const backgroundFiles = fs.readdirSync(backgroundAssetsPath);
-  const layers = [];
+const updateTscnForDecoration = (modInnerPath, data) => {
+  const tscnFilePath = path.join(modInnerPath, 'overwrites/Scene/Level/Buildings/Decos', `${data.codeName}.tscn`);
+  let tscnFileContents = fs.readFileSync(tscnFilePath, 'utf8');
 
-  const layersData = data?.layers;
-  const orderedFiles = backgroundFiles.filter((file) => file.includes(data.codeName));
-  if (layersData) {
-    orderedFiles.sort((a, b) => {
-      const layerA = layersData[a];
-      const layerB = layersData[b];
-      return layerA.order - layerB.order;
-    });
-  }
-
-  orderedFiles.forEach((file, index) => {
-    textureImports.push(`[ext_resource type="Texture2D" path="res://mods-unpacked/${data.authorName}-${data.modName}/overwrites/Assets/Deco/Background/${data.codeName}/${file}" id="${index}"]`);
-
-    const layer = `[node name="Layer_${index}" type="Parallax2D" parent="."] 
-scroll_offset = Vector2(0, 25)
-repeat_size = Vector2(960, 0)
-repeat_times = 5
-${layersData[file]?.autoscroll ? `autoscroll = Vector2(${layersData[file].autoscroll.x}, ${layersData[file].autoscroll.y})` : ''}
-
-[node name="Sprite2D" type="Sprite2D" parent="Layer_${index}"]
-position = Vector2(0, 2)
-texture = ExtResource("${index}")
-`;
-    layers.push(layer);
-  });
-
-  const tscnFileContents = `[gd_scene load_steps=8 format=3]
-
-[ext_resource type="Script" path="res://Scene/Level/background/bg.gd" id="${scriptId}"]
-${textureImports.join('\n')}
-
-[node name="${data.codeName}" type="Node2D"]
-script = ExtResource("${scriptId}")
-bg_type = ${data.modId}
-
-${layers.join('\n')}`;
+  // replace the old modId with the new modId
+  tscnFileContents = tscnFileContents.replace(new RegExp(oldModId, 'g'), data.modId);
+  tscnFileContents = tscnFileContents.replace(new RegExp(oldCodeName, 'g'), data.codeName);
 
   fs.writeFileSync(tscnFilePath, tscnFileContents, 'utf8');
-  console.log(`Created new tscn file at ${tscnFilePath}`);
+  console.log(`Updated tscn file for decoration: ${tscnFilePath}`);
 };
 
 const createNewDecorationModFromData = () => {
   const data = getModData(DECORATION_MOD_FOLDER_NAME);
 
-  const oldModId = '2016';
   const newModId = data.modId;
-  const oldCodeName = 'new_item';
   const newCodeName = data.codeName;
-  const oldFolderName = 'Your_Name-NewItem';
-  // const oldModId = '1000';
-  // const oldCodeName = 'deco_new';
-  // const oldFolderName = 'Your_Name-NewDecoration';
   const newFolderName = `${data.authorName}-${data.modName}`;
 
   deleteDuplicateExistingFolder(newFolderName, DECORATION_MOD_FOLDER_NAME);
@@ -138,14 +111,15 @@ const createNewDecorationModFromData = () => {
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
   const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  // moveNewAssetsToModFolder(modInnerPath, newCodeName);
+  moveNewAssetsToModFolder(modInnerPath, newCodeName);
   updateManifestFile(modInnerPath, data);
+  updateOverwritesGdFile(modInnerPath, data);
 
   updateTranslations(modInnerPath, data, 'DECO', 'NORMAL');
 
-  // updateShopPageDecorationFile(modInnerPath, data);
-
-  // createTtscnFileForBackground(modInnerPath, data);
+  updateBuildManagerFile(modInnerPath, data);
+  updateShopPageDecorationFile(modInnerPath, data);
+  updateTscnForDecoration(modInnerPath, data);
 };
 
 createNewDecorationModFromData();
