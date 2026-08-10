@@ -19,7 +19,7 @@ import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } fr
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod';
 const oldModId = '1000';
-const oldCodeName = 'deco_new';
+const oldCodeName = 'new_deco';
 const oldFolderName = 'Your_Name-NewDecoration';
 const oldPrice = '100';
 
@@ -67,8 +67,8 @@ const updateShopPageDecorationFile = (modInnerPath, data) => {
   let shopPageDecorationContents = fs.readFileSync(shopPageDecorationPath, 'utf8');
 
   // replace the old modId with the new modId
-  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldPrice, 'g'), data.price);
   shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldModId, 'g'), data.modId);
+  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldPrice, 'g'), data.price);
 
   fs.writeFileSync(shopPageDecorationPath, shopPageDecorationContents, 'utf8');
   console.log(`Updated shop page decoration file: ${shopPageDecorationPath}`);
