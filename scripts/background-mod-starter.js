@@ -19,6 +19,11 @@ import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } fr
 
 const BACKGROUND_MOD_FOLDER_NAME = 'create-background-mod';
 
+const oldModId = '1000'
+const oldCodeName = 'bg_new'
+const oldFolderName = 'Your_Name-NewBackground'
+const oldPrice = 2000
+
 // move images from new-assets folder to the new mod folder
 const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
   // delete bg_new folder from Assets/Deco/Background if it exists
@@ -28,7 +33,7 @@ const moveNewAssetsToModFolder = (newModInnerPath, newCodeName) => {
     fs.rmSync(oldBackgroundPath, { recursive: true, force: true });
   }
 
-  const newAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
@@ -59,10 +64,8 @@ const updateShopPageDecorationFile = (modInnerPath, data) => {
   let shopPageDecorationContents = fs.readFileSync(shopPageDecorationPath, 'utf8');
 
   // replace the old modId with the new modId
-  shopPageDecorationContents = shopPageDecorationContents.replace(/DECO_NAME_BG_1000/g, `DECO_NAME_BG_${data.modId}`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/DECO_DESC_BG_1000/g, `DECO_DESC_BG_${data.modId}`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/BG1000_01/g, `BG${data.modId}_01`);
-  shopPageDecorationContents = shopPageDecorationContents.replace(/2000/g, data.price);
+  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldModId, 'g'), data.modId);
+  shopPageDecorationContents = shopPageDecorationContents.replace(new RegExp(oldPrice, 'g'), data.price);
 
   fs.writeFileSync(shopPageDecorationPath, shopPageDecorationContents, 'utf8');
   console.log(`Updated shop page decoration file: ${shopPageDecorationPath}`);
@@ -74,7 +77,7 @@ const createTtscnFileForBackground = (modInnerPath, data) => {
   const scriptId = randomUUID();
 
   const textureImports = [];
-  const backgroundAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets/background`);
+  const backgroundAssetsPath = path.join(__dirname, `../${BACKGROUND_MOD_FOLDER_NAME}/new-assets/background`);
   const backgroundFiles = fs.readdirSync(backgroundAssetsPath);
   const layers = [];
 
@@ -122,11 +125,8 @@ ${layers.join('\n')}`;
 const createNewBackgroundModFromData = () => {
   const data = getModData(BACKGROUND_MOD_FOLDER_NAME);
 
-  const oldModId = '1000'
   const newModId = data.modId;
-  const oldCodeName = 'bg_new';
   const newCodeName = data.codeName;
-  const oldFolderName = 'Your_Name-NewBackground';
   const newFolderName = `${data.authorName}-${data.modName}`;
 
   deleteDuplicateExistingFolder(newFolderName, BACKGROUND_MOD_FOLDER_NAME);

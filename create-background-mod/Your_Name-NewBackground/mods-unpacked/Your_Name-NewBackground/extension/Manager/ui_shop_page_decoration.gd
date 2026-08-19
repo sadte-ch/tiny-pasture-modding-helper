@@ -1,12 +1,12 @@
 extends "res://Scene/UI/PopupUI/UIShop/ui_shop_page_decoration.gd"
 
-@export var new_bg = preload("res://Scene/UI/PopupUI/UIShop/decorations/ui_shop_deco_bg.tscn")
+@export var bg_new_base = preload("res://Scene/UI/PopupUI/UIShop/decorations/ui_shop_deco_bg.tscn")
 
 const bg_new = preload("res://mods-unpacked/Your_Name-NewBackground/overwrites/Assets/UI/PopupUI/Shop/Deco/bg_new.png")
 
 func _ready() -> void:
 	super()
-	var BG1000_01 = new_bg.instantiate()
+	var BG1000_01 = bg_new_base.instantiate()
 	bg_box.add_child(BG1000_01)
 	var newCount = bg_box.get_child_count()
 	BG1000_01.type_id = newCount + 1 #index in background list on shop page
