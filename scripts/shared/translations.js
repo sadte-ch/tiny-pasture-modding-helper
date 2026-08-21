@@ -14,3 +14,20 @@ ${descKey},${data.translations.zh.description},${data.translations['zh-HK'].desc
   fs.writeFileSync(translationsPath, csvContent, 'utf8');
   console.log(`Updated translations file: ${translationsPath}`);
 };
+
+// update translations for a mod containing multiple items
+export const updateTranslationsPack = (newModInnerPath, data, prefix, suffix) => {
+  const translationsPath = path.join(newModInnerPath, 'translations/translations.csv');
+  // generate a csv file
+  const csvContent = `key,zh,zh-HK,en
+${data.pack_items.map((item, index) => {
+  const nameKey = `${prefix}_NAME${suffix ? `_${suffix}` : ''}_${data.modId}${index}`
+  const descKey = `${prefix}_DESC${suffix ? `_${suffix}` : ''}_${data.modId}${index}`
+  
+  return `${nameKey},${item.translations.zh.name},${item.translations['zh-HK'].name},${item.translations.en.name}
+${descKey},${item.translations.zh.description},${item.translations['zh-HK'].description},${item.translations.en.description}`  
+}).join('\n')}`
+
+  fs.writeFileSync(translationsPath, csvContent, 'utf8');
+  console.log(`Updated pack translations file: ${translationsPath}`);
+};

@@ -4,7 +4,6 @@
  * It will create a new folder with the updated files that you can then open in Godot to finish off the mod and test it.
  */
 
-import { randomUUID } from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

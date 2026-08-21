@@ -4,6 +4,7 @@
   "scripts": {
     "create-animal-mod": "node scripts/animal-mod-starter.js",
     "create-bg-mod": "node scripts/background-mod-starter.js",
-    "create-decoration-mod": "node scripts/decoration-mod-starter.js"
+    "create-decoration-mod": "node scripts/decoration-mod-starter.js",
+    "create-decoration-mod-pack": "node scripts/decoration-mod-pack-starter.js"
   }
 }
