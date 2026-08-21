@@ -1,0 +1,43 @@
+{
+  "modName": "NewDecorationPack",
+  "modId": "1000",
+  "authorName": "Your_Name",
+  "codeName": "new_deco_pack",
+  "description": "Add a new decoration pack to the game.",
+  "pack_items": [
+    {
+      "translations": {
+        "en": {
+          "name": "Decoration 1",
+          "description": "Add decoration 1"
+        },
+        "zh": {
+          "name": "装饰 1",
+          "description": "添加装饰 1"
+        },
+        "zh-HK": {
+          "name": "装饰 1",
+          "description": "添加装饰 1"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Decoration 2",
+          "description": "Add decoration 2"
+        },
+        "zh": {
+          "name": "装饰 2",
+          "description": "添加装饰 2"
+        },
+        "zh-HK": {
+          "name": "装饰 2",
+          "description": "添加装饰 2"
+        }
+      },
+      "price": 1000.0
+    }
+  ]
+}
