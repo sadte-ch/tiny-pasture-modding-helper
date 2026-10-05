@@ -19,6 +19,7 @@ func _ready() -> void:
 
 
 func install_script_extensions():
+	ModLoaderMod.install_script_extension("res://mods-unpacked/Your_Name-NewDecorationPack/extension/Manager/FarmDB.gd")
 	ModLoaderMod.install_script_extension("res://mods-unpacked/Your_Name-NewDecorationPack/extension/Manager/ui_shop_page_decoration.gd")
 	ModLoaderMod.install_script_extension("res://mods-unpacked/Your_Name-NewDecorationPack/extension/Manager/build_manager.gd")
 

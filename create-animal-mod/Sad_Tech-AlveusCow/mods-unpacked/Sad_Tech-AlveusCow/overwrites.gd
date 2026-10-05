@@ -1,6 +1,5 @@
 extends Node
 
-
 const MOD_DIR = "res://mods-unpacked/Sad_Tech-AlveusCow/overwrites/"
 
 var overwrites_path = [
