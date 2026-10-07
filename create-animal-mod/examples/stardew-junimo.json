@@ -1,0 +1,87 @@
+{
+  "modName": "StardewJunimo",
+  "modId": "2412",
+  "authorName": "Sad_Tech",
+  "codeName": "stardew_junimo",
+  "description": "Add junimos from Stardew Valley.",
+  "translations": {
+    "en": {
+      "name": "Stardew Junimo",
+      "description": "Add junimos from Stardew Valley."
+    },
+    "zh": {
+      "name": "星露谷物语祝尼魔",
+      "description": "添加来自《星露谷物语》的祝尼魔"
+    },
+    "zh-HK": {
+      "name": "星露谷物语祝尼魔",
+      "description": "添加来自《星露谷物语》的祝尼魔"
+    }
+  },
+  "price": 2000.0,
+  "adult_price": [12000.0, 24000.0, 35000.0, 40000.0, 48000.0],
+  "child_price": [100.0, 2000.0, 4000.0, 8000.0, 12000.0],
+  "adult_time": [300, 450, 1500, 3000, 6000],
+  "drop_time": [300, 900, 1800, 2700, 3600],
+  "second_coin": [166.73, 200.08, 277.88, 625.25, 1667.33],
+  "poop_time": 800,
+  "max_hunger": 100.0,
+  "hungry_speed": 1.0,
+  "poop_endure": 15,
+  "max_move_speed": 40,
+  "min_move_speed": 30,
+  "variations_no": 12,
+  "is_fish": false,
+  "sprite": {
+    "width": 50,
+    "height": 50
+  },
+  "animations": {
+    "idle_0": {
+      "fps": 5,
+      "frames": [[0, 0], [1, 0], [2, 0], [1, 0], [0, 0]]
+    },
+    "idle_1_pre": {
+      "fps": 10,
+      "startFrame": [0, 0],
+      "endFrame": [0, 0]
+    },
+    "idle_1_loop": {
+      "fps": 10,
+      "frames": [[0, 0], [0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [0, 2], [1, 2]]
+    },
+    "idle_1_end": {
+      "fps": 10,
+      "startFrame": [0, 0],
+      "endFrame": [0, 0]
+    },
+    "sleep_pre": {
+      "fps": 6,
+      "frames": [[0, 0], [0, 3], [1, 3]]
+    },
+    "sleep_loop": {
+      "fps": 4,
+      "frames": [[2, 3], [3, 3], [4, 3], [3, 3]]
+    },
+    "sleep_end": {
+      "fps": 6,
+      "frames": [[1, 3], [0, 3]]
+    },
+    "move": {
+      "fps": 6.666666666666667,
+      "frames": [[0, 4], [1, 4], [2, 4], [1, 4]]
+    },
+    "interact_0": {
+      "fps": 10,
+      "frames": [[0, 0], [0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [0, 5], [0, 6], [1, 6], [2, 6], [3, 6], [4, 6], [3, 6], [2, 6], [1, 6], [0, 6], [4, 5], [3, 5], [2, 5], [1, 5], [0, 5]]
+    },
+    "eat": {
+      "fps": 5,
+      "frames": [[0, 7], [1, 7], [0, 7], [2, 7], [0, 7], [1, 7]]
+    }
+  },
+  "shop_idle_animation": {
+    "fps": 5,
+    "frames": [[0, 0], [1, 0], [2, 0], [1, 0], [0, 0]]
+  }
+}

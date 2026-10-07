@@ -1,0 +1,44 @@
+{
+  "modName": "StardewValleyBackground",
+  "modId": "2016",
+  "authorName": "Sad_Tech",
+  "codeName": "bg_stardew",
+  "description": "Add a Stardew Valley themed background to the game.",
+  "translations": {
+    "en": {
+      "name": "Stardew Valley",
+      "description": "Add a Stardew Valley themed background to the game."
+    },
+    "zh": {
+      "name": "星露谷物语",
+      "description": "为游戏添加一个《星露谷物语》主题的背景。"
+    },
+    "zh-HK": {
+      "name": "星露谷物语",
+      "description": "为游戏添加一个《星露谷物语》主题的背景。"
+    }
+  },
+  "price": 2000.0,
+  "layers": {
+    "bg_stardew_00.png": {
+      "order": 1
+    },
+    "bg_stardew_01.png": {
+      "order": 2
+    },
+    "bg_stardew_02.png": {
+      "order": 3,
+      "autoscroll": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    "bg_stardew_03.png": {
+      "order": 0,
+      "autoscroll": {
+        "x": 0.5,
+        "y": 0
+      }
+    }
+  }
+}

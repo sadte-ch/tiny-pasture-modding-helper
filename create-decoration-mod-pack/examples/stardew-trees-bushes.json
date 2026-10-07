@@ -1,0 +1,723 @@
+{
+  "modName": "StardewTreesBushes",
+  "modId": "46464",
+  "authorName": "Sad_Tech",
+  "codeName": "stardew_trees_bushes",
+  "description": "Add trees and bushes from Stardew Valley to the shop.",
+  "pack_items": [
+    {
+      "translations": {
+        "en": {
+          "name": "Mushroom Tree",
+          "description": "Add a mushroom tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "蘑菇树",
+          "description": "添加一棵来自《星露谷物语》的蘑菇树。"
+        },
+        "zh-HK": {
+          "name": "蘑菇树",
+          "description": "添加一棵来自《星露谷物语》的蘑菇树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Pine Tree | Spring",
+          "description": "Add a spring Pine tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "松树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季松树。"
+        },
+        "zh-HK": {
+          "name": "松树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季松树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Pine Tree | Autumn",
+          "description": "Add an autumn Pine tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "松树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季松树。"
+        },
+        "zh-HK": {
+          "name": "松树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季松树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Pine Tree | Winter",
+          "description": "Add a winter Pine tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "松树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季松树。"
+        },
+        "zh-HK": {
+          "name": "松树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季松树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Oak Tree | Spring",
+          "description": "Add a spring Oak tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "橡树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季橡树。"
+        },
+        "zh-HK": {
+          "name": "橡树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季橡树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Oak Tree | Summer",
+          "description": "Add a summer Oak tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "橡树 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季橡树。"
+        },
+        "zh-HK": {
+          "name": "橡树 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季橡树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Oak Tree | Autumn",
+          "description": "Add an autumn Oak tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "橡树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季橡树。"
+        },
+        "zh-HK": {
+          "name": "橡树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季橡树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Oak Tree | Winter",
+          "description": "Add a winter Oak tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "橡树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季橡树。"
+        },
+        "zh-HK": {
+          "name": "橡树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季橡树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Maple Tree | Spring",
+          "description": "Add a spring Maple tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "枫树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季枫树。"
+        },
+        "zh-HK": {
+          "name": "枫树 | 春天",
+          "description": "添加一棵来自《星露谷物语》的春季枫树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Maple Tree | Summer",
+          "description": "Add a summer Maple tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "枫树 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季枫树。"
+        },
+        "zh-HK": {
+          "name": "枫树 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季枫树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Maple Tree | Autumn",
+          "description": "Add an autumn Maple tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "枫树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季枫树。"
+        },
+        "zh-HK": {
+          "name": "枫树 | 秋天",
+          "description": "添加一棵来自《星露谷物语》的秋季枫树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Maple Tree | Winter",
+          "description": "Add a winter Maple tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "枫树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季枫树。"
+        },
+        "zh-HK": {
+          "name": "枫树 | 冬季",
+          "description": "添加一棵来自《星露谷物语》的冬季枫树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Mahogany Tree | Spring",
+          "description": "Add a spring Mahogany tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "桃花心木 | 春季",
+          "description": "添加一棵来自《星露谷物语》的春季红木树。"
+        },
+        "zh-HK": {
+          "name": "桃花心木 | 春季",
+          "description": "添加一棵来自《星露谷物语》的春季红木树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Mahogany Tree | Summer",
+          "description": "Add a summer Mahogany tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "桃花心木 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季红木树。"
+        },
+        "zh-HK": {
+          "name": "桃花心木 | 夏季",
+          "description": "添加一棵来自《星露谷物语》的夏季红木树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Mahogany Tree | Autumn",
+          "description": "Add an autumn Mahogany tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "桃花心木 | 秋季",
+          "description": "添加一棵来自《星露谷物语》的秋季红木树。"
+        },
+        "zh-HK": {
+          "name": "桃花心木 | 秋季",
+          "description": "添加一棵来自《星露谷物语》的秋季红木树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Mahogany Tree | Winter",
+          "description": "Add a winter Mahogany tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "桃花心木 | 冬季",
+          "description": "添加来自《星露谷物语》的冬季红木树。"
+        },
+        "zh-HK": {
+          "name": "桃花心木 | 冬季",
+          "description": "添加来自《星露谷物语》的冬季红木树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Mystic Tree",
+          "description": "Add a Mystic tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "神秘之树",
+          "description": "添加一棵来自《星露谷物语》的神秘树。"
+        },
+        "zh-HK": {
+          "name": "神秘之树",
+          "description": "添加一棵来自《星露谷物语》的神秘树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Medium Bush | Spring",
+          "description": "Add a spring medium bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "中型灌木 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季灌木。"
+        },
+        "zh-HK": {
+          "name": "中型灌木 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Salmonberry Bush",
+          "description": "Add a Salmonberry bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "鲑莓灌木",
+          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。"
+        },
+        "zh-HK": {
+          "name": "鲑莓灌木",
+          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Bush 1",
+          "description": "Add a bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "老布什",
+          "description": "添加一株来自《星露谷物语》的灌木。"
+        },
+        "zh-HK": {
+          "name": "老布什",
+          "description": "添加一株来自《星露谷物语》的灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Bush 2",
+          "description": "Add a bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小布什",
+          "description": "添加一株来自《星露谷物语》的灌木。"
+        },
+        "zh-HK": {
+          "name": "小布什",
+          "description": "添加一株来自《星露谷物语》的灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Medium Bush | Autumn",
+          "description": "Add an autumn medium bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "中型灌木 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季中型灌木。"
+        },
+        "zh-HK": {
+          "name": "中型灌木 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季中型灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Blackberry Bush",
+          "description": "Add a Blackberry bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "黑莓丛",
+          "description": "添加一株来自《星露谷物语》的黑莓灌木。"
+        },
+        "zh-HK": {
+          "name": "黑莓丛",
+          "description": "添加一株来自《星露谷物语》的黑莓灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Medium Bush | Winter",
+          "description": "Add a winter medium bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "中型灌木 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季中型灌木。"
+        },
+        "zh-HK": {
+          "name": "中型灌木 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季中型灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 1 | Spring",
+          "description": "Add a spring small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 1 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 1 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 2 | Spring",
+          "description": "Add a spring small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 2 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 2 | 春季",
+          "description": "添加一株来自《星露谷物语》的春季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 1 | Autumn",
+          "description": "Add an autumn small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 1 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 1 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 2 | Autumn",
+          "description": "Add an autumn small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 2 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 2 | 秋季",
+          "description": "添加一株来自《星露谷物语》的秋季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 1 | Winter",
+          "description": "Add a winter small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 1 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 1 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Small Bush 2 | Winter",
+          "description": "Add a winter small bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "小灌木 2 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季小灌木。"
+        },
+        "zh-HK": {
+          "name": "小灌木 2 | 冬季",
+          "description": "添加一株来自《星露谷物语》的冬季小灌木。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Grass | Spring",
+          "description": "Add spring grass from Stardew Valley."
+        },
+        "zh": {
+          "name": "草 | 春天",
+          "description": "添加《星露谷物语》中的春季草。"
+        },
+        "zh-HK": {
+          "name": "草 | 春天",
+          "description": "添加《星露谷物语》中的春季草。"
+        }
+      },
+      "price": 100.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Grass | Autumn",
+          "description": "Add autumn grass from Stardew Valley."
+        },
+        "zh": {
+          "name": "草 | 秋天",
+          "description": "添加来自《星露谷物语》的秋季草。"
+        },
+        "zh-HK": {
+          "name": "草 | 秋天",
+          "description": "添加来自《星露谷物语》的秋季草。"
+        }
+      },
+      "price": 100.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Grass | Winter",
+          "description": "Add winter grass from Stardew Valley."
+        },
+        "zh": {
+          "name": "草 | 冬季",
+          "description": "添加《星露谷物语》中的冬季草。"
+        },
+        "zh-HK": {
+          "name": "草 | 冬季",
+          "description": "添加《星露谷物语》中的冬季草。"
+        }
+      },
+      "price": 100.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Fiddlehead Fern",
+          "description": "Add a Fiddlehead Fern from Stardew Valley."
+        },
+        "zh": {
+          "name": "蕨菜（拳头菜）",
+          "description": "添加来自《星露谷物语》的蕨菜。"
+        },
+        "zh-HK": {
+          "name": "蕨菜（拳头菜）",
+          "description": "添加来自《星露谷物语》的蕨菜。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Green Rain Tree 1",
+          "description": "Add a Green Rain Tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "绿雨树 1",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        },
+        "zh-HK": {
+          "name": "绿雨树 1",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Green Rain Tree 2",
+          "description": "Add a Green Rain Tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "绿雨树 2",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        },
+        "zh-HK": {
+          "name": "绿雨树 2",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Green Rain Tree 3",
+          "description": "Add a Green Rain Tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "绿雨树 3",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        },
+        "zh-HK": {
+          "name": "绿雨树 3",
+          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Green Rain Bush",
+          "description": "Add a Green Rain Bush from Stardew Valley."
+        },
+        "zh": {
+          "name": "绿雨灌木",
+          "description": "添加来自《星露谷物语》的绿雨灌木。"
+        },
+        "zh-HK": {
+          "name": "绿雨灌木",
+          "description": "添加来自《星露谷物语》的绿雨灌木。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Cactus 1",
+          "description": "Add a Cactus from Stardew Valley."
+        },
+        "zh": {
+          "name": "仙人掌 1",
+          "description": "添加一个来自《星露谷物语》的仙人掌。"
+        },
+        "zh-HK": {
+          "name": "仙人掌 1",
+          "description": "添加一个来自《星露谷物语》的仙人掌。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Cactus 2",
+          "description": "Add a Cactus from Stardew Valley."
+        },
+        "zh": {
+          "name": "仙人掌 2",
+          "description": "添加一个来自《星露谷物语》的仙人掌。"
+        },
+        "zh-HK": {
+          "name": "仙人掌 2",
+          "description": "添加一个来自《星露谷物语》的仙人掌。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Palm Tree 1",
+          "description": "Add a Palm Tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "棕榈树 1",
+          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+        },
+        "zh-HK": {
+          "name": "棕榈树 1",
+          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+        }
+      },
+      "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Palm Tree 2",
+          "description": "Add a Palm Tree from Stardew Valley."
+        },
+        "zh": {
+          "name": "棕榈树 2",
+          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+        },
+        "zh-HK": {
+          "name": "棕榈树 2",
+          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+        }
+      },
+      "price": 1000.0
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "modName": "StardewCropsForaging",
+  "modId": "889030",
+  "authorName": "Sad_Tech",
+  "codeName": "stardew_crops_foraging",
+  "description": "Add crops and foraging items from Stardew Valley to the shop.",
+  "pack_items": [
+    {
+      "translations": {
+        "en": {
+          "name": "Common Mushroom",
+          "description": "Add a Common Mushroom from Stardew Valley."
+        },
+        "zh": {
+          "name": "普通蘑菇",
+          "description": "添加《星露谷物语》中的普通蘑菇。"
+        },
+        "zh-HK": {
+          "name": "普通蘑菇",
+          "description": "添加《星露谷物语》中的普通蘑菇。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Red Mushroom",
+          "description": "Add a Red Mushroom from Stardew Valley."
+        },
+        "zh": {
+          "name": "红蘑菇",
+          "description": "添加一个来自《星露谷物语》的红蘑菇。"
+        },
+        "zh-HK": {
+          "name": "红蘑菇",
+          "description": "添加一个来自《星露谷物语》的红蘑菇。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Purple Mushroom",
+          "description": "Add a Purple Mushroom from Stardew Valley."
+        },
+        "zh": {
+          "name": "紫色蘑菇",
+          "description": "添加一个来自《星露谷物语》的紫蘑菇。"
+        },
+        "zh-HK": {
+          "name": "紫色蘑菇",
+          "description": "添加一个来自《星露谷物语》的紫蘑菇。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Chanterelle",
+          "description": "Add a Chanterelle from Stardew Valley."
+        },
+        "zh": {
+          "name": "鸡油菌",
+          "description": "添加一个来自《星露谷物语》的鸡油菌。"
+        },
+        "zh-HK": {
+          "name": "鸡油菌",
+          "description": "添加一个来自《星露谷物语》的鸡油菌。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Morel",
+          "description": "Add a Morel from Stardew Valley."
+        },
+        "zh": {
+          "name": "羊肚菌",
+          "description": "添加一个来自《星露谷物语》的羊肚菌。"
+        },
+        "zh-HK": {
+          "name": "羊肚菌",
+          "description": "添加一个来自《星露谷物语》的羊肚菌。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Magma Cap",
+          "description": "Add a Magma Cap from Stardew Valley."
+        },
+        "zh": {
+          "name": "岩浆盖",
+          "description": "添加一个来自《星露谷物语》的岩浆帽。"
+        },
+        "zh-HK": {
+          "name": "岩浆盖",
+          "description": "添加一个来自《星露谷物语》的岩浆帽。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Sweet Pea",
+          "description": "Add a Sweet Pea from Stardew Valley."
+        },
+        "zh": {
+          "name": "香豌豆",
+          "description": "添加一株来自《星露谷物语》的香豌豆。"
+        },
+        "zh-HK": {
+          "name": "香豌豆",
+          "description": "添加一株来自《星露谷物语》的香豌豆。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Crocus",
+          "description": "Add a Crocus from Stardew Valley."
+        },
+        "zh": {
+          "name": "番红花",
+          "description": "添加《星露谷物语》中的番红花。"
+        },
+        "zh-HK": {
+          "name": "番红花",
+          "description": "添加《星露谷物语》中的番红花。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Holly",
+          "description": "Add a Holly from Stardew Valley."
+        },
+        "zh": {
+          "name": "冬青",
+          "description": "添加一个来自《星露谷物语》的冬青。"
+        },
+        "zh-HK": {
+          "name": "冬青",
+          "description": "添加一个来自《星露谷物语》的冬青。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Dandelion",
+          "description": "Add a Dandelion from Stardew Valley."
+        },
+        "zh": {
+          "name": "蒲公英",
+          "description": "添加一个来自《星露谷物语》的蒲公英。"
+        },
+        "zh-HK": {
+          "name": "蒲公英",
+          "description": "添加一个来自《星露谷物语》的蒲公英。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Daffodil",
+          "description": "Add a Daffodil from Stardew Valley."
+        },
+        "zh": {
+          "name": "水仙花",
+          "description": "添加一株来自《星露谷物语》的水仙花。"
+        },
+        "zh-HK": {
+          "name": "水仙花",
+          "description": "添加一株来自《星露谷物语》的水仙花。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Coral",
+          "description": "Add a Coral from Stardew Valley."
+        },
+        "zh": {
+          "name": "珊瑚",
+          "description": "添加一个来自《星露谷物语》的珊瑚。"
+        },
+        "zh-HK": {
+          "name": "珊瑚",
+          "description": "添加一个来自《星露谷物语》的珊瑚。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Seaweed",
+          "description": "Add a Seaweed from Stardew Valley."
+        },
+        "zh": {
+          "name": "海藻",
+          "description": "添加来自《星露谷物语》的海草。"
+        },
+        "zh-HK": {
+          "name": "海藻",
+          "description": "添加来自《星露谷物语》的海草。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Sea Urchin",
+          "description": "Add a Sea Urchin from Stardew Valley."
+        },
+        "zh": {
+          "name": "海胆",
+          "description": "添加一个来自《星露谷物语》的海胆。"
+        },
+        "zh-HK": {
+          "name": "海胆",
+          "description": "添加一个来自《星露谷物语》的海胆。"
+        }
+      },
+      "price": 250.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Tulip",
+          "description": "Add a Tulip flower from Stardew Valley."
+        },
+        "zh": {
+          "name": "郁金香",
+          "description": "添加一朵来自《星露谷物语》的郁金香。"
+        },
+        "zh-HK": {
+          "name": "郁金香",
+          "description": "添加一朵来自《星露谷物语》的郁金香。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Poppy",
+          "description": "Add a Poppy flower from Stardew Valley."
+        },
+        "zh": {
+          "name": "罂粟",
+          "description": "添加一朵来自《星露谷物语》的虞美人花。"
+        },
+        "zh-HK": {
+          "name": "罂粟",
+          "description": "添加一朵来自《星露谷物语》的虞美人花。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Blue Jazz",
+          "description": "Add a Blue Jazz flower from Stardew Valley."
+        },
+        "zh": {
+          "name": "蓝色爵士",
+          "description": "添加一朵来自《星露谷物语》的蓝爵花。"
+        },
+        "zh-HK": {
+          "name": "蓝色爵士",
+          "description": "添加一朵来自《星露谷物语》的蓝爵花。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Summer Spangle",
+          "description": "Add a Summer Spangle flower from Stardew Valley."
+        },
+        "zh": {
+          "name": "夏日闪耀",
+          "description": "添加一朵来自《星露谷物语》的夏季闪耀花。"
+        },
+        "zh-HK": {
+          "name": "夏日闪耀",
+          "description": "添加一朵来自《星露谷物语》的夏季闪耀花。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Fairy Rose",
+          "description": "Add a Fairy Rose flower from Stardew Valley."
+        },
+        "zh": {
+          "name": "仙女玫瑰",
+          "description": "添加一朵来自《星露谷物语》的仙女玫瑰。"
+        },
+        "zh-HK": {
+          "name": "仙女玫瑰",
+          "description": "添加一朵来自《星露谷物语》的仙女玫瑰。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Sunflower",
+          "description": "Add a Sunflower from Stardew Valley."
+        },
+        "zh": {
+          "name": "向日葵",
+          "description": "添加一株来自《星露谷物语》的向日葵。"
+        },
+        "zh-HK": {
+          "name": "向日葵",
+          "description": "添加一株来自《星露谷物语》的向日葵。"
+        }
+      },
+      "price": 500.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Starfruit Plant",
+          "description": "Add a Starfruit plant from Stardew Valley that grows and produces edible fruit."
+        },
+        "zh": {
+          "name": "杨桃树",
+          "description": "添加一株来自《星露谷物语》的杨桃植株，它会生长并结出可食用的果实。"
+        },
+        "zh-HK": {
+          "name": "杨桃树",
+          "description": "添加一株来自《星露谷物语》的杨桃植株，它会生长并结出可食用的果实。"
+        }
+      },
+      "price": 500.0,
+      "edible_plant": {
+        "width": 16,
+        "sway": true,
+        "drop_no": 1,
+        "plant_stage_time": [13, 13, 13],
+        "food_value": 125
+      }
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Ancient Fruit Plant",
+          "description": "Add a Ancient Fruit plant from Stardew Valley that grows and produces edible fruit."
+        },
+        "zh": {
+          "name": "远古果实植株",
+          "description": "添加一种来自《星露谷物语》的“远古果实”植株，它能生长并结出可食用的果实。"
+        },
+        "zh-HK": {
+          "name": "远古果实植株",
+          "description": "添加一种来自《星露谷物语》的“远古果实”植株，它能生长并结出可食用的果实。"
+        }
+      },
+      "price": 500.0,
+      "edible_plant": {
+        "width": 16,
+        "sway": true,
+        "drop_no": 1,
+        "plant_stage_time": [28, 28, 28],
+        "food_value": 0
+      }
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Blueberry Plant",
+          "description": "Add a Blueberry plant from Stardew Valley that grows and produces edible fruit."
+        },
+        "zh": {
+          "name": "蓝莓植株",
+          "description": "添加一株来自《星露谷物语》的蓝莓植株，它会生长并结出可食用的果实。"
+        },
+        "zh-HK": {
+          "name": "蓝莓植株",
+          "description": "添加一株来自《星露谷物语》的蓝莓植株，它会生长并结出可食用的果实。"
+        }
+      },
+      "price": 500.0,
+      "edible_plant": {
+        "width": 18,
+        "sway": true,
+        "drop_no": 3,
+        "plant_stage_time": [13, 13, 13],
+        "food_value": 25
+      }
+    }
+  ]
+}

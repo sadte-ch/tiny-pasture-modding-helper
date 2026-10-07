@@ -1,0 +1,448 @@
+{
+  "modName": "StardewFarmItems",
+  "modId": "80499",
+  "authorName": "Sad_Tech",
+  "codeName": "stardew_farm_items",
+  "description": "Add a range of farm items from Stardew Valley to the shop.",
+  "pack_items": [
+    {
+      "translations": {
+        "en": {
+          "name": "Shipping Bin",
+          "description": "Add a Shipping Bin from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "出货箱",
+          "description": "将《星露谷物语》中的出货箱添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "出货箱",
+          "description": "将《星露谷物语》中的出货箱添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Bee House",
+          "description": "Add a Bee House from Stardew Valley to the game. Produces edible honey to feed your animals."
+        },
+        "zh": {
+          "name": "蜂房",
+          "description": "将《星露谷物语》中的蜂房加入游戏中。它能生产可食用的蜂蜜，用于喂养你的动物。"
+        },
+        "zh-HK": {
+          "name": "蜂房",
+          "description": "将《星露谷物语》中的蜂房加入游戏中。它能生产可食用的蜂蜜，用于喂养你的动物。"
+        }
+      },
+      "price": 200.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 1,
+        "plant_stage_time": [400, 400, 400],
+        "food_value": 57
+      }
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Chest",
+          "description": "Add a Chest from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "胸部",
+          "description": "将《星露谷物语》中的宝箱添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "胸部",
+          "description": "将《星露谷物语》中的宝箱添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Preserves Jar",
+          "description": "Add a Preserves Jar from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "果酱罐",
+          "description": "将《星露谷物语》中的果酱桶加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "果酱罐",
+          "description": "将《星露谷物语》中的果酱桶加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Scarecrow",
+          "description": "Add a Scarecrow from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "稻草人",
+          "description": "将《星露谷物语》中的稻草人加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "稻草人",
+          "description": "将《星露谷物语》中的稻草人加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Cask",
+          "description": "Add a Cask from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "木桶",
+          "description": "将《星露谷物语》中的木桶添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "木桶",
+          "description": "将《星露谷物语》中的木桶添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Keg",
+          "description": "Add a Keg from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "桶",
+          "description": "将《星露谷物语》中的小桶加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "桶",
+          "description": "将《星露谷物语》中的小桶加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Bench",
+          "description": "Add a Bench from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "长椅",
+          "description": "将《星露谷物语》中的长椅添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "长椅",
+          "description": "将《星露谷物语》中的长椅添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Hardwood Fence",
+          "description": "Add a Hardwood Fence from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "硬木围栏",
+          "description": "将《星露谷物语》中的硬木栅栏加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "硬木围栏",
+          "description": "将《星露谷物语》中的硬木栅栏加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Wood Fence",
+          "description": "Add a Wood Fence from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "木栅栏",
+          "description": "将《星露谷物语》中的木栅栏添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "木栅栏",
+          "description": "将《星露谷物语》中的木栅栏添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Iron Fence",
+          "description": "Add an Iron Fence from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "铁艺围栏",
+          "description": "将《星露谷物语》中的铁栅栏添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "铁艺围栏",
+          "description": "将《星露谷物语》中的铁栅栏添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Stone Fence",
+          "description": "Add a Stone Fence from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "石篱",
+          "description": "将《星露谷物语》中的石篱笆添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "石篱",
+          "description": "将《星露谷物语》中的石篱笆添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Tub o' Flowers",
+          "description": "Add a Tub o' Flowers from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "花卉盆栽",
+          "description": "将《星露谷物语》中的“花盆”（Tub o' Flowers）添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "花卉盆栽",
+          "description": "将《星露谷物语》中的“花盆”（Tub o' Flowers）添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Hay Bale",
+          "description": "Add a Hay Bale from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "贝尔在那儿。",
+          "description": "将《星露谷物语》中的干草捆添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "贝尔在那儿。",
+          "description": "将《星露谷物语》中的干草捆添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Hay Hopper",
+          "description": "Add a Hay Hopper from Stardew Valley to the game. Produces edible hay to feed your animals."
+        },
+        "zh": {
+          "name": "干草料斗",
+          "description": "将《星露谷物语》中的干草料斗加入游戏中。它能生产可供动物食用的干草。"
+        },
+        "zh-HK": {
+          "name": "干草料斗",
+          "description": "将《星露谷物语》中的干草料斗加入游戏中。它能生产可供动物食用的干草。"
+        }
+      },
+      "price": 200.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 1,
+        "plant_stage_time": [1, 1, 1],
+        "food_value": 12
+      }
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Water Bowl",
+          "description": "Add a Water Bowl from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "水碗",
+          "description": "将《星露谷物语》中的水碗添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "水碗",
+          "description": "将《星露谷物语》中的水碗添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Wood Lamp-post",
+          "description": "Add a Wood Lamp-post from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "木制灯柱",
+          "description": "Add a Wood Lamp-post from Stardew Valley to the game."
+        },
+        "zh-HK": {
+          "name": "木制灯柱",
+          "description": "Add a Wood Lamp-post from Stardew Valley to the game."
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Iron Lamp-post",
+          "description": "Add an Iron Lamp-post from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "铁制灯柱",
+          "description": "将《星露谷物语》中的铁制灯柱添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "铁制灯柱",
+          "description": "将《星露谷物语》中的铁制灯柱添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Lantern",
+          "description": "Add a Lantern from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "灯笼",
+          "description": "将《星露谷物语》中的灯笼加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "灯笼",
+          "description": "将《星露谷物语》中的灯笼加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Chicken Statue",
+          "description": "Add a Chicken Statue from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "鸡雕像",
+          "description": "将《星露谷物语》中的鸡雕像添加到游戏中。"
+        },
+        "zh-HK": {
+          "name": "鸡雕像",
+          "description": "将《星露谷物语》中的鸡雕像添加到游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Dwarf King Statue",
+          "description": "Add a Dwarf King Statue from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "矮人王雕像",
+          "description": "将《星露谷物语》中的矮人王雕像加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "矮人王雕像",
+          "description": "将《星露谷物语》中的矮人王雕像加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Stone Parrot",
+          "description": "Add a Stone Parrot from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "石鹦鹉",
+          "description": "将《星露谷物语》中的石鹦鹉加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "石鹦鹉",
+          "description": "将《星露谷物语》中的石鹦鹉加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Stone Junimo",
+          "description": "Add a Stone Junimo from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "石头祝尼魔",
+          "description": "将《星露谷物语》中的石制祝尼魔加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "石头祝尼魔",
+          "description": "将《星露谷物语》中的石制祝尼魔加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Stone Frog",
+          "description": "Add a Stone Frog from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "石蛙",
+          "description": "将《星露谷物语》中的石蛙加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "石蛙",
+          "description": "将《星露谷物语》中的石蛙加入游戏中。"
+        }
+      },
+      "price": 200.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Gourmand Statue",
+          "description": "Add a Gourmand Statue from Stardew Valley to the game."
+        },
+        "zh": {
+          "name": "美食家雕像",
+          "description": "将《星露谷物语》中的美食家雕像加入游戏中。"
+        },
+        "zh-HK": {
+          "name": "美食家雕像",
+          "description": "将《星露谷物语》中的美食家雕像加入游戏中。"
+        }
+      },
+      "price": 200.0
+    }
+  ]
+}
