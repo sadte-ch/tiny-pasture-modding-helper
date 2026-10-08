@@ -9,18 +9,25 @@
       "translations": {
         "en": {
           "name": "Mushroom Tree",
-          "description": "Add a mushroom tree from Stardew Valley."
+          "description": "Add a mushroom tree from Stardew Valley. Produces edible mushrooms."
         },
         "zh": {
           "name": "蘑菇树",
-          "description": "添加一棵来自《星露谷物语》的蘑菇树。"
+          "description": "添加一棵来自《星露谷物语》的蘑菇树。它能产出可食用的蘑菇。"
         },
         "zh-HK": {
           "name": "蘑菇树",
-          "description": "添加一棵来自《星露谷物语》的蘑菇树。"
+          "description": "添加一棵来自《星露谷物语》的蘑菇树。它能产出可食用的蘑菇。"
         }
       },
-      "price": 1000.0
+      "price": 1000.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 5,
+        "plant_stage_time": [400, 400, 400],
+        "food_value": 50
+      }
     },
     {
       "translations": {
@@ -315,18 +322,25 @@
       "translations": {
         "en": {
           "name": "Salmonberry Bush",
-          "description": "Add a Salmonberry bush from Stardew Valley."
+          "description": "Add a Salmonberry bush from Stardew Valley. Produces edible Salmonberries."
         },
         "zh": {
           "name": "鲑莓灌木",
-          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。"
+          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。可产出可食用的鲑鱼莓。"
         },
         "zh-HK": {
           "name": "鲑莓灌木",
-          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。"
+          "description": "添加一株来自《星露谷物语》的鲑鱼莓灌木。可产出可食用的鲑鱼莓。"
         }
       },
-      "price": 500.0
+      "price": 500.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 4,
+        "plant_stage_time": [100, 100, 100],
+        "food_value": 25
+      }
     },
     {
       "translations": {
@@ -383,18 +397,25 @@
       "translations": {
         "en": {
           "name": "Blackberry Bush",
-          "description": "Add a Blackberry bush from Stardew Valley."
+          "description": "Add a Blackberry bush from Stardew Valley. Produces edible Blackberries."
         },
         "zh": {
           "name": "黑莓丛",
-          "description": "添加一株来自《星露谷物语》的黑莓灌木。"
+          "description": "添加来自《星露谷物语》的黑莓灌木。可产出可食用的黑莓。"
         },
         "zh-HK": {
           "name": "黑莓丛",
-          "description": "添加一株来自《星露谷物语》的黑莓灌木。"
+          "description": "添加来自《星露谷物语》的黑莓灌木。可产出可食用的黑莓。"
         }
       },
-      "price": 500.0
+      "price": 500.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 4,
+        "plant_stage_time": [100, 100, 100],
+        "food_value": 25
+      }
     },
     {
       "translations": {
@@ -587,18 +608,25 @@
       "translations": {
         "en": {
           "name": "Green Rain Tree 1",
-          "description": "Add a Green Rain Tree from Stardew Valley."
+          "description": "Add a Green Rain Tree from Stardew Valley. Produces edible Fiddlehead ferns."
         },
         "zh": {
           "name": "绿雨树 1",
-          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+          "description": "添加来自《星露谷物语》的绿色雨林树。可产出可食用的蕨菜。"
         },
         "zh-HK": {
           "name": "绿雨树 1",
-          "description": "添加一棵来自《星露谷物语》的绿雨树。"
+          "description": "添加来自《星露谷物语》的绿色雨林树。可产出可食用的蕨菜。"
         }
       },
-      "price": 1000.0
+      "price": 1000.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 5,
+        "plant_stage_time": [400, 400, 400],
+        "food_value": 25
+      }
     },
     {
       "translations": {
@@ -671,36 +699,50 @@
     {
       "translations": {
         "en": {
-          "name": "Cactus 2",
-          "description": "Add a Cactus from Stardew Valley."
+          "name": "Cactus Plant",
+          "description": "Add a Cactus from Stardew Valley. Produces edible Cactus fruit."
         },
         "zh": {
-          "name": "仙人掌 2",
-          "description": "添加一个来自《星露谷物语》的仙人掌。"
+          "name": "仙人掌植物",
+          "description": "添加来自《星露谷物语》的仙人掌。可产出可食用的仙人掌果实。"
         },
         "zh-HK": {
-          "name": "仙人掌 2",
-          "description": "添加一个来自《星露谷物语》的仙人掌。"
+          "name": "仙人掌植物",
+          "description": "添加来自《星露谷物语》的仙人掌。可产出可食用的仙人掌果实。"
         }
       },
-      "price": 500.0
+      "price": 500.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 1,
+        "plant_stage_time": [1200, 1200, 1200],
+        "food_value": 75
+      }
     },
     {
       "translations": {
         "en": {
           "name": "Palm Tree 1",
-          "description": "Add a Palm Tree from Stardew Valley."
+          "description": "Add a Palm Tree from Stardew Valley. Produces edible Coconuts."
         },
         "zh": {
           "name": "棕榈树 1",
-          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+          "description": "添加一棵来自《星露谷物语》的棕榈树。可产出可食用的椰子。"
         },
         "zh-HK": {
           "name": "棕榈树 1",
-          "description": "添加一棵来自《星露谷物语》的棕榈树。"
+          "description": "添加一棵来自《星露谷物语》的棕榈树。可产出可食用的椰子。"
         }
       },
-      "price": 1000.0
+      "price": 1000.0,
+      "edible_plant": {
+        "width": 37,
+        "sway": false,
+        "drop_no": 2,
+        "plant_stage_time": [400, 400, 400],
+        "food_value": 50
+      }
     },
     {
       "translations": {
