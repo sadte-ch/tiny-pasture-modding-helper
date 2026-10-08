@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scene/Level/Buildings/Decos/bd_deco_plant.gd" id="1"]
 [ext_resource type="Texture2D" path="res://mods-unpacked/Your_Name-NewDecorationPack/overwrites/Assets/Deco/Buildings/new_deco_pack_0_0.png" id="2"]
-[ext_resource type="Texture2D"  path="res://mods-unpacked/Your_Name-NewDecorationPack/overwrites/Assets/Deco/Buildings/new_deco_pack_0_1.png" id="3"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Your_Name-NewDecorationPack/overwrites/Assets/Deco/Buildings/new_deco_pack_0_1.png" id="3"]
 [ext_resource type="Texture2D" path="res://mods-unpacked/Your_Name-NewDecorationPack/overwrites/Assets/Deco/Buildings/new_deco_pack_0_2.png" id="4"]
 [ext_resource type="Texture2D" path="res://mods-unpacked/Your_Name-NewDecorationPack/overwrites/Assets/Deco/Buildings/new_deco_pack_0_3.png" id="5"]
 [ext_resource type="Shader" path="res://Assets/Shders/texture_outline.gdshader" id="6"]

@@ -207,7 +207,9 @@ const updateTscnForDecoration = (modInnerPath, data) => {
   console.log(`Updated tscn file for decoration: ${tscnFilePath}`)
   
   // delete excess plant tres tscn file at the end
-  fs.rmSync(tresFilePath, { recursive: true, force: true })
+  if (!data.pack_items[0]?.edible_plant) { // only delete tres if first item isn't a plant
+    fs.rmSync(tresFilePath, {recursive: true, force: true})
+  }
   fs.rmSync(tscnPlantFilePath, { recursive: true, force: true })
 };
 
