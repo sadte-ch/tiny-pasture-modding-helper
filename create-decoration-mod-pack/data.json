@@ -38,6 +38,30 @@
         }
       },
       "price": 1000.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Plant Decoration 3",
+          "description": "Add plant decoration 3"
+        },
+        "zh": {
+          "name": "装饰 3",
+          "description": "添加装饰 3"
+        },
+        "zh-HK": {
+          "name": "装饰 3",
+          "description": "添加装饰 3"
+        }
+      },
+      "edible_plant": {
+        "width": 20,
+        "sway": true,
+        "drop_no": 1,
+        "plant_stage_time": [100, 100, 100],
+        "food_value": 20
+      },
+      "price": 1000.0
     }
   ]
 }

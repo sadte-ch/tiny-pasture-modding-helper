@@ -10,12 +10,12 @@
       "description": "Add a new decoration to the game."
     },
     "zh": {
-      "name": "朱尼莫小屋",
-      "description": "为游戏添加一个新的装饰物品。"
+      "name": "全新装饰",
+      "description": "为游戏添加一个新的装饰物。"
     },
     "zh-HK": {
-      "name": "朱尼莫小屋",
-      "description": "为游戏添加一个新的装饰物品。"
+      "name": "全新装饰",
+      "description": "为游戏添加一个新的装饰物。"
     }
   },
   "price": 100.0

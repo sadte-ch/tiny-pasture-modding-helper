@@ -1,0 +1,22 @@
+{
+  "modName": "JunimoHut",
+  "modId": "2017",
+  "authorName": "Sad_Tech",
+  "codeName": "junimo_hut",
+  "description": "Add a Junimo Hut to the game.",
+  "translations": {
+    "en": {
+      "name": "Junimo Hut",
+      "description": "Add a Junimo Hut to the game."
+    },
+    "zh": {
+      "name": "朱尼莫小屋",
+      "description": "为游戏添加一个新的装饰物品。"
+    },
+    "zh-HK": {
+      "name": "朱尼莫小屋",
+      "description": "为游戏添加一个新的装饰物品。"
+    }
+  },
+  "price": 1000.0
+}
