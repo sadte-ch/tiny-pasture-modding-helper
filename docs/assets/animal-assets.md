@@ -1,10 +1,10 @@
 # Creating animal assets
-A guide to creating assets for your mod
+A guide to creating assets for your animal mod
 
 The following is an expansion on [this](https://bcnege18gifk.feishu.cn/docx/MVh1dKMtToLAI2x2iOqcu2M5nCb#Q0tId2i3IoCrrsxX51jcZlbTnxh) guide.
 
 1. [Overview](#overview)
-2. [A quick test](#a-quick-test)
+2. [A quick test](#a-quick-test-optional)
 3. [Creating sprites](#creating-sprites)
 4. [Animal animation spritesheets](#animal-animation-spritesheets)
 5. [Animal idle animation spritesheets](#animal-idle-animation-spritesheets)
@@ -39,18 +39,19 @@ It is required to create one of each of these assets for the juvenile and adult 
 - juvenile portrait: `portrait_your_animal_1_0.png`
 - adult portrait: `portrait_your_animal_1_1.png`
 
-You don't need to create additional shop lock/unlock images
+You don't need to create additional shop lock/unlock images for other variants
 
-## A quick test
+## A quick test (optional)
 To start with I would recommend looking at the assets that already exist for other animals and try to edit one.
+Make sure you have done the [Godot setup](../godot-setup.md) first
 
 1. Open your decompiled Tiny Pasture game folder in your file system
-2. Navigate to > Assetes > Animals
-3. Choose one of the spritesheets, `cat_0_0.png` might be a good start as its a smaller sheet and is simple)
+2. Navigate to > Assets > Animals
+3. Choose one of the spritesheets, `cat_0_0.png` might be a good start as it's a smaller sheet and is simple
 4. Open the spritesheet in your design tool of choice and try to replace the white colour with a different one
-5. Save your upated design over the original image or just replace it (making sure the file name doesn't change)
+5. Save your updated design over the original image or just replace it (making sure the file name doesn't change)
 6. Open your decompiled Tiny Pasture game folder in Godot
-7. Run the game by pressing the play button in the top right, another instance of the game should open over the top of the normal Tiny Pasture game
+7. Run the game by pressing the play button in the top right, a new instance of the game should open
 8. Buy the cat until you get a white one and you should see that the juvenile version colours are updated
 9. You can try to experiment with other stuff like changing/removing frames from the spritesheet, etc to see what happens
 
@@ -95,7 +96,7 @@ The same applies for the eat animation - you can do one `eat` animation or `eat_
 
 #### idle_0
 The basic standing and breathing idle animation.
-Try to animate the top of the animal moving up and down by 1 pixel, so its subtle. You can also do subtle animations like tail swooshing, ears moving, etc.
+Try to animate the top of the animal moving up and down by 1 pixel, so it's subtle. You can also do subtle animations like tail swooshing, ears moving, etc.
 
 #### idle_1
 The idle animation for the animal which will play randomly - freedom to do whatever you want to add character to your animal.
@@ -119,7 +120,7 @@ Animation which will be looped while the animal is sleeping.
 
 #### sleep_end
 Animation for the animal getting up from sleeping.
-End frame should be similar to a start frame from the start idle frame so they can be joined seemlessly.
+End frame should be similar to a start frame from the start idle frame so they can be joined seamlessly.
 
 #### move
 Movement animation like walking or flying.
@@ -138,7 +139,7 @@ Animation for getting into an eating position (like sitting down).
 If you do `eat_pre` you will need to also do `eat_loop` and `eat_end`
 
 #### eat_loop
-Eating animation that is looped inbetween `eat_pre` and `eat_end`
+Eating animation that is looped in between `eat_pre` and `eat_end`
 
 #### eat_end
 Animation for the animal getting out of its eating position (like getting up).
@@ -151,7 +152,7 @@ Keep track of the start and end frame position/indexes for each animation to hel
 ie: idle_0 is frame 0-7, idle_1 is frame 9-12, etc
 
 ## Animal idle animation spritesheets
-You can just use the first row of each spritesheet (or wherever you placed [idle_0](#idle_0) you created in the previous step for the idle animation by cropping the images (make sure the sprite/frame height stays the same). You can also create new frames for the idle animation if you want.
+You can just use the first row of each spritesheet (or wherever you placed [idle_0](#idle_0)) you created in the previous step for the idle animation by cropping the images (make sure the sprite/frame height stays the same). You can also create new frames for the idle animation if you want.
 
 You need to export an idle spritesheet for both juvenile and adult in every colour variant you want to add.
 
@@ -172,4 +173,4 @@ These are the images used in the shop for each animal, before you click on it to
 1. You need to create one locked version which is a silhouette of the juvenile animal with the dashed line at its feet.
 2. And then one unlocked version which is a full colour image of the juvenile animal with the dashed line at its feet.
 
-## Next steps [Create and configure your mod](create-mod.md)
+## Next steps [Create and configure your mod](../templates/create-animal-mod.md#create-and-configure-your-mod)
