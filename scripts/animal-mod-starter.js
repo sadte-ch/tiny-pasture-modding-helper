@@ -350,7 +350,7 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
   fs.writeFileSync(animationsPath, lines.join('\n'), 'utf8');
 }
 
-// generate a gd file to run inside godot (add a shop idle animation animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
+// generate a gd file to run inside godot (add a shop idle animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
 const updateGdForAnimalResFile = (newModInnerPath, data, newFolderName) => {
   const gdFilePath = path.join(__dirname, `../${ANIMAL_MOD_FOLDER_NAME}/generate_res_file.gd`);
 
