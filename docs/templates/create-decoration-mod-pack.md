@@ -59,7 +59,7 @@ You will paste your decoration assets into this repo, edit one data file to fill
 You can then copy the new mod folder created by the script and open it in Godot to test it, before exporting it.
 
 ### Add your assets
-1. Find and open the `tiny-pastures-modding-helper` folder in your file system
+1. Find and open the `tiny-pasture-modding-helper` folder in your file system
 2. Go to the `create-decoration-mod` folder > [new-assets](/create-decoration-mod-pack/new-assets)
 3. Delete the assets in each of the folders
 4. Paste your new correctly named [assets](#create-your-decoration-assets) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
@@ -181,7 +181,7 @@ You can look at my example data.json files that I used to create my decoration m
 
 ### Run the script
 1. If you are using a native terminal/cli/shell tool, open the terminal and then navigate to the correct directory
-    - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}`
+    - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pasture-modding-helper'}`
 2. If you are using a code editor with a terminal built in (ie: VSCode), open it
 3. Open the `tiny-pasture-modding-helper` folder
 4. Type the following command to run the script (make sure you are working within the `tiny-pasture-modding-helper` directory

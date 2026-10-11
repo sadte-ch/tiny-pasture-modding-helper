@@ -1,4 +1,4 @@
-# tiny-pastures-modding-helper
+# tiny-pasture-modding-helper
 
 A collection of helper scripts to help you create mods for the [Tiny Pasture Steam game](https://store.steampowered.com/app/3167550/Tiny_Pasture/) (A cute animal idle desktop game). So you can spend less time in Godot and more time making art!
 
@@ -48,7 +48,7 @@ DO NOT SHARE THE FULL DECOMPILED GAME FILES ONLINE TO RESPECT TINY PASTURE MODDI
 **Follow the steps below to get started:**
 
 ## Clone this git repository
-1. Go to https://github.com/sadte-ch/tiny-pastures-modding-helper/tree/main
+1. Go to https://github.com/sadte-ch/tiny-pasture-modding-helper/tree/main
 2. Click the Code button on the top right
 3. Clone the repo in your preferred way or download the ZIP if that is easier
 

@@ -51,7 +51,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
 There are some things the script doesn't support yet like the alternate idle animation (2 steps instead of 3) and unlock conditions. You can set these up in Godot afterwards when you import the generated files. Check back for updates as I build support for more stuff!
 
 ### Add your assets
-1. Find and open the `tiny-pastures-modding-helper` folder in your file system
+1. Find and open the `tiny-pasture-modding-helper` folder in your file system
 2. Go to the `create-animal-mod` folder > [new-assets](/create-animal-mod/new-assets)
 3. Delete the assets in each of the four folders
 4. Paste your new correctly named [spritesheets and assets](../assets/animal-assets.md#overview) into the correct folders (make sure the file names use the code_name value you will be using in data.json)
@@ -170,7 +170,7 @@ You can look at my example data.json files that I used to create my animal mods 
 
 ### Run the script
 1. If you are using a native terminal/cli/shell tool, open the terminal and then navigate to the correct directory
-   - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pastures-modding-helper'}`
+   - `cd {enter path to this repo, ie: 'Users/Me/Downloads/tiny-pasture-modding-helper'}`
 2. If you are using a code editor with a terminal built in (ie: VSCode), open it
 3. Open the tiny-pasture-modding-helper folder
 4. Type the following command to run the script (make sure you are working within the tiny-pasture-modding-helper directory
