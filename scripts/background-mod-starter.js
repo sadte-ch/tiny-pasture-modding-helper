@@ -26,7 +26,7 @@ const oldCodeName = 'bg_new'
 const oldFolderName = 'Your_Name-NewBackground'
 const oldPrice = 2000
 
-const createTtscnFileForBackground = (modInnerPath, data) => {
+const createTscnFileForBackground = (modInnerPath, data) => {
   const tscnFilePath = path.join(modInnerPath, 'overwrites/Scene/Level/background', `${data.codeName}.tscn`);
 
   const scriptId = randomUUID();
@@ -97,7 +97,7 @@ const createNewBackgroundModFromData = () => {
 
   updateDecorationShopPageFileForOneItemMod(modInnerPath, data, oldModId, oldPrice);
 
-  createTtscnFileForBackground(modInnerPath, data);
+  createTscnFileForBackground(modInnerPath, data);
 };
 
 createNewBackgroundModFromData();
