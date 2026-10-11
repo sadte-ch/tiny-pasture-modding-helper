@@ -101,12 +101,12 @@ You can look at my example data.json files that I used to create my decoration m
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-decoration-mod](../../create-decoration-mod), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the mods-unpacked folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Inside the AuthorName-ModName folder, open the `mods-unpacked` folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files
-2. Open the mods-unpacked folder
-3. Paste your version of the `AuthorName-ModName` folder into the mods-unpacked folder
+2. Open the `mods-unpacked` folder
+3. Paste your version of the `AuthorName-ModName` folder into the `mods-unpacked` folder
 
 ### Open decompiled files in Godot
 1. Open the Godot app
@@ -121,7 +121,7 @@ Run the game locally in Godot with your new mod added. Go to the shop and locate
 2. Click the run/play button in the top right of the Godot game engine
 3. This should launch another instance of the game
 4. If it doesn't, check the output/error console to see if there are any issues you need to resolve
-5. If you are still experiencing issues, delete the mod folder from mods-unpacked and try again
+5. If you are still experiencing issues, delete the mod folder from `mods-unpacked` and try again
 6. You can also try adding another mod that you know works to try to get to the bottom of the issue (which you can find by browsing your local Steam files `steamapps > workshop > content > 3167550 > copy one of the zips, unpack it and put it into your mods-unpacked folder`). Gradually change things in data.json, run the script and repeat the process until the issue is resolved
 7. Once its working, it's time to export your mod so you can publish it on the Steam Workshop
 
