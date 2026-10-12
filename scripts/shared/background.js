@@ -15,7 +15,7 @@ export const moveNewAssetsToModFolder = (newModInnerPath, newCodeName, BACKGROUN
     fs.rmSync(oldBackgroundPath, { recursive: true, force: true });
   }
 
-  const newAssetsPath = path.join(__dirname, `../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../../${BACKGROUND_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
