@@ -6,57 +6,17 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
-const __dirname = path.dirname(__filename); // get the name of the directory
 
 import { updateTranslationsPack } from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
+import {moveNewAssetsToModFolder} from "./shared/decoration.js";
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod-pack';
 const oldModId = '1000';
 const oldCodeName = 'new_deco_pack';
 const oldFolderName = 'Your_Name-NewDecorationPack';
-const oldPrice = '1000';
-
-// move images from new-assets folder to the new mod folder
-const moveNewAssetsToModFolder = (newModInnerPath) => {
-  const newAssetsPath = path.join(__dirname, `../${DECORATION_MOD_FOLDER_NAME}/new-assets`);
-  const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
-  // move files from new-assets to new mod assets folder
-
-  // decoration images
-  const decorationPath = path.join(newAssetsPath, 'decoration')
-  const modDecorationFolderPath = path.join(newModAssetsPath, `Deco/Buildings`)
-  const decorationFiles = fs.readdirSync(decorationPath)
-  decorationFiles.forEach((file) => {
-    const oldPath = path.join(decorationPath, file)
-    const newPath = path.join(modDecorationFolderPath, file)
-    fs.cpSync(oldPath, newPath, { recursive: true })
-  })
-  
-  // food items
-  const foodPath = path.join(newAssetsPath, 'food')
-  const foodFiles = fs.readdirSync(foodPath)
-  foodFiles.forEach((file) => {
-    const oldPath = path.join(foodPath, file)
-    const newPath = path.join(modDecorationFolderPath, file)
-    fs.cpSync(oldPath, newPath, { recursive: true })
-  })
-
-  // shop
-  const shopPath = path.join(newAssetsPath, 'shop')
-  const modShopPath = path.join(newModAssetsPath, 'UI/PopupUI/Shop/Deco')
-  const shopFiles = fs.readdirSync(shopPath)
-  shopFiles.forEach((file) => {
-    const oldPath = path.join(shopPath, file)
-    const newPath = path.join(modShopPath, file)
-    fs.cpSync(oldPath, newPath, { recursive: true })
-  })
-}
 
 const updateOverwritesGdFile = (modInnerPath, data, newFolderName) => {
   const overwritesGdPath = path.join(modInnerPath, 'overwrites.gd');
@@ -226,7 +186,7 @@ const createNewDecorationModFromData = () => {
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
   const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  moveNewAssetsToModFolder(modInnerPath);
+  moveNewAssetsToModFolder(modInnerPath, DECORATION_MOD_FOLDER_NAME);
   updateManifestFile(modInnerPath, data);
   updateOverwritesGdFile(modInnerPath, data, newFolderName);
 

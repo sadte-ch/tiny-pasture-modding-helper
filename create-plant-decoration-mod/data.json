@@ -1,0 +1,29 @@
+{
+  "modName": "NewPlantDecoration",
+  "modId": "1000",
+  "authorName": "Your_Name",
+  "codeName": "new_plant_deco",
+  "description": "Add a new plant decoration to the game.",
+  "translations": {
+    "en": {
+      "name": "New Plant Decoration",
+      "description": "Add a new plant decoration to the game. Produces edible food when ready."
+    },
+    "zh": {
+      "name": "新款植物装饰",
+      "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
+    },
+    "zh-HK": {
+      "name": "新款植物装饰",
+      "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
+    }
+  },
+  "edible_plant": {
+    "width": 32,
+    "sway": true,
+    "drop_no": 3,
+    "plant_stage_time": [100, 100, 100],
+    "food_value": 20
+  },
+  "price": 1000.0
+}

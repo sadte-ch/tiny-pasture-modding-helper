@@ -1,0 +1,29 @@
+{
+  "modName": "StardewAppleTree",
+  "modId": "198383",
+  "authorName": "Sad_Tech",
+  "codeName": "stardew_apple_tree",
+  "description": "Add a Stardew Valley Apple Tree to the game. Produces edible apples.",
+  "translations": {
+    "en": {
+      "name": "Stardew Apple Tree",
+      "description": "Add a Stardew Valley Apple Tree to the game. Produces edible apples."
+    },
+    "zh": {
+      "name": "星露谷苹果树",
+      "description": "在游戏中加入一棵《星露谷物语》风格的苹果树。它能产出可食用的苹果。"
+    },
+    "zh-HK": {
+      "name": "星露谷苹果树",
+      "description": "在游戏中加入一棵《星露谷物语》风格的苹果树。它能产出可食用的苹果。"
+    }
+  },
+  "edible_plant": {
+    "width": 32,
+    "sway": false,
+    "drop_no": 3,
+    "plant_stage_time": [10, 10, 10],
+    "food_value": 50
+  },
+  "price": 1000.0
+}

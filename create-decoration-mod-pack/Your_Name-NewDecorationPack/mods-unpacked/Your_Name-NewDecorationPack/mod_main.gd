@@ -25,4 +25,17 @@ func install_script_extensions():
 
 func add_translations():
 	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.zh.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.zh_HK.translation")
 	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.en.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.de.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.es.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.fr.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.ja.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.ko.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.la.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.pl.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.pt.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.pt_BR.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.ru.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.th.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/Your_Name-NewDecorationPack/translations/translations.tr.translation")

@@ -1,10 +1,11 @@
 {
-  "name": "tiny-pastures-modding-helper",
+  "name": "tiny-pasture-modding-helper",
   "version": "1.0.0",
   "scripts": {
     "create-animal-mod": "node scripts/animal-mod-starter.js",
     "create-bg-mod": "node scripts/background-mod-starter.js",
     "create-decoration-mod": "node scripts/decoration-mod-starter.js",
+    "create-plant-decoration-mod": "node scripts/plant-decoration-mod-starter.js",
     "create-decoration-mod-pack": "node scripts/decoration-mod-pack-starter.js"
   }
 }
