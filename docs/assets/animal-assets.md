@@ -145,16 +145,33 @@ Eating animation that is looped in between `eat_pre` and `eat_end`
 Animation for the animal getting out of its eating position (like getting up).
 Played after the `eat_loop` is done. If you do `eat_end` you will need to also do `eat_pre` and `eat_end`
 
+<img width="934" height="642" alt="Screenshot 2026-10-12 at 9 55 09 pm" src="https://github.com/user-attachments/assets/7236d5d9-923f-49f2-bb22-c4fca606d3c1" />
+<img width="1176" height="471" alt="Screenshot 2026-10-12 at 9 57 33 pm" src="https://github.com/user-attachments/assets/8874c571-e19e-46a1-9ae6-0a2ffcd55b45" />
+
 ### Creating the spritesheet
 You can arrange the animations you choose to do however you want within a spritesheet, in any order.
-Keep track of the start and end frame position/indexes for each animation to help with importing the spritesheet later.
+Keep track of the start and end frame position/co-ordinates for each animation to help with importing the spritesheet later.
 
-ie: idle_0 is frame 0-7, idle_1 is frame 9-12, etc
+- Note how duplicate sprites are not repeated but are used in multiple animations. This is to save space on your spritesheet (and lower file sizes).
+- Individual animations don't have to all be in a line, we just separate them so it's easier to see on the spritesheet
+- There's two ways to declare which frames/sprites you want to use for animations and in what order, in the next step:
+- 1. by giving a start and end frame `start: [0, 0], end: [2, 1]` (if the animation is simple, in one straight line and doesn't need to repeat any frames or use frames from other animations)
+  2. by giving a list of all the frames in the animation, in the order you want `[[0,0], [1.0], [2,0], [1,0], [0,0]]` (if the frames are not in the right order (left -> right) on the spritesheet, you need to repeat frames or use frames from other sections of the spritesheet)
+
+ie: idle_0 is frame 0,0 - 7,0 and idle_1_pre is frame 0,1 - 2,1, etc
+
+<img width="783" height="685" alt="Group 98" src="https://github.com/user-attachments/assets/9264f1c5-ec76-487c-8a77-542d2adb9b9e" />
+<img width="558" height="590" alt="Group 98 (1)" src="https://github.com/user-attachments/assets/2b7f0415-0a4b-4afa-ab3f-a19257e99674" />
+
 
 ## Animal idle animation spritesheets
 You can just use the first row of each spritesheet (or wherever you placed [idle_0](#idle_0)) you created in the previous step for the idle animation by cropping the images (make sure the sprite/frame height stays the same). You can also create new frames for the idle animation if you want.
 
 You need to export an idle spritesheet for both juvenile and adult in every colour variant you want to add.
+
+<img width="1084" height="182" alt="Screenshot 2026-10-12 at 9 50 22 pm" src="https://github.com/user-attachments/assets/df436a07-04f7-4426-9267-f0ddced2736a" />
+<img width="731" height="400" alt="Screenshot 2026-10-12 at 9 51 47 pm" src="https://github.com/user-attachments/assets/419255cc-dbb0-4d92-8d29-ad123f84e896" />
+
 
 ## Animal portraits
 These are the images used in the pasture menu to show each animal you own.
@@ -167,10 +184,17 @@ You need to create a portrait for both the juvenile and adult of every colour va
 - crop the frame you want to use to feature the head of the animal in the portrait
 - the adult version is more zoomed in
 
+<img width="745" height="230" alt="Screenshot 2026-10-12 at 9 45 41 pm" src="https://github.com/user-attachments/assets/85df6215-74ab-42ac-b036-b368a1915511" />
+<img width="770" height="385" alt="Screenshot 2026-10-12 at 9 47 40 pm" src="https://github.com/user-attachments/assets/8964a5d3-7159-4cfd-bcfb-91182e5244e2" />
+
+
 ## Animal shop page images
 These are the images used in the shop for each animal, before you click on it to buy one. Locked animals are greyed out before you are allowed to buy them.
 
 1. You need to create one locked version which is a silhouette of the juvenile animal with the dashed line at its feet.
 2. And then one unlocked version which is a full colour image of the juvenile animal with the dashed line at its feet.
+
+<img width="578" height="214" alt="Screenshot 2026-10-12 at 9 38 15 pm" src="https://github.com/user-attachments/assets/e3a46a7c-0b9e-4634-af42-5b8b27880293" />
+<img width="803" height="242" alt="Screenshot 2026-10-12 at 9 40 06 pm" src="https://github.com/user-attachments/assets/c31d94e1-1f23-4873-855f-39554687f935" />
 
 ## Next steps [Create and configure your mod](../templates/create-animal-mod.md#create-and-configure-your-mod)
