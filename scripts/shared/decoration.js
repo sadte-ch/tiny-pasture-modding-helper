@@ -30,7 +30,7 @@ export const updateBuildManagerFile = (modInnerPath, data, oldModId, oldCodeName
 
 // move images from new-assets folder to the new mod folder
 export const moveNewAssetsToModFolder = (newModInnerPath, DECORATION_MOD_FOLDER_NAME) => {
-  const newAssetsPath = path.join(__dirname, `../${DECORATION_MOD_FOLDER_NAME}/new-assets`);
+  const newAssetsPath = path.join(__dirname, `../../${DECORATION_MOD_FOLDER_NAME}/new-assets`);
   const newModAssetsPath = path.join(newModInnerPath, '/overwrites/Assets');
   // move files from new-assets to new mod assets folder
 
@@ -46,12 +46,16 @@ export const moveNewAssetsToModFolder = (newModInnerPath, DECORATION_MOD_FOLDER_
 
   // food items
   const foodPath = path.join(newAssetsPath, 'food')
-  const foodFiles = fs.readdirSync(foodPath)
-  foodFiles.forEach((file) => {
-    const oldPath = path.join(foodPath, file)
-    const newPath = path.join(modDecorationFolderPath, file)
-    fs.cpSync(oldPath, newPath, { recursive: true })
-  })
+  try {
+    const foodFiles = fs.readdirSync(foodPath)
+    foodFiles.forEach((file) => {
+      const oldPath = path.join(foodPath, file)
+      const newPath = path.join(modDecorationFolderPath, file)
+      fs.cpSync(oldPath, newPath, {recursive: true})
+    })
+  } catch (error) {
+    console.log('no food items found for decoration - expected if not a plant')
+  }
 
   // shop
   const shopPath = path.join(newAssetsPath, 'shop')

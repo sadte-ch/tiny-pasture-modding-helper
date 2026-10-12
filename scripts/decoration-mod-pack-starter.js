@@ -11,7 +11,7 @@ import { updateTranslationsPack } from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
-import {moveNewAssetsToModFolder} from "./shared/decoration";
+import {moveNewAssetsToModFolder} from "./shared/decoration.js";
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod-pack';
 const oldModId = '1000';

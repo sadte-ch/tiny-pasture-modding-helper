@@ -15,7 +15,7 @@ import {
   moveNewAssetsToModFolder, updateBuildManagerFile,
   updateDecorationShopPageFileForOneItemMod,
   updateOverwritesGdFile
-} from "./shared/decoration";
+} from "./shared/decoration.js";
 
 const DECORATION_MOD_FOLDER_NAME = 'create-decoration-mod';
 const oldModId = '1000';

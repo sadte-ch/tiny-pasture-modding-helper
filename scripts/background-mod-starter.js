@@ -16,8 +16,8 @@ import { updateTranslations } from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
-import {moveNewAssetsToModFolder} from "./shared/background";
-import {updateDecorationShopPageFileForOneItemMod} from "./shared/decoration";
+import {moveNewAssetsToModFolder} from "./shared/background.js";
+import {updateDecorationShopPageFileForOneItemMod} from "./shared/decoration.js";
 
 const BACKGROUND_MOD_FOLDER_NAME = 'create-background-mod';
 
