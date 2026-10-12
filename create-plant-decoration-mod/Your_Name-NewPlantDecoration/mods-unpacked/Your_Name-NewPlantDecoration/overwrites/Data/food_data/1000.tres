@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1")
-type_id = 10000
+type_id = 1000
 food_name = "new deco food"
 price = 0
 food_value = 10

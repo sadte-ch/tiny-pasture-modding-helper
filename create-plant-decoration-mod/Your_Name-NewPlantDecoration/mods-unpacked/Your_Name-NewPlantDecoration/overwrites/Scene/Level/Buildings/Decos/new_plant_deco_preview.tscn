@@ -8,7 +8,7 @@ size = Vector2(32, 50)
 
 [node name="BD_DecoPreview" type="Node2D" node_paths=PackedStringArray("area_2d", "flip_sprites")]
 script = ExtResource("1")
-bd_path = "res://mods-unpacked/Your_Name-NewPlantDecoration/overwrites/Scene/Level/Buildings/Decos/new_deco.tscn"
+bd_path = "res://mods-unpacked/Your_Name-NewPlantDecoration/overwrites/Scene/Level/Buildings/Decos/new_plant_deco.tscn"
 area_2d = NodePath("Area2D")
 flip_sprites = [NodePath("Sprite2D")]
 
