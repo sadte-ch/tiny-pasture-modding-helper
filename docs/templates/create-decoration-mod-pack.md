@@ -49,6 +49,8 @@ Plant decoration items:
 - a single shop image, ie: `my_new_plant_decoration_mod_{index}.png`
 - a single food image, ie: `my_new_plant_decoration_mod_{index}.png`
 
+<img width="1070" height="581" alt="Screenshot 2026-10-13 at 8 10 09 pm" src="https://github.com/user-attachments/assets/17ba10d8-5f97-4c30-bdef-d61710ebcff9" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
