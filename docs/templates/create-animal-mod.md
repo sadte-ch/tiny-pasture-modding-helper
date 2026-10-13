@@ -77,6 +77,70 @@ There are some things the script doesn't support yet like the alternate idle ani
 - **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
 - **price** - a number for how much you want your item to cost in the Tiny Pasture shop
 
+**Animal data:**
+- **adult_price** - selling prices for adult animals - an array/list of 5 number values, one price for each star/quality rating, ie: `[12000.0, 24000.0, 35000.0, 40000.0, 48000.0]`
+- **child_price** - selling prices for child animals - an array/list of 5 number values, one price for each star/quality rating, ie: `[100.0, 2000.0, 4000.0, 8000.0, 12000.0]`
+- **adult_time** - time required for the animal to grow to adulthood in seconds - an array/list of 5 number values, one number for each star/quality rating, ie: `[300, 450, 1500, 3000, 6000]`
+- **drop_time** - time the animal can store earnings in seconds (until money is dropped to the ground) - an array/list of 5 number values, one number for each star/quality rating, ie: `[300, 900, 1800, 2700, 3600]`
+- **second_coin** - earning rate of the animal in seconds - an array/list of 5 number values, one number for each star/quality rating, ie: `[166.73, 200.08, 277.88, 625.25, 1667.33]`
+- **poop_time** - how long it takes for the animal to drop poop in seconds, ie: `800`
+- **max_hunger** - maximum hunger value of the animal, ie: `100.0`
+- **hungry_speed** - amount hunger decreases every 60 seconds, ie: `1.0`
+- **poop_endure** - number of poops the animal can tolerate in the environment (exceeding this number causes the animal to lose health), ie: `15`
+- **max_move_speed** - maximum movement speed randomly generated when a new animal is created, ie: `40`
+- **min_move_speed** - minimum movement speed randomly generated when a new animal is created, ie: `30`
+- **variations_no** - how many colour variations you have created assets for, ie: `1`
+- **is_fish** - whether the animal is a fish or not, ie: `true` or `false`
+
+**Spritesheet data:**
+- **sprite** - contains the width and height you used for your individual sprites
+  - **width** - width of each sprite in your spritesheets in px, ie: `50`
+  - **height** - height of each sprite in your spritesheets in px, ie: `50`
+- **animations** - contains configuration data for each of your spritesheet animations
+  - **idle_0** - config data for your `idle_0` animation (see frame data info below)
+  - **idle_1_pre** - config data for your `idle_1_pre` animation (see frame data info below)
+  - **idle_1_loop** - config data for your `idle_1_loop` animation (see frame data info below)
+  - **idle_1_end** - config data for your `idle_1_end` animation (see frame data info below)
+  - **sleep_pre** - config data for your `sleep_pre` animation (see frame data info below)
+  - **sleep_loop** - config data for your `sleep_loop` animation (see frame data info below)
+  - **sleep_end** - config data for your `sleep_end` animation (see frame data info below)
+  - **move** - config data for your `move` animation (see frame data info below)
+  - **interact_0** - config data for your `interact_0` animation (see frame data info below)
+  - **eat** - config data for your `eat` animation (see frame data info below)
+- **shop_idle_animation** - config data for your shop idle animation (see frame data info below)
+
+**Animation frame data:**
+- **fps** - speed of the animation, in frames per second
+- **startFrame** - the coordinate value of the first frame of the animation `[x, y]`
+- **endFrame** - the coordinate value of the end frame of the animation `[x, y]`
+- **frames** - alternatively, you can use an array containing a list of all the frame coordinates you want in the animation, in the exact order you want, if you need more control `[[x, y], [x, y], [x, y], ...]`
+
+In terms of animation frame data, there are 2 options for defining frames. Either declaring a start frame and an end frame OR a list of frames.
+
+**Using `startFrame` and `endFrame` (don't include `frames`):**
+
+If the frames in your animation are in the correct order on the spritesheet and on the same row, you can define a start frame and an end frame, and the script will fill the gap for you:
+```
+"move": {
+  "fps": 5,
+  "startFrame": [0, 6],
+  "endFrame": [5, 6]
+}
+```
+**OR using `frames` (don't include `startFrame` and `endFrame`):**
+
+If you need more control over the order of the frames in your animation. For example, if they're not all on the same row, you're re-using frames that already exist, etc
+```
+"idle_1_loop": {
+  "fps": 5,
+  "frames": [[4, 1], [5, 1], [6, 1], [0, 2]]
+}
+```
+
+This image shows the coordinates of all the frames in my spritesheet and shows each animation boxed out. Blue boxes are animations that use `startFrame` and `endFrame`. Red boxes are animations that are configured using `frames`:
+
+<img width="783" height="685" alt="671732687-9264f1c5-ec76-487c-8a77-542d2adb9b9e" src="https://github.com/user-attachments/assets/66738685-b856-4002-b777-534493e3d806" />
+
 ```
 {
   "modName": "NewCow",
@@ -167,15 +231,12 @@ There are some things the script doesn't support yet like the alternate idle ani
     }
   },
   "shop_idle_animation": {
-    "fps": 5, - how fast you want the animation to loop through your idle spritesheet frames
-    "startFrame": [0, 0], - coordinate position of the start frame of your idle animation on your spritesheet [x, y] - so this would be the first image on the first row (first row and column start at 0)
-    "endFrame": [7, 0] - coordinate position of the end frame of your idle animation on your spritesheet [x, y] - so this would be the 8th image on the first row (first row and column start at 0)
+    "fps": 5,
+    "startFrame": [0, 0],
+    "endFrame": [7, 0]
   }
 }
 ```
-
-<img width="783" height="685" alt="Group 99" src="https://github.com/user-attachments/assets/c308fba1-212d-402e-8603-f3a46017cafb" />
-
 
 You can look at my example data.json files that I used to create my animal mods via this script for help [here](../../create-animal-mod/examples)
 
