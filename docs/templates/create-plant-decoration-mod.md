@@ -38,6 +38,8 @@ At the end of this you should end up with the following assets:
 - a single shop image, ie: `my_new_plant_decoration_mod.png`
 - a single food image, ie: `my_new_plant_decoration_mod.png`
 
+<img width="1136" height="212" alt="Screenshot 2026-10-13 at 8 19 05 pm" src="https://github.com/user-attachments/assets/88a56383-c43d-46fd-99fb-1257fccbd853" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
