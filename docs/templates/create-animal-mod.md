@@ -36,6 +36,12 @@ At the end of this you should end up with the following assets:
 - animal portraits (2 x colour variant total - one adult and juvenile portrait for each animal colour variant you are adding)
 - animal shop page images (1 locked and 1 unlocked - only for the juvenile version of the first colour variant)
 
+<img width="634" height="442" alt="671701615-7236d5d9-923f-49f2-bb22-c4fca606d3c1" src="https://github.com/user-attachments/assets/b8cb2423-da44-4e4f-bdfc-5890c83a1622" />
+<img width="1084" height="182" alt="671697683-df436a07-04f7-4426-9267-f0ddced2736a" src="https://github.com/user-attachments/assets/8dada643-6e8a-4b81-9c0d-eab1da9e799d" />
+<img width="745" height="230" alt="671694621-85df6215-74ab-42ac-b036-b368a1915511" src="https://github.com/user-attachments/assets/0655854a-12fc-49ef-b681-4ecd64df006f" />
+<img width="578" height="214" alt="671691292-e3a46a7c-0b9e-4634-af42-5b8b27880293" src="https://github.com/user-attachments/assets/58f7e9fa-a60b-4132-97b2-490ddc36823f" />
+
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 This is done based off the template provided by Tiny Pasture. Running my script will replace the assets with our own and change all the data to match what we want for our new custom animal.
