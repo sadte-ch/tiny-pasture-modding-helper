@@ -33,6 +33,8 @@ At the end of this you should end up with the following assets:
 - a single decoration image, ie: `my_new_decoration_mod.png`
 - a single shop image, ie: `my_new_decoration_mod.png`
 
+<img width="917" height="430" alt="Screenshot 2026-10-13 at 8 15 20 pm" src="https://github.com/user-attachments/assets/2db43f99-a520-45b0-af26-f65b0e27aad0" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
