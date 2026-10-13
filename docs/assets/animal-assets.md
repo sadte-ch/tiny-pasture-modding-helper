@@ -89,13 +89,9 @@ The animations available are listed below, some are optional (*):
 - [sleep_end](#sleep_end)
 - [move](#move)
 - [interact_0](#interact_0)
-- [eat](#eat) *
-- [eat_pre](#eat_pre) *
-- [eat_loop](#eat_loop) *
-- [eat_end](#eat_end) *
+- [eat](#eat)
 
 There are 2 different options for idle_1  - you can either do `idle_1` as a one shot or `idle_1_pre`, `idle_1_loop` and `idle_1_end`.
-The same applies for the eat animation - you can do one `eat` animation or `eat_pre`, `eat_loop` and `eat_end`.
 
 #### idle_0
 The basic standing and breathing idle animation.
@@ -171,23 +167,10 @@ To match the other animals, include the hand from the other animal spritesheets.
 
 #### eat
 A one shot animation for the animal eating.
-You can either do one `eat` animation OR do 3 separate ones `eat_pre`, `eat_loop` and `eat_end`
 
 <img width="400" height="100" alt="new_cow_0_1 16 (1)" src="https://github.com/user-attachments/assets/ab421064-2b30-46e9-8cb9-cdec82824e04" />
 <img width="50" height="50" alt="sprite-animation (5)" src="https://github.com/user-attachments/assets/87f66a7c-4fae-4d88-8e12-b45e3ddbaa18" />
 <img width="950" height="50" alt="Group 102" src="https://github.com/user-attachments/assets/5f6d23b1-39dc-4f54-9d24-fe8e60c377f6" />
-
-
-#### eat_pre
-Animation for getting into an eating position (like sitting down).
-If you do `eat_pre` you will need to also do `eat_loop` and `eat_end`
-
-#### eat_loop
-Eating animation that is looped in between `eat_pre` and `eat_end`
-
-#### eat_end
-Animation for the animal getting out of its eating position (like getting up).
-Played after the `eat_loop` is done. If you do `eat_end` you will need to also do `eat_pre` and `eat_end`
 
 ### Creating the spritesheet
 You can arrange the animations you choose to do however you want within a spritesheet, in any order.
