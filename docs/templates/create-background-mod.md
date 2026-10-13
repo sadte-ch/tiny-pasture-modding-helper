@@ -32,6 +32,9 @@ At the end of this you should end up with the following assets:
 - 1 or more background images, ie: `my_new_background_mod_00.png`, `my_new_background_mod_01.png`
 - a single shop image, ie: `my_new_background_mod.png`
 
+<img width="1008" height="446" alt="671683102-071a3e6b-f53c-4cd3-886f-043ca16a19dd" src="https://github.com/user-attachments/assets/e03e85be-3688-4d1f-a44f-33f9a0bb48b2" />
+<img width="373" height="285" alt="671683196-5ed34f95-a7c9-41fa-a025-f8673fe0feda" src="https://github.com/user-attachments/assets/464584ab-3b75-4b74-af0a-0704b06661aa" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
