@@ -118,15 +118,14 @@ Start of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and 
 The looping section of the idle animation.
 You can either do one `idle_1` animation OR do 3 separate ones `idle_1_pre`, `idle_1_loop` and `idle_1_end`
 
-<img width="150" height="50" alt="new_cow_0_1 9" src="https://github.com/user-attachments/assets/94db604a-a9ee-413b-8d06-fda7a96a1596" />
+<img width="150" height="100" alt="Group 103" src="https://github.com/user-attachments/assets/dc74cfd3-a154-4d9a-9810-f68d720ac282" />
 
 
 #### idle_1_end
 The end of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and `idle_1_end` together instead of just `idle_1`.
 
 <img width="150" height="50" alt="new_cow_0_1 10" src="https://github.com/user-attachments/assets/a97dee5e-ee87-4c0d-81da-535ba547a9f9" />
-
-<img width="50" height="50" alt="sprite-animation (1)" src="https://github.com/user-attachments/assets/090432ae-ca2e-4952-b915-2480ceef0fdf" />
+<img width="50" height="50" alt="sprite-animation (6)" src="https://github.com/user-attachments/assets/f3076de1-3653-42e9-a622-48cc9d6c099f" />
 
 `Gif is idle_1_pre, idle_1_loop repeated a few times and then idle_1_end put together to complete the idle animation`
 
