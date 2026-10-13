@@ -68,8 +68,8 @@ Before creating your animal, you should choose how big each frame needs to be to
 - If the animal is standing on the ground, you should draw it at the bottom of the frame
 - Try to keep the animal horizontally centered as much as possible
 
-<img width="593" height="597" alt="Screenshot 2026-10-13 at 10 33 04 am" src="https://github.com/user-attachments/assets/58b20a7a-3726-4f67-96e6-4d4cb2f66e2c" />
-<img width="578" height="561" alt="Screenshot 2026-10-13 at 10 35 21 am" src="https://github.com/user-attachments/assets/cdabdd89-23e7-4d0c-a225-1fd4deffcdad" />
+<img width="393" height="397" alt="Screenshot 2026-10-13 at 10 33 04 am" src="https://github.com/user-attachments/assets/58b20a7a-3726-4f67-96e6-4d4cb2f66e2c" />
+<img width="378" height="361" alt="Screenshot 2026-10-13 at 10 35 21 am" src="https://github.com/user-attachments/assets/cdabdd89-23e7-4d0c-a225-1fd4deffcdad" />
 
 ## Animal animation spritesheets
 This is the most time intensive part of the whole process, the less frames you create for each animation the quicker it will be. Use a pixel art tool of your choice to create your spritesheets.
