@@ -31,6 +31,9 @@ Requirements:
 
 <img width="1008" height="446" alt="Screenshot 2026-10-12 at 9 30 51 pm" src="https://github.com/user-attachments/assets/071a3e6b-f53c-4cd3-886f-043ca16a19dd" />
 
+- this is the order these layers will be stacked in the game:
+<img width="1115" height="131" alt="Screenshot 2026-10-13 at 8 25 10 pm" src="https://github.com/user-attachments/assets/85c940eb-d742-46b7-87c3-3c35a9a201fd" />
+
 
 ## Create Shop Image
 A png image to show off a preview for your background (all the layers together), within the correct shop image size.
