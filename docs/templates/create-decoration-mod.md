@@ -53,13 +53,15 @@ You can then copy the new mod folder created by the script and open it in Godot 
 2. Update the values you want to change
 3. I have tried to add as much info about these values below:
 
-**modName** - choose a name for your mod, needs to be in PascalCase
-**modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
-**authorName** - your author name
-**codeName** - should be your mod name in snake_case
-**description** - add a short description for what's included in the mod
-**translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
-**price** - a number for how much you want your item to cost in the Tiny Pasture shop
+**Values:**
+
+- **modName** - choose a name for your mod, needs to be in PascalCase
+- **modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
+- **authorName** - your author name
+- **codeName** - should be your mod name in snake_case
+- **description** - add a short description for what's included in the mod
+- **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
+- **price** - a number for how much you want your item to cost in the Tiny Pasture shop
 
 ```
 {
