@@ -166,6 +166,9 @@ There are some things the script doesn't support yet like the alternate idle ani
 }
 ```
 
+<img width="783" height="685" alt="Group 99" src="https://github.com/user-attachments/assets/c308fba1-212d-402e-8603-f3a46017cafb" />
+
+
 You can look at my example data.json files that I used to create my animal mods via this script for help [here](../../create-animal-mod/examples)
 
 ### Run the script
