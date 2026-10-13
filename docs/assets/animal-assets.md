@@ -59,6 +59,7 @@ Make sure you have done the [Godot setup](../godot-setup.md) first
 Before creating your animal, you should choose how big each frame needs to be to fit all the movements you want to capture.
 
 - Every frame/sprite in the spritesheet needs to be the same width and height
+- The best way to choose which dimensions to use is to think about accommodating the animation frame that will cover the most space.
 
 - Max height you can use for frames is 52px
 - You can use any width value
@@ -67,6 +68,8 @@ Before creating your animal, you should choose how big each frame needs to be to
 - If the animal is standing on the ground, you should draw it at the bottom of the frame
 - Try to keep the animal horizontally centered as much as possible
 
+<img width="593" height="597" alt="Screenshot 2026-10-13 at 10 33 04 am" src="https://github.com/user-attachments/assets/58b20a7a-3726-4f67-96e6-4d4cb2f66e2c" />
+<img width="578" height="561" alt="Screenshot 2026-10-13 at 10 35 21 am" src="https://github.com/user-attachments/assets/cdabdd89-23e7-4d0c-a225-1fd4deffcdad" />
 
 ## Animal animation spritesheets
 This is the most time intensive part of the whole process, the less frames you create for each animation the quicker it will be. Use a pixel art tool of your choice to create your spritesheets.
@@ -97,6 +100,9 @@ The same applies for the eat animation - you can do one `eat` animation or `eat_
 #### idle_0
 The basic standing and breathing idle animation.
 Try to animate the top of the animal moving up and down by 1 pixel, so it's subtle. You can also do subtle animations like tail swooshing, ears moving, etc.
+
+<img width="400" height="50" alt="new_cow_0_1 3" src="https://github.com/user-attachments/assets/609a78f1-cdd3-46e8-ae4c-0d23e59fd3b5" />
+<img width="50" height="50" alt="sprite-animation" src="https://github.com/user-attachments/assets/c3dc51b2-ef5a-40c3-8552-41fa821f1403" />
 
 #### idle_1
 The idle animation for the animal which will play randomly - freedom to do whatever you want to add character to your animal.
