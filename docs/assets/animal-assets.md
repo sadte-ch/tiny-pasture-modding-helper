@@ -108,37 +108,76 @@ Try to animate the top of the animal moving up and down by 1 pixel, so it's subt
 The idle animation for the animal which will play randomly - freedom to do whatever you want to add character to your animal.
 Use `idle_1` on its own to do a one shot animation that only plays once (ie: a hop)
 
+
 #### idle_1_pre
 Start of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and `idle_1_end` together instead of just `idle_1`.
+
+<img width="150" height="50" alt="new_cow_0_1 8" src="https://github.com/user-attachments/assets/0581f3aa-0e02-4c59-8850-48abcff6084e" />
 
 #### idle_1_loop
 The looping section of the idle animation.
 You can either do one `idle_1` animation OR do 3 separate ones `idle_1_pre`, `idle_1_loop` and `idle_1_end`
 
+<img width="150" height="50" alt="new_cow_0_1 9" src="https://github.com/user-attachments/assets/94db604a-a9ee-413b-8d06-fda7a96a1596" />
+
+
 #### idle_1_end
 The end of the idle animation if you choose to do `idle_1_pre`, `idle_1_loop` and `idle_1_end` together instead of just `idle_1`.
+
+<img width="150" height="50" alt="new_cow_0_1 10" src="https://github.com/user-attachments/assets/a97dee5e-ee87-4c0d-81da-535ba547a9f9" />
+
+<img width="50" height="50" alt="sprite-animation (1)" src="https://github.com/user-attachments/assets/090432ae-ca2e-4952-b915-2480ceef0fdf" />
+
+`Gif is idle_1_pre, idle_1_loop repeated a few times and then idle_1_end put together to complete the idle animation`
+
 
 #### sleep_pre
 Animation for the animal lying down or getting ready to sleep.
 
+<img width="300" height="50" alt="new_cow_0_1 11" src="https://github.com/user-attachments/assets/ad8d4ae3-0eed-45fe-aba3-0843e16cc2b5" />
+
+
 #### sleep_loop
 Animation which will be looped while the animal is sleeping.
+
+<img width="300" height="50" alt="new_cow_0_1 12" src="https://github.com/user-attachments/assets/1de236d3-bea3-4976-b895-3b6df842b392" />
+
 
 #### sleep_end
 Animation for the animal getting up from sleeping.
 End frame should be similar to a start frame from the start idle frame so they can be joined seamlessly.
 
+<img width="300" height="50" alt="new_cow_0_1 13" src="https://github.com/user-attachments/assets/e437aaf4-4bf1-4894-b0b7-fa492fb48c67" />
+
+<img width="50" height="50" alt="sprite-animation (2)" src="https://github.com/user-attachments/assets/9a632f0e-4a97-4952-a840-057c0e93a46e" />
+
+`Gif is sleep_pre, sleep_loop repeated a few times and then sleep_end put together to complete the idle animation`
+
+
 #### move
 Movement animation like walking or flying.
 Create the animation as if it's on the spot (keep the animal centered as much as possible).
+
+<img width="300" height="50" alt="new_cow_0_1 14" src="https://github.com/user-attachments/assets/8711804e-987d-4553-a13b-c3ef9104b460" />
+<img width="50" height="50" alt="sprite-animation (3)" src="https://github.com/user-attachments/assets/ef81fae9-c0e0-4028-ab01-ebd0a6d36768" />
+
 
 #### interact_0
 Petting animation for when you click on the animal.
 To match the other animals, include the hand from the other animal spritesheets.
 
+<img width="400" height="50" alt="new_cow_0_1 15" src="https://github.com/user-attachments/assets/d43eae43-f8e8-48d4-902a-d41f639e080d" />
+<img width="50" height="50" alt="sprite-animation (4)" src="https://github.com/user-attachments/assets/562ef204-4cdf-4d08-abd9-54a3bdaf0b32" />
+
+
 #### eat
 A one shot animation for the animal eating.
 You can either do one `eat` animation OR do 3 separate ones `eat_pre`, `eat_loop` and `eat_end`
+
+<img width="400" height="100" alt="new_cow_0_1 16 (1)" src="https://github.com/user-attachments/assets/ab421064-2b30-46e9-8cb9-cdec82824e04" />
+<img width="50" height="50" alt="sprite-animation (5)" src="https://github.com/user-attachments/assets/87f66a7c-4fae-4d88-8e12-b45e3ddbaa18" />
+<img width="950" height="50" alt="Group 102" src="https://github.com/user-attachments/assets/5f6d23b1-39dc-4f54-9d24-fe8e60c377f6" />
+
 
 #### eat_pre
 Animation for getting into an eating position (like sitting down).
@@ -151,9 +190,6 @@ Eating animation that is looped in between `eat_pre` and `eat_end`
 Animation for the animal getting out of its eating position (like getting up).
 Played after the `eat_loop` is done. If you do `eat_end` you will need to also do `eat_pre` and `eat_end`
 
-<img width="934" height="642" alt="Screenshot 2026-10-12 at 9 55 09 pm" src="https://github.com/user-attachments/assets/7236d5d9-923f-49f2-bb22-c4fca606d3c1" />
-<img width="1176" height="471" alt="Screenshot 2026-10-12 at 9 57 33 pm" src="https://github.com/user-attachments/assets/8874c571-e19e-46a1-9ae6-0a2ffcd55b45" />
-
 ### Creating the spritesheet
 You can arrange the animations you choose to do however you want within a spritesheet, in any order.
 Keep track of the start and end frame position/co-ordinates for each animation to help with importing the spritesheet later.
@@ -165,6 +201,9 @@ Keep track of the start and end frame position/co-ordinates for each animation t
   2. by giving a list of all the frames in the animation, in the order you want `[[0,0], [1.0], [2,0], [1,0], [0,0]]` (if the frames are not in the right order (left -> right) on the spritesheet, you need to repeat frames or use frames from other sections of the spritesheet)
 
 ie: idle_0 is frame 0,0 - 7,0 and idle_1_pre is frame 0,1 - 2,1, etc
+
+<img width="934" height="642" alt="Screenshot 2026-10-12 at 9 55 09 pm" src="https://github.com/user-attachments/assets/7236d5d9-923f-49f2-bb22-c4fca606d3c1" />
+<img width="1176" height="471" alt="Screenshot 2026-10-12 at 9 57 33 pm" src="https://github.com/user-attachments/assets/8874c571-e19e-46a1-9ae6-0a2ffcd55b45" />
 
 <img width="783" height="685" alt="Group 98" src="https://github.com/user-attachments/assets/9264f1c5-ec76-487c-8a77-542d2adb9b9e" />
 <img width="558" height="590" alt="Group 98 (1)" src="https://github.com/user-attachments/assets/2b7f0415-0a4b-4afa-ab3f-a19257e99674" />
