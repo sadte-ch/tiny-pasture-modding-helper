@@ -249,8 +249,7 @@ If you want to do a 1 shot animation for idle_1 (instead of idle_1_pre, idle_1_l
     },
     "idle_1": {
       "fps": 10,
-      "startFrame": [0, 1],
-      "endFrame": [5, 1]
+      "frames": [[0, 1], [1, 1], [2, 1], [4, 1], [5, 1], [6, 1], [0, 2], [1, 2], [2, 2]]
     },
     "sleep_pre": {
       "fps": 6.666666666666667,
