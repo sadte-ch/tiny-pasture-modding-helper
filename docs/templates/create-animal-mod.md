@@ -98,6 +98,7 @@ There are some things the script doesn't support yet like the alternate idle ani
   - **height** - height of each sprite in your spritesheets in px, ie: `50`
 - **animations** - contains configuration data for each of your spritesheet animations
   - **idle_0** - config data for your `idle_0` animation (see frame data info below)
+  - **idle_1** - config data for your `idle_1` animation (you can either do just idle_1 if you want a one shot, or idle_1_pre, idle_1_loop and idle_1_end)
   - **idle_1_pre** - config data for your `idle_1_pre` animation (see frame data info below)
   - **idle_1_loop** - config data for your `idle_1_loop` animation (see frame data info below)
   - **idle_1_end** - config data for your `idle_1_end` animation (see frame data info below)
@@ -235,6 +236,51 @@ This image shows the coordinates of all the frames in my spritesheet and shows e
     "startFrame": [0, 0],
     "endFrame": [7, 0]
   }
+}
+```
+
+If you want to do a 1 shot animation for idle_1 (instead of idle_1_pre, idle_1_loop, idle_1_end), it would look like this:
+```
+"animations": {
+    "idle_0": {
+      "fps": 5,
+      "startFrame": [0, 0],
+      "endFrame": [7, 0]
+    },
+    "idle_1": {
+      "fps": 10,
+      "startFrame": [0, 1],
+      "endFrame": [5, 1]
+    },
+    "sleep_pre": {
+      "fps": 6.666666666666667,
+      "startFrame": [0, 3],
+      "endFrame": [5, 3]
+    },
+    "sleep_loop": {
+      "fps": 6.666666666666667,
+      "startFrame": [0, 4],
+      "endFrame": [5, 4]
+    },
+    "sleep_end": {
+      "fps": 6.666666666666667,
+      "startFrame": [0, 5],
+      "endFrame": [5, 5]
+    },
+    "move": {
+      "fps": 6.666666666666667,
+      "startFrame": [0, 6],
+      "endFrame": [5, 6]
+    },
+    "interact_0": {
+      "fps": 6.666666666666667,
+      "startFrame": [0, 7],
+      "endFrame": [7, 7]
+    },
+    "eat": {
+      "fps": 6.666666666666667, - speed of the eat animation
+      "frames": [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8], [5, 8], [0, 9], [1, 9], [2, 9], [0, 9], [1, 9], [2, 9], [0, 9], [1, 9], [2, 9], [4, 9], [5, 9], [6, 9], [7, 9]]
+    }
 }
 ```
 
