@@ -341,9 +341,10 @@ Alternatively, you can do this section manually if you prefer - see [guide](http
 
 #### Check your animal config and animations
 1. Locate your animals scene file in the Godot file system at > mods-unpacked > your mod > overwrites > Scene > Level > Animals > your_animal.tscn
-2. Double click the tscn scene file to open it
-3. Make sure you are in 2D mode
-4. Zoom in to view your animal
+3. Double click the tscn scene file to open it
+4. Make sure you are in 2D mode
+5. Zoom in to view your animal
+(For some reason it doesn't always show the textures correctly for me on this step but running the game, it works perfectly)
 
 ##### Adjust Mouse Clickable Area
 1. Click 'Detector' in the Scene viewer top left
