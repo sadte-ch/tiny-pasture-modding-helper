@@ -86,7 +86,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "新背景",
       "description": "添加新背景"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "新背景",
       "description": "添加新背景"
     }

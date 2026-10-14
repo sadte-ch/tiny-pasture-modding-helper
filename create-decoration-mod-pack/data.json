@@ -15,7 +15,7 @@
           "name": "装饰 1",
           "description": "添加装饰 1"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 1",
           "description": "添加装饰 1"
         }
@@ -32,7 +32,7 @@
           "name": "装饰 2",
           "description": "添加装饰 2"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 2",
           "description": "添加装饰 2"
         }
@@ -49,7 +49,7 @@
           "name": "装饰 3",
           "description": "添加装饰 3"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 3",
           "description": "添加装饰 3"
         }

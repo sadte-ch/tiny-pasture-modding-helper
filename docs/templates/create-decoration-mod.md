@@ -81,7 +81,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "全新装饰",
       "description": "为游戏添加一个新的装饰物。"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "全新装饰",
       "description": "为游戏添加一个新的装饰物。"
     }

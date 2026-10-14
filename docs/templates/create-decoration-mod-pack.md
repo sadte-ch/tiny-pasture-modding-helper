@@ -107,7 +107,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 1",
           "description": "添加装饰 1"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 1",
           "description": "添加装饰 1"
         }
@@ -124,7 +124,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 2",
           "description": "添加装饰 2"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 2",
           "description": "添加装饰 2"
         }
@@ -141,7 +141,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 3",
           "description": "添加装饰 3"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 3",
           "description": "添加装饰 3"
         }
@@ -172,7 +172,7 @@ Add a new object with the same general item structure to the `pack_items` array,
       "name": "装饰 1",
       "description": "添加装饰 1"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "装饰 1",
       "description": "添加装饰 1"
     },

@@ -158,7 +158,7 @@ This image shows the coordinates of all the frames in my spritesheet and shows e
       "name": "阿尔维斯牛",
       "description": "添加来自阿尔维斯庇护所的红安格斯牛“维尼·哞”。"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "阿爾維斯牛",
       "description": "添加來自阿爾維斯庇護所的紅安格斯牛「維尼·哞」。"
     }

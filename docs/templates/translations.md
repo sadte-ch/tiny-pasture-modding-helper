@@ -16,7 +16,7 @@ You can choose to do the same or delete/add more as you wish
     "name": "装饰 1",
     "description": "添加装饰 1"
   },
-  "zh-HK": {
+  "zh_HK": {
     "name": "装饰 1",
     "description": "添加装饰 1"
   }

@@ -92,7 +92,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "新款植物装饰",
       "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "新款植物装饰",
       "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
     }
