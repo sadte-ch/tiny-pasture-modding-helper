@@ -102,7 +102,10 @@ Try to animate the top of the animal moving up and down by 1 pixel, so it's subt
 
 #### idle_1
 The idle animation for the animal which will play randomly - freedom to do whatever you want to add character to your animal.
-Use `idle_1` on its own to do a one shot animation that only plays once (ie: a hop)
+Use `idle_1` on its own to do a one shot animation that only plays once (ie: a hop) - as an alternative to `idle_1_pre`, `idle_1_loop` and `idle_1_end` below. (not the head shake doesn't loop here)
+
+<img width="450" height="50" alt="Group 104" src="https://github.com/user-attachments/assets/eacc36a8-9ab1-4fe8-bdb6-e0e8f8f49f39" />
+<img width="50" height="50" alt="sprite-animation" src="https://github.com/user-attachments/assets/bd1dd577-0f6c-4208-b35b-1afbff4209f7" />
 
 
 #### idle_1_pre
