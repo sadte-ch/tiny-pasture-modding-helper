@@ -22,7 +22,6 @@ const __dirname = path.dirname(__filename); // get the name of the directory
 const addLinksForAdditionalVariations = (newModInnerPath, data) => {
   const variationsNo = data.variations_no;
   const codeName = data.codeName;
-  const newModId = data.modId;
 
   const ogAssetsPath = `res://Assets/`;
   const assetsPath = `res://mods-unpacked/${data.authorName}-${data.modName}/overwrites/Assets/`;
@@ -209,7 +208,6 @@ const getFramesDataFromAnimationData = (animData, spritesX) => {
     const endX = animData.endFrame[0];
     const startY = animData.startFrame[1];
     const endY = animData.endFrame[1];
-    const xLength = endX - startX + 1;
     const yLength = endY - startY + 1;
     framesNo = (spritesX * yLength) - startX - (spritesX - endX - 1);
     startIndex = getIndexFromFrameCoordinates(animData.startFrame, spritesX);
@@ -245,18 +243,26 @@ const getSpritesheetDimensions = (newModInnerPath, data, filePath) => {
 
 // update scene .tscn file (config for animal animations)
 const updateAnimalAnimations = (newModInnerPath, data) => {
+  const useIdle1Shot = !!data.animations.idle_1
   const animationsPath = path.join(newModInnerPath, `overwrites/Scene/Level/Animals/${data.codeName}.tscn`);
-  let contents = fs.readFileSync(animationsPath, 'utf8');
+  const idle1ShotPath = path.join(newModInnerPath, `overwrites/Scene/Level/Animals/${data.codeName}_idle_1_shot.tscn`);
+  let contents = fs.readFileSync(useIdle1Shot ? idle1ShotPath : animationsPath, 'utf8');
 
   const { spritesX, spritesY } = getSpritesheetDimensions(newModInnerPath, data, `overwrites/Assets/Animals/${data.codeName}_0_0.png`);
 
   const lines = contents.split(/\r?\n/);
 
   // replace "Cow" with the new mod name in the node name line
-  lines[762] = `[node name="${data.modName}" type="Node2D" groups=["ANIMAL"]]`;
-  lines[781] = `hframes = ${spritesX}` // hframes
-  lines[782] = `vframes = ${spritesY}` // vframes
-
+  if (!useIdle1Shot) {
+    lines[762] = `[node name="${data.modName}" type="Node2D" groups=["ANIMAL"]]`;
+    lines[781] = `hframes = ${spritesX}` // hframes
+    lines[782] = `vframes = ${spritesY}` // vframes
+  } else {
+    lines[703] = `[node name="${data.modName}" type="Node2D" groups=["ANIMAL"]]`;
+    lines[722] = `hframes = ${spritesX}` // hframes
+    lines[723] = `vframes = ${spritesY}` // vframes
+  }
+  
   // eat
   const eat = data.animations.eat;
   const eatLines = getAnimationLinesFromData(eat, spritesX);
@@ -275,79 +281,138 @@ const updateAnimalAnimations = (newModInnerPath, data) => {
   lines[97] = idle0Lines.transitionsLine;
   lines[99] = idle0Lines.valuesLine;
 
-  // idle_1_end
-  const idle_1_end = data.animations.idle_1_end;
-  const idle1EndLines = getAnimationLinesFromData(idle_1_end, spritesX);
-  lines[104] = idle1EndLines.lengthLine;
-  lines[105] = idle1EndLines.stepLine;
-  lines[113] = idle1EndLines.timesLine;
-  lines[114] = idle1EndLines.transitionsLine;
-  lines[116] = idle1EndLines.valuesLine;
+  if (!useIdle1Shot) {
+    // idle_1_end
+    const idle_1_end = data.animations.idle_1_end;
+    const idle1EndLines = getAnimationLinesFromData(idle_1_end, spritesX);
+    lines[104] = idle1EndLines.lengthLine;
+    lines[105] = idle1EndLines.stepLine;
+    lines[113] = idle1EndLines.timesLine;
+    lines[114] = idle1EndLines.transitionsLine;
+    lines[116] = idle1EndLines.valuesLine;
 
-  // idle_1_loop
-  const idle_1_loop = data.animations.idle_1_loop;
-  const idle1LoopLines = getAnimationLinesFromData(idle_1_loop, spritesX);
-  lines[121] = idle1LoopLines.lengthLine;
-  lines[123] = idle1LoopLines.stepLine;
-  lines[131] = idle1LoopLines.timesLine;
-  lines[132] = idle1LoopLines.transitionsLine;
-  lines[134] = idle1LoopLines.valuesLine;
+    // idle_1_loop
+    const idle_1_loop = data.animations.idle_1_loop;
+    const idle1LoopLines = getAnimationLinesFromData(idle_1_loop, spritesX);
+    lines[121] = idle1LoopLines.lengthLine;
+    lines[123] = idle1LoopLines.stepLine;
+    lines[131] = idle1LoopLines.timesLine;
+    lines[132] = idle1LoopLines.transitionsLine;
+    lines[134] = idle1LoopLines.valuesLine;
 
-  // idle_1_pre
-  const idle_1_pre = data.animations.idle_1_pre;
-  const idle1PreLines = getAnimationLinesFromData(idle_1_pre, spritesX);
-  lines[139] = idle1PreLines.lengthLine;
-  lines[140] = idle1PreLines.stepLine;
-  lines[148] = idle1PreLines.timesLine;
-  lines[149] = idle1PreLines.transitionsLine;
-  lines[151] = idle1PreLines.valuesLine;
+    // idle_1_pre
+    const idle_1_pre = data.animations.idle_1_pre;
+    const idle1PreLines = getAnimationLinesFromData(idle_1_pre, spritesX);
+    lines[139] = idle1PreLines.lengthLine;
+    lines[140] = idle1PreLines.stepLine;
+    lines[148] = idle1PreLines.timesLine;
+    lines[149] = idle1PreLines.transitionsLine;
+    lines[151] = idle1PreLines.valuesLine;
 
-  // interact_0
-  const interact_0 = data.animations.interact_0;
-  const interact0Lines = getAnimationLinesFromData(interact_0, spritesX);
-  lines[156] = interact0Lines.lengthLine;
-  lines[157] = interact0Lines.stepLine;
-  lines[165] = interact0Lines.timesLine;
-  lines[166] = interact0Lines.transitionsLine;
-  lines[168] = interact0Lines.valuesLine;
+    // interact_0
+    const interact_0 = data.animations.interact_0;
+    const interact0Lines = getAnimationLinesFromData(interact_0, spritesX);
+    lines[156] = interact0Lines.lengthLine;
+    lines[157] = interact0Lines.stepLine;
+    lines[165] = interact0Lines.timesLine;
+    lines[166] = interact0Lines.transitionsLine;
+    lines[168] = interact0Lines.valuesLine;
 
-  // move
-  const move = data.animations.move;
-  const moveLines = getAnimationLinesFromData(move, spritesX);
-  lines[173] = moveLines.lengthLine;
-  lines[175] = moveLines.stepLine;
-  lines[183] = moveLines.timesLine;
-  lines[184] = moveLines.transitionsLine;
-  lines[186] = moveLines.valuesLine;
+    // move
+    const move = data.animations.move;
+    const moveLines = getAnimationLinesFromData(move, spritesX);
+    lines[173] = moveLines.lengthLine;
+    lines[175] = moveLines.stepLine;
+    lines[183] = moveLines.timesLine;
+    lines[184] = moveLines.transitionsLine;
+    lines[186] = moveLines.valuesLine;
 
-  // sleep_end
-  const sleep_end = data.animations.sleep_end;
-  const sleepEndLines = getAnimationLinesFromData(sleep_end, spritesX);
-  lines[191] = sleepEndLines.lengthLine;
-  lines[192] = sleepEndLines.stepLine;
-  lines[200] = sleepEndLines.timesLine;
-  lines[201] = sleepEndLines.transitionsLine;
-  lines[203] = sleepEndLines.valuesLine;
+    // sleep_end
+    const sleep_end = data.animations.sleep_end;
+    const sleepEndLines = getAnimationLinesFromData(sleep_end, spritesX);
+    lines[191] = sleepEndLines.lengthLine;
+    lines[192] = sleepEndLines.stepLine;
+    lines[200] = sleepEndLines.timesLine;
+    lines[201] = sleepEndLines.transitionsLine;
+    lines[203] = sleepEndLines.valuesLine;
 
-  // sleep_loop
-  const sleep_loop = data.animations.sleep_loop;
-  const sleepLoopLines = getAnimationLinesFromData(sleep_loop, spritesX);
-  lines[208] = sleepLoopLines.lengthLine;
-  lines[210] = sleepLoopLines.stepLine;
-  lines[218] = sleepLoopLines.timesLine;
-  lines[219] = sleepLoopLines.transitionsLine;
-  lines[221] = sleepLoopLines.valuesLine;
+    // sleep_loop
+    const sleep_loop = data.animations.sleep_loop;
+    const sleepLoopLines = getAnimationLinesFromData(sleep_loop, spritesX);
+    lines[208] = sleepLoopLines.lengthLine;
+    lines[210] = sleepLoopLines.stepLine;
+    lines[218] = sleepLoopLines.timesLine;
+    lines[219] = sleepLoopLines.transitionsLine;
+    lines[221] = sleepLoopLines.valuesLine;
 
-  // sleep_pre
-  const sleep_pre = data.animations.sleep_pre;
-  const sleepPreLines = getAnimationLinesFromData(sleep_pre, spritesX);
-  lines[226] = sleepPreLines.lengthLine;
-  lines[227] = sleepPreLines.stepLine;
-  lines[235] = sleepPreLines.timesLine;
-  lines[236] = sleepPreLines.transitionsLine;
-  lines[238] = sleepPreLines.valuesLine;
+    // sleep_pre
+    const sleep_pre = data.animations.sleep_pre;
+    const sleepPreLines = getAnimationLinesFromData(sleep_pre, spritesX);
+    lines[226] = sleepPreLines.lengthLine;
+    lines[227] = sleepPreLines.stepLine;
+    lines[235] = sleepPreLines.timesLine;
+    lines[236] = sleepPreLines.transitionsLine;
+    lines[238] = sleepPreLines.valuesLine;
+  } else {
+    // idle_1
+    const idle_1 = data.animations.idle_1;
+    const idle1Lines = getAnimationLinesFromData(idle_1, spritesX);
+    lines[104] = idle1Lines.lengthLine;
+    lines[105] = idle1Lines.stepLine;
+    lines[113] = idle1Lines.timesLine;
+    lines[114] = idle1Lines.transitionsLine;
+    lines[116] = idle1Lines.valuesLine;
+
+    // interact_0
+    const interact_0 = data.animations.interact_0;
+    const interact0Lines = getAnimationLinesFromData(interact_0, spritesX);
+    lines[121] = interact0Lines.lengthLine;
+    lines[122] = interact0Lines.stepLine;
+    lines[130] = interact0Lines.timesLine;
+    lines[131] = interact0Lines.transitionsLine;
+    lines[133] = interact0Lines.valuesLine;
+
+    // move
+    const move = data.animations.move;
+    const moveLines = getAnimationLinesFromData(move, spritesX);
+    lines[138] = moveLines.lengthLine;
+    lines[140] = moveLines.stepLine;
+    lines[148] = moveLines.timesLine;
+    lines[149] = moveLines.transitionsLine;
+    lines[151] = moveLines.valuesLine;
+
+    // sleep_end
+    const sleep_end = data.animations.sleep_end;
+    const sleepEndLines = getAnimationLinesFromData(sleep_end, spritesX);
+    lines[156] = sleepEndLines.lengthLine;
+    lines[157] = sleepEndLines.stepLine;
+    lines[165] = sleepEndLines.timesLine;
+    lines[166] = sleepEndLines.transitionsLine;
+    lines[168] = sleepEndLines.valuesLine;
+
+    // sleep_loop
+    const sleep_loop = data.animations.sleep_loop;
+    const sleepLoopLines = getAnimationLinesFromData(sleep_loop, spritesX);
+    lines[173] = sleepLoopLines.lengthLine;
+    lines[175] = sleepLoopLines.stepLine;
+    lines[183] = sleepLoopLines.timesLine;
+    lines[184] = sleepLoopLines.transitionsLine;
+    lines[186] = sleepLoopLines.valuesLine;
+
+    // sleep_pre
+    const sleep_pre = data.animations.sleep_pre;
+    const sleepPreLines = getAnimationLinesFromData(sleep_pre, spritesX);
+    lines[191] = sleepPreLines.lengthLine;
+    lines[192] = sleepPreLines.stepLine;
+    lines[200] = sleepPreLines.timesLine;
+    lines[201] = sleepPreLines.transitionsLine;
+    lines[203] = sleepPreLines.valuesLine;
+  }
 
   fs.writeFileSync(animationsPath, lines.join('\n'), 'utf8');
+
+  // remove 1 shot tscn file afterwards
+  fs.rmSync(idle1ShotPath, { recursive: true, force: true })
 }
 
 // generate a gd file to run inside godot (add a shop idle animation to opened_pack.tscn) which you can then export as a .res file to put in the mod folder
