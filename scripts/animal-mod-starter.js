@@ -454,14 +454,13 @@ const createNewAnimalModFromData = () => {
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
-  const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  moveNewAssetsToModFolder(modInnerPath);
-  addLinksForAdditionalVariations(modInnerPath, data);
-  updateManifestFile(modInnerPath, data);
-  updateTresFiles(modInnerPath, newModId, data);
-  updateTranslations(modInnerPath, data, 'ANIMAL');
-  updateAnimalAnimations(modInnerPath, data);
-  updateGdForAnimalResFile(modInnerPath, data, newFolderName);
+  moveNewAssetsToModFolder(newModPath);
+  addLinksForAdditionalVariations(newModPath, data);
+  updateManifestFile(newModPath, data);
+  updateTresFiles(newModPath, newModId, data);
+  updateTranslations(newModPath, data, 'ANIMAL');
+  updateAnimalAnimations(newModPath, data);
+  updateGdForAnimalResFile(newModPath, data, newFolderName);
 
   console.log(`New mod created at ${newModPath}`);
 };

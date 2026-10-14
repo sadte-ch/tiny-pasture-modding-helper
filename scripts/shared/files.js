@@ -21,11 +21,6 @@ export const duplicateModFolderWithNewName = (newFolderName, oldFolderName, path
   // Copy the background-mod-starter folder to the new mod folder
   fs.cpSync(modStarterPath, newModPath, { recursive: true });
 
-  // update inner folder name in the new mod folder
-  const newModInnerPath = path.join(newModPath, `/mods-unpacked/${oldFolderName}`);
-  const newModInnerPathRenamed = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  fs.renameSync(newModInnerPath, newModInnerPathRenamed);
-
   return newModPath;
 };
 

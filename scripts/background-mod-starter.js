@@ -89,15 +89,14 @@ const createNewBackgroundModFromData = () => {
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
-  const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  moveNewAssetsToModFolder(modInnerPath, newCodeName, BACKGROUND_MOD_FOLDER_NAME);
-  updateManifestFile(modInnerPath, data);
+  moveNewAssetsToModFolder(newModPath, newCodeName, BACKGROUND_MOD_FOLDER_NAME);
+  updateManifestFile(newModPath, data);
 
-  updateTranslations(modInnerPath, data, 'DECO', 'BG');
+  updateTranslations(newModPath, data, 'DECO', 'BG');
 
-  updateDecorationShopPageFileForOneItemMod(modInnerPath, data, oldModId, oldPrice);
+  updateDecorationShopPageFileForOneItemMod(newModPath, data, oldModId, oldPrice);
 
-  createTscnFileForBackground(modInnerPath, data);
+  createTscnFileForBackground(newModPath, data);
 };
 
 createNewBackgroundModFromData();
