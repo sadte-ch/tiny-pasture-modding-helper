@@ -298,12 +298,12 @@ You can look at my example data.json files that I used to create my animal mods 
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-animal-mod](../../create-animal-mod), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the mods-unpacked folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Copy that folder, with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files
-2. Open the mods-unpacked folder
-3. Paste your version of the `AuthorName-ModName` folder into the mods-unpacked folder
+2. Open the `mods-unpacked` folder
+3. Paste your version of the `AuthorName-ModName` folder into the `mods-unpacked` folder
 
 ### Open decompiled files in Godot
 1. Open the Godot app
@@ -329,21 +329,22 @@ Alternatively, you can do this section manually if you prefer - see [guide](http
 10. Find 'Animation Player' under 'TEX_AnimalAvatar' in the Scene viewer top left and click on it
 11. You should be able to see your new animal on the store UI
 12. If the animation timeline doesn't come up at the bottom, click on 'TEX_AnimalAvatar' and then click back on 'Animation Player'
-13. Next to the 'Animation' box, where it says 'RESET', click the dropdown and select the animation that matches your new mod name
-14. Click the play button to test the idle animation works correctly
-15. You might need to adjust the position of TEX_AnimalAvatar to center the animal witihin the semi circle
-16. You can also adjust the animation frames and timing if you want
-17. Once you're happy with the animation, make sure you are on the 'AnimationPlayer'
-18. Click on the 'Animation' button and select 'Manage Animations..'
-19. Find your new animal in the list and click the corresponding save icon
-20. Click 'Save As', navigate to > mods-unpacked > your mod > Extension > Animation
-21. Click 'Save' to save a file named 'your_animal.res' within your mod files
+13. If it doesn't show the correct animal texture, you might have to just close and reopen Godot
+14. Next to the 'Animation' box, where it says 'RESET', click the dropdown and select the animation that matches your new mod name
+15. Click the play button to test the idle animation works correctly
+16. You might need to adjust the position of TEX_AnimalAvatar to center the animal within the semi circle
+17. You can also adjust the animation frames and timing if you want
+18. Once you're happy with the animation, make sure you are on the 'AnimationPlayer'
+19. Click on the 'Animation' button and select 'Manage Animations..'
+20. Find your new animal in the list and click the corresponding save icon
+21. Click 'Save As', navigate to > mods-unpacked > your mod > Extension > Animation
+22. Click 'Save' to save a file named 'your_animal.res' within your mod files
 
 #### Check your animal config and animations
 1. Locate your animals scene file in the Godot file system at > mods-unpacked > your mod > overwrites > Scene > Level > Animals > your_animal.tscn
-3. Double click the tscn scene file to open it
-4. Make sure you are in 2D mode
-5. Zoom in to view your animal
+2. Double click the tscn scene file to open it
+3. Make sure you are in 2D mode 
+4. Zoom in to view your animal
 (For some reason it doesn't always show the textures correctly for me on this step but running the game, it works perfectly)
 
 ##### Adjust Mouse Clickable Area
@@ -377,7 +378,7 @@ You're all done! Now it's time to test it.
 2. Click the run/play button in the top right of the Godot game engine
 3. This should launch another instance of the game
 4. If it doesn't, check the output/error console to see if there are any issues you need to resolve
-5. If you are still experiencing issues, delete the mod folder from mods-unpacked and try again
+5. If you are still experiencing issues, delete the mod folder from `mods-unpacked` and try again
 6. You can also try adding another mod that you know works to try to get to the bottom of the issue (which you can find by browsing your local Steam files `steamapps > workshop > content > 3167550 > copy one of the zips, unpack it and put it into your mods-unpacked folder`). Gradually change things in data.json, run the script and repeat the process until the issue is resolved
 7. Once its working, it's time to export your mod so you can publish it on the Steam Workshop
 
