@@ -1,0 +1,22 @@
+{
+  "modName": "NewFoodItem",
+  "modId": "1000",
+  "authorName": "Your_Name",
+  "codeName": "new_food",
+  "description": "Add a new food item to the game.",
+  "translations": {
+    "en": {
+      "name": "New Food",
+      "description": "Add a new food item to the game."
+    },
+    "zh": {
+      "name": "新食品",
+      "description": "在游戏中添加一个新的食物物品。"
+    },
+    "zh_HK": {
+      "name": "新食品",
+      "description": "在游戏中添加一个新的食物物品。"
+    }
+  },
+  "price": 100.0
+}
