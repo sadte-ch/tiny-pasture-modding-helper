@@ -50,13 +50,16 @@ export const moveNewAssetsToModFolder = (newModInnerPath, ITEM_MOD_FOLDER_NAME) 
 }
 
 // update ui_shop_page_items.gd with stuff from data.json (when the file already consists the item stuff and it just needs to be changes, rather than adding more items)
-export const updateItemsShopPageFileForOneItemMod = (modInnerPath, data, oldModId, oldPrice) => {
+export const updateItemsShopPageFileForOneItemMod = (modInnerPath, data, oldModId, oldPrice, oldHpValue) => {
   const shopPageItemsPath = path.join(modInnerPath, 'extension/Manager/ui_shop_page_items.gd');
   let shopPageItemsContents = fs.readFileSync(shopPageItemsPath, 'utf8');
 
   // replace the old modId with the new modId
   shopPageItemsContents = shopPageItemsContents.replace(new RegExp(oldModId, 'g'), data.modId);
   shopPageItemsContents = shopPageItemsContents.replace(new RegExp(oldPrice, 'g'), data.price);
+  if (data.hp_value && oldHpValue) {
+    shopPageItemsContents = shopPageItemsContents.replace(new RegExp(oldHpValue, 'g'), data.hp_value)
+  }
 
   fs.writeFileSync(shopPageItemsPath, shopPageItemsContents, 'utf8');
   console.log(`Updated shop page items file: ${shopPageItemsPath}`);
