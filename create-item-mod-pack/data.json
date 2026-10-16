@@ -20,7 +20,8 @@
           "description": "添加食物 1"
         }
       },
-      "price": 100.0
+      "price": 100.0,
+      "food_value": 10
     },
     {
       "translations": {
@@ -37,7 +38,8 @@
           "description": "添加食物 2"
         }
       },
-      "price": 100.0
+      "price": 100.0,
+      "food_value": 10
     }
   ]
 }
