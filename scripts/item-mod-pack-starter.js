@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { updateTranslations } from './shared/translations.js';
+import {updateTranslations, updateTranslationsPack} from './shared/translations.js';
 import { getModData, updateManifestFile } from './shared/data.js';
 import { deleteDuplicateExistingFolder } from './shared/files.js';
 import { updateLinksWithOldPath, renameFiles, duplicateModFolderWithNewName } from './shared/files.js';
@@ -16,14 +16,15 @@ import {
   updateItemsShopPageFileForOneItemMod
 } from "./shared/item.js";
 
-const ITEM_MOD_FOLDER_NAME = 'create-food-item-mod';
+const ITEM_MOD_FOLDER_NAME = 'create-item-mod-pack';
 const oldModId = '1000';
-const oldCodeName = 'new_food';
-const oldFolderName = 'Your_Name-NewFoodItem';
-const oldPrice = '100';
+const oldCodeName = 'new_food_items_pack';
+const oldFolderName = 'NewFoodItemsPack';
 
 const updateTresForItem = (modInnerPath, data) => {
   const foodDataPath = 'overwrites/Data/food_data'
+  const oldName = `${data.codeName}_0`
+  const oldId = `${oldModId}0`
   const tresFilePath = path.join(modInnerPath, foodDataPath, `${data.modId}0.tres`) // already renamed with new id
   const tresFileContents = fs.readFileSync(tresFilePath, 'utf8')
 
@@ -46,7 +47,7 @@ const updateTresForItem = (modInnerPath, data) => {
   console.log(`Updated tres files for food mod pack`);
 };
 
-const updateItemsShopPageFile = (modInnerPath, data) => {
+const updateItemsShopPageFile = (modInnerPath, data, newFolderName) => {
   const shopPageItemsPath = path.join(modInnerPath, 'extension/Manager/ui_shop_page_items.gd');
 
   const shopPageItemsContents = `extends "res://Scene/UI/PopupUI/UIShop/ui_shop_page_items.gd"
@@ -95,10 +96,10 @@ const createNewDecorationModFromData = () => {
   moveNewAssetsToModFolder(newModPath, ITEM_MOD_FOLDER_NAME);
   updateManifestFile(newModPath, data);
 
-  updateTranslations(newModPath, data, 'ITEM', 'FOOD');
+  updateTranslationsPack(newModPath, data, 'ITEM', 'FOOD');
 
   updateTresForItem(newModPath, data);
-  updateItemsShopPageFile(newModPath, data, oldModId, oldPrice);
+  updateItemsShopPageFile(newModPath, data, newFolderName);
 };
 
 createNewDecorationModFromData();
