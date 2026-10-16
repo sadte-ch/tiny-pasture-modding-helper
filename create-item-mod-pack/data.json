@@ -1,0 +1,43 @@
+{
+  "modName": "NewFoodItemsPack",
+  "modId": "1000",
+  "authorName": "Your_Name",
+  "codeName": "new_food_items_pack",
+  "description": "Add a new food items pack to the game.",
+  "pack_items": [
+    {
+      "translations": {
+        "en": {
+          "name": "Food 1",
+          "description": "Add food 1"
+        },
+        "zh": {
+          "name": "食物 1",
+          "description": "添加食物 1"
+        },
+        "zh_HK": {
+          "name": "食物 1",
+          "description": "添加食物 1"
+        }
+      },
+      "price": 100.0
+    },
+    {
+      "translations": {
+        "en": {
+          "name": "Food 2",
+          "description": "Add food 2"
+        },
+        "zh": {
+          "name": "食物 2",
+          "description": "添加食物 2"
+        },
+        "zh_HK": {
+          "name": "食物 2",
+          "description": "添加食物 2"
+        }
+      },
+      "price": 100.0
+    }
+  ]
+}

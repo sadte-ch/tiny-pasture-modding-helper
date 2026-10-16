@@ -7,6 +7,7 @@
     "create-decoration-mod": "node scripts/decoration-mod-starter.js",
     "create-plant-decoration-mod": "node scripts/plant-decoration-mod-starter.js",
     "create-decoration-mod-pack": "node scripts/decoration-mod-pack-starter.js",
-    "create-food-item-mod": "node scripts/food-item-mod-starter.js"
+    "create-food-item-mod": "node scripts/food-item-mod-starter.js",
+    "create-item-mod-pack": "node scripts/item-mod-pack-starter.js"
   }
 }
