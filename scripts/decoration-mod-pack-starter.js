@@ -1,5 +1,5 @@
 /**
- * Automates as much of the process of creating a new decoration mod for tiny pasture as possible.
+ * Automates as much of the process of creating a new decoration pack mod for tiny pasture as possible.
  * It requires that you put all your new assets in the "new-assets" folder and that you have filled out the data.json file with the correct information for your mod.
  * It will create a new folder with the updated files that you can then open in Godot to finish off the mod and test it.
  */
