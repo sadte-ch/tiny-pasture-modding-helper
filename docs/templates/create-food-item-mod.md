@@ -33,6 +33,9 @@ At the end of this you should end up with the following assets:
 - a single icon food image, ie: `icon_my_new_food_item_mod.png`
 - a single shop image, ie: `my_new_food_item_mod.png`
 
+<img width="863" height="321" alt="Screenshot 2026-10-16 at 10 57 16 pm" src="https://github.com/user-attachments/assets/e22e24df-cb9c-43d8-8300-3c6bbb90e4cd" />
+
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
