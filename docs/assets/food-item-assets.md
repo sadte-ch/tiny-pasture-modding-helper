@@ -22,12 +22,18 @@ Requirements:
 
 - I usually just make it so that the image hugs the food item, without leaving any space around. If you have space around, just align the food item to the bottom center of the image.
 
+<img width="432" height="172" alt="Screenshot 2026-10-16 at 10 48 19 pm" src="https://github.com/user-attachments/assets/f359639a-53ab-4179-ac55-080f170e3fa2" />
+
+
 ## Create Food Icon Image
 A smaller png image containing the edible food item, seen when you have bookmarked a food item and when you select the food item in the shop.
 
 Requirements:
 - 10px x 10px png
 - Image needs to be named to match your mod name in snake_case, with `icon_` at the start, ie: `icon_my_new_food_item_mod.png`
+
+<img width="525" height="192" alt="Screenshot 2026-10-16 at 10 49 44 pm" src="https://github.com/user-attachments/assets/44e4ebac-93ea-42bc-9877-2ab883d49ab9" />
+
 
 ## Create Shop Image
 A higher res png image containing your food item.
@@ -37,6 +43,8 @@ Requirements:
 - Image needs to be named to match your mod name in snake_case, ie: `my_new_food_item_mod.png`
 
 - Try to keep the food item centered
+
+<img width="434" height="261" alt="Screenshot 2026-10-16 at 10 51 23 pm" src="https://github.com/user-attachments/assets/941d9ef4-fcbe-48f4-a477-4d20ac26b01b" />
 
 
 ## Next steps [Create and configure your mod](../templates/create-plant-decoration-mod.md#create-and-configure-your-mod)
