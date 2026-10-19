@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=2 format=3 uid="uid://hdivt1putp3t"]
+
+[ext_resource type="Script" path="res://Data/food_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+type_id = 88903021
+food_name = "Ancient Fruit Plant"
+price = 0
+food_value = 10
+unlock_condition = 0
+shop_tex_p = "res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_21.png"
+icon_tex_p = "res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_21.png"
+drop_tex_p = "res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_21.png"
+

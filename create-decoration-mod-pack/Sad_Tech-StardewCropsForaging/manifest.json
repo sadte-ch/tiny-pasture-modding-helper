@@ -1,0 +1,27 @@
+{
+  "name": "StardewCropsForaging",
+  "namespace": "Sad_Tech",
+  "version_number": "1.0.0",
+  "description": "Add crops and foraging items from Stardew Valley to the shop.",
+  "website_url": "",
+  "dependencies": [],
+  "extra": {
+    "godot": {
+      "authors": [
+        "Sad_Tech"
+      ],
+      "tags": [],
+      "description_rich": "",
+      "optional_dependencies": [],
+      "load_before": [],
+      "incompatibilities": [],
+      "compatible_mod_loader_version": [
+        "7.0.1"
+      ],
+      "compatible_game_version": [
+        "1.0.10"
+      ],
+      "config_schema": {}
+    }
+  }
+}

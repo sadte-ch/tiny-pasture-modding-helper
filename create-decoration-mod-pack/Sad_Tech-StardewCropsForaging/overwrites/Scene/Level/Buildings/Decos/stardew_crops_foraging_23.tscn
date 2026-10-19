@@ -1,0 +1,228 @@
+[gd_scene load_steps=19 format=3 uid="uid://c1bqvn4yqdin0"]
+
+[ext_resource type="Script" path="res://Scene/Level/Buildings/Decos/bd_deco_plant.gd" id="1"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_23_0.png" id="2"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_23_1.png" id="3"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_23_2.png" id="4"]
+[ext_resource type="Texture2D" path="res://mods-unpacked/Sad_Tech-StardewCropsForaging/overwrites/Assets/Deco/Buildings/stardew_crops_foraging_23_3.png" id="5"]
+[ext_resource type="Shader" path="res://Assets/Shders/texture_outline.gdshader" id="6"]
+[ext_resource type="Texture2D" uid="uid://y55fmhh32f8o" path="res://Assets/Deco/Plants/icon_harvest.png" id="7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yscbw"]
+size = Vector2(32, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5hv7"]
+resource_local_to_scene = true
+shader = ExtResource("6")
+shader_parameter/is_show = false
+shader_parameter/is_use_texture = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 2.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/outline_texture = null
+
+[sub_resource type="Animation" id="Animation_nexmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_va6mg"]
+resource_name = "sway"
+length = 4.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0523599, 0.0, -0.0523599, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igpyq"]
+_data = {
+"RESET": SubResource("Animation_nexmr"),
+"sway": SubResource("Animation_va6mg")
+}
+
+[sub_resource type="Animation" id="Animation_kiwpy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_glj4f"]
+resource_name = "hover"
+length = 0.6
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.1), Vector2(1, 1), Vector2(1, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvot3"]
+_data = {
+"RESET": SubResource("Animation_kiwpy"),
+"hover": SubResource("Animation_glj4f")
+}
+
+[sub_resource type="Animation" id="Animation_7ck8i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3g7a8"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y003v"]
+_data = {
+"RESET": SubResource("Animation_7ck8i"),
+"idle": SubResource("Animation_3g7a8")
+}
+
+[node name="BD_Deco_2" type="Node2D" node_paths=PackedStringArray("sprite", "detecter")]
+z_index = 1
+script = ExtResource("1")
+plant_stage_tex = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5")]
+plant_stage_time = [28, 28, 28]
+fruit_type_id = 88903023
+fruit_num = 3
+type_id = 88903023
+sprite = NodePath("Sprite")
+detecter = NodePath("Detecter")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_yscbw")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_p5hv7")
+texture = ExtResource("5")
+offset = Vector2(0, -25)
+flip_h = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(22, -38)
+skew = -0.045262
+texture = ExtResource("7")
+
+[node name="Detecter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -46.0
+offset_right = 16.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SwayAnime" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_igpyq")
+}
+
+
+[node name="HoverAnime" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_vvot3")
+}
+
+[node name="HarvestTipAnime" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_y003v")
+}
+autoplay = "idle"
+
+[connection signal="gui_input" from="Detecter" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Detecter" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Detecter" to="." method="_on_control_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
