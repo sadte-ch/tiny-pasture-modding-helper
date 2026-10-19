@@ -47,16 +47,15 @@ const createNewDecorationModFromData = () => {
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
-  const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  moveNewAssetsToModFolder(modInnerPath, DECORATION_MOD_FOLDER_NAME);
-  updateManifestFile(modInnerPath, data);
-  updateOverwritesGdFile(modInnerPath, data, oldModId);
+  moveNewAssetsToModFolder(newModPath, DECORATION_MOD_FOLDER_NAME);
+  updateManifestFile(newModPath, data);
+  updateOverwritesGdFile(newModPath, data, oldModId);
 
-  updateTranslations(modInnerPath, data, 'DECO', 'NORMAL');
+  updateTranslations(newModPath, data, 'DECO', 'NORMAL');
 
-  updateBuildManagerFile(modInnerPath, data, oldModId, oldCodeName);
-  updateDecorationShopPageFileForOneItemMod(modInnerPath, data, oldModId, oldPrice);
-  updateTscnForDecoration(modInnerPath, data);
+  updateBuildManagerFile(newModPath, data, oldModId, oldCodeName);
+  updateDecorationShopPageFileForOneItemMod(newModPath, data, oldModId, oldPrice);
+  updateTscnForDecoration(newModPath, data);
 };
 
 createNewDecorationModFromData();

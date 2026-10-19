@@ -32,6 +32,9 @@ At the end of this you should end up with the following assets:
 - 1 or more background images, ie: `my_new_background_mod_00.png`, `my_new_background_mod_01.png`
 - a single shop image, ie: `my_new_background_mod.png`
 
+<img width="1008" height="446" alt="671683102-071a3e6b-f53c-4cd3-886f-043ca16a19dd" src="https://github.com/user-attachments/assets/e03e85be-3688-4d1f-a44f-33f9a0bb48b2" />
+<img width="373" height="285" alt="671683196-5ed34f95-a7c9-41fa-a025-f8673fe0feda" src="https://github.com/user-attachments/assets/464584ab-3b75-4b74-af0a-0704b06661aa" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
@@ -52,14 +55,16 @@ You can then copy the new mod folder created by the script and open it in Godot 
 2. Update the values you want to change
 3. I have tried to add as much info about these values below:
 
-**modName** - choose a name for your mod, needs to be in PascalCase
-**modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
-**authorName** - your author name
-**codeName** - should be your mod name in snake_case
-**description** - add a short description for what's included in the mod
-**translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
-**price** - a number for how much you want your item to cost in the Tiny Pasture shop
-**layers** - an object containing data about the layers you want to add to the background
+**Values:**
+
+- **modName** - choose a name for your mod, needs to be in PascalCase
+- **modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
+- **authorName** - your author name
+- **codeName** - should be your mod name in snake_case
+- **description** - add a short description for what's included in the mod
+- **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
+- **price** - a number for how much you want your item to cost in the Tiny Pasture shop
+- **layers** - an object containing data about the layers you want to add to the background
     - **{code_name}_0{index}.png** - each key of the object is the file name used for that background layer image
         - **order** - what order you want this layer to appear, as if the images are stacked on top of each other (where 0 is at the back)
         - **autoscroll** - an object containing x and y speed values for the amount you want this image to move (if you don't want the image to move, don't include this)
@@ -81,7 +86,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "新背景",
       "description": "添加新背景"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "新背景",
       "description": "添加新背景"
     }
@@ -124,7 +129,7 @@ You can look at my example data.json files that I used to create my background m
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-background-mod](../../create-background-mod), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the `mods-unpacked` folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Copy that folder, with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files

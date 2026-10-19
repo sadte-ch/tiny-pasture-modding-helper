@@ -15,6 +15,12 @@ Plant decorations have 4 stages and produce food when they are ready - I've also
 ### :palm_tree::postbox::bath: [Create Decoration Mod Pack](./templates/create-decoration-mod-pack.md) (medium)
 Add as many decoration items to the shop as you want, in one mod. Can be a combination of standard decorations and plants.
 
+### :carrot: [Create Food Item Mod](./templates/create-food-item-mod.md) (easy)
+Add a single food item to the Items shop page, which you can use to feed your animals.
+
+### 🍆🧀🥩 [Create Item Mod Pack](./templates/create-item-mod-pack.md) (medium)
+Add as many food items to the shop as you want, in one mod.
+
 ### :milky_way: [Create Background Mod](./templates/create-background-mod.md) (easy)
 Add a single background to the shop.
 

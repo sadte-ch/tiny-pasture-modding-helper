@@ -1,5 +1,5 @@
 /**
- * Automates as much of the process of creating a new decoration mod for tiny pasture as possible.
+ * Automates as much of the process of creating a new plant decoration mod for tiny pasture as possible.
  * It requires that you put all your new assets in the "new-assets" folder and that you have filled out the data.json file with the correct information for your mod.
  * It will create a new folder with the updated files that you can then open in Godot to finish off the mod and test it.
  */
@@ -77,16 +77,15 @@ const createNewDecorationModFromData = () => {
   updateLinksWithOldPath(newFolderName, oldFolderName, newModPath, oldCodeName, newCodeName);
   renameFiles(oldModId, newModId, newModPath, newFolderName, oldFolderName, oldCodeName, newCodeName);
 
-  const modInnerPath = path.join(newModPath, `/mods-unpacked/${newFolderName}`);
-  moveNewAssetsToModFolder(modInnerPath, DECORATION_MOD_FOLDER_NAME);
-  updateManifestFile(modInnerPath, data);
-  updateOverwritesGdFile(modInnerPath, data, oldModId);
+  moveNewAssetsToModFolder(newModPath, DECORATION_MOD_FOLDER_NAME);
+  updateManifestFile(newModPath, data);
+  updateOverwritesGdFile(newModPath, data, oldModId);
 
-  updateTranslations(modInnerPath, data, 'DECO', 'NORMAL');
+  updateTranslations(newModPath, data, 'DECO', 'NORMAL');
 
-  updateBuildManagerFile(modInnerPath, data, oldModId, oldCodeName);
-  updateDecorationShopPageFileForOneItemMod(modInnerPath, data, oldModId, oldPrice);
-  updateTscnForDecoration(modInnerPath, data);
+  updateBuildManagerFile(newModPath, data, oldModId, oldCodeName);
+  updateDecorationShopPageFileForOneItemMod(newModPath, data, oldModId, oldPrice);
+  updateTscnForDecoration(newModPath, data);
 };
 
 createNewDecorationModFromData();

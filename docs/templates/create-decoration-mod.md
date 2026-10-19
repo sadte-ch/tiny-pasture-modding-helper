@@ -33,6 +33,8 @@ At the end of this you should end up with the following assets:
 - a single decoration image, ie: `my_new_decoration_mod.png`
 - a single shop image, ie: `my_new_decoration_mod.png`
 
+<img width="917" height="430" alt="Screenshot 2026-10-13 at 8 15 20 pm" src="https://github.com/user-attachments/assets/2db43f99-a520-45b0-af26-f65b0e27aad0" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
@@ -53,13 +55,15 @@ You can then copy the new mod folder created by the script and open it in Godot 
 2. Update the values you want to change
 3. I have tried to add as much info about these values below:
 
-**modName** - choose a name for your mod, needs to be in PascalCase
-**modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
-**authorName** - your author name
-**codeName** - should be your mod name in snake_case
-**description** - add a short description for what's included in the mod
-**translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
-**price** - a number for how much you want your item to cost in the Tiny Pasture shop
+**Values:**
+
+- **modName** - choose a name for your mod, needs to be in PascalCase
+- **modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
+- **authorName** - your author name
+- **codeName** - should be your mod name in snake_case
+- **description** - add a short description for what's included in the mod
+- **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
+- **price** - a number for how much you want your item to cost in the Tiny Pasture shop
 
 ```
 {
@@ -77,7 +81,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "全新装饰",
       "description": "为游戏添加一个新的装饰物。"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "全新装饰",
       "description": "为游戏添加一个新的装饰物。"
     }
@@ -101,7 +105,7 @@ You can look at my example data.json files that I used to create my decoration m
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-decoration-mod](../../create-decoration-mod), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the `mods-unpacked` folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Copy that folder, with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files

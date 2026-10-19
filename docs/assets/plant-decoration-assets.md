@@ -33,6 +33,10 @@ Requirements:
 You need to make sure there are 4 images, each with a number to indicate the stage at the end
 If you don't want 4 stages, you can use the same image as a previous stage but change the name
 
+<img width="721" height="232" alt="Screenshot 2026-10-12 at 9 22 02 pm" src="https://github.com/user-attachments/assets/d2ea0130-0731-47d0-b8ab-39d01897471e" />
+<img width="651" height="200" alt="Screenshot 2026-10-12 at 9 24 39 pm" src="https://github.com/user-attachments/assets/669ada04-f533-42d8-b028-6be467526f20" />
+
+
 ## Create Shop Image
 A png image containing your plant/item in its final stage, within the shop template design.
 You can take the design you used for your final decoration image above and paste it onto the shop template image [here](../assets/shop-template.png)
@@ -44,6 +48,11 @@ Requirements:
 
 - Try to center the contents horizontally and align it to the bottom (without covering the border line)
 
+<img width="337" height="298" alt="Screenshot 2026-10-12 at 9 21 10 pm" src="https://github.com/user-attachments/assets/e6f40fa9-7207-4f8c-bf15-3576e1a95e38" />
+<img width="296" height="283" alt="Screenshot 2026-10-12 at 9 24 14 pm" src="https://github.com/user-attachments/assets/c6310cc8-f6a1-44a7-9189-8481245b7fae" />
+
+
+
 ## Create Food Image
 A png image containing the edible food item you want to plant to drop when it's ready
 
@@ -52,5 +61,9 @@ Requirements:
 - Image needs to be named to match your mod name in snake_case, ie: `my_new_plant_decoration_mod.png`
 
 - I usually just make it so that the image hugs the food item, without leaving any space around. If you have space around, just align the food item to the bottom center of the image.
+
+<img width="372" height="240" alt="Screenshot 2026-10-12 at 9 20 37 pm" src="https://github.com/user-attachments/assets/3fd0d66c-b811-451f-b374-ac74f16769ad" />
+<img width="267" height="218" alt="Screenshot 2026-10-12 at 9 23 44 pm" src="https://github.com/user-attachments/assets/878ab86f-bab8-4028-b238-0bde5e4a903a" />
+
 
 ## Next steps [Create and configure your mod](../templates/create-plant-decoration-mod.md#create-and-configure-your-mod)

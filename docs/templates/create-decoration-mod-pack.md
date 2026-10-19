@@ -49,6 +49,8 @@ Plant decoration items:
 - a single shop image, ie: `my_new_plant_decoration_mod_{index}.png`
 - a single food image, ie: `my_new_plant_decoration_mod_{index}.png`
 
+<img width="1070" height="581" alt="Screenshot 2026-10-13 at 8 10 09 pm" src="https://github.com/user-attachments/assets/17ba10d8-5f97-4c30-bdef-d61710ebcff9" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
@@ -69,13 +71,15 @@ You can then copy the new mod folder created by the script and open it in Godot 
 2. Update the values you want to change
 3. I have tried to add as much info about these values below:
 
-**modName** - choose a name for your mod, needs to be in PascalCase
-**modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
-**authorName** - your author name
-**codeName** - should be your mod name in snake_case
-**description** - add a short description for what's included in the mod
+**Values:**
 
-**pack_items** - an array containing data for all the items you want to add in this mod pack (add a new object containing the data below for each item you want to add to the pack)
+- **modName** - choose a name for your mod, needs to be in PascalCase
+- **modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
+- **authorName** - your author name
+- **codeName** - should be your mod name in snake_case
+- **description** - add a short description for what's included in the mod
+
+- **pack_items** - an array containing data for all the items you want to add in this mod pack (add a new object containing the data below for each item you want to add to the pack)
     - **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
     - **price** - a number for how much you want your item to cost in the Tiny Pasture shop
     - **edible plant** - an object containing values to configure a plant decoration (do not include this object if you want the decoration to be static and not a plant)
@@ -103,7 +107,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 1",
           "description": "添加装饰 1"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 1",
           "description": "添加装饰 1"
         }
@@ -120,7 +124,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 2",
           "description": "添加装饰 2"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 2",
           "description": "添加装饰 2"
         }
@@ -137,7 +141,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
           "name": "装饰 3",
           "description": "添加装饰 3"
         },
-        "zh-HK": {
+        "zh_HK": {
           "name": "装饰 3",
           "description": "添加装饰 3"
         }
@@ -168,7 +172,7 @@ Add a new object with the same general item structure to the `pack_items` array,
       "name": "装饰 1",
       "description": "添加装饰 1"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "装饰 1",
       "description": "添加装饰 1"
     },
@@ -192,7 +196,7 @@ You can look at my example data.json files that I used to create my decoration m
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-decoration-mod-pack](../../create-decoration-mod-pack), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the `mods-unpacked` folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Copy that folder, with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files

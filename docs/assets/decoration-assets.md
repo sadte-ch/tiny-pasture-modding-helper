@@ -24,6 +24,8 @@ Requirements:
 - Try to center the contents horizontally and align it to the bottom
 - Looks best when designed to be front facing perspective to match the rest of the game
 
+<img width="260" height="261" alt="Screenshot 2026-10-12 at 9 16 00 pm" src="https://github.com/user-attachments/assets/637e2cf7-9d04-437d-8c1c-558145f58801" />
+
 ## Create Shop Image
 A png image containing your decoration, within the shop template design.
 You can take the design you used for your decoration image above and paste it onto the shop template image [here](../assets/shop-template.png)
@@ -33,5 +35,8 @@ Requirements:
 - Image needs to be named to match your mod name in snake_case, ie: `my_new_decoration_mod.png` (same as above)
 
 - Try to center the contents horizontally and align it to the bottom (without covering the border line)
+
+<img width="284" height="250" alt="Screenshot 2026-10-12 at 9 16 09 pm" src="https://github.com/user-attachments/assets/c5ba9179-57ed-441c-97e6-48b2ca5401e2" />
+
 
 ## Next steps [Create and configure your mod](../templates/create-decoration-mod.md#create-and-configure-your-mod)

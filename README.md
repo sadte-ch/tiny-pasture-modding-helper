@@ -10,6 +10,7 @@ There are a few different kinds of mods you can create for Tiny Pasture:
 - [Static Decoration](docs/templates/create-decoration-mod.md) (like a building, tree or any other static item)
 - [Plant Decoration](docs/templates/create-plant-decoration-mod.md) (plants have 4 stages and produce food when they are ready - I've also used this for things like a beehive that produces honey)
 - [Background](docs/templates/create-background-mod.md)
+- [Food Item](docs/templates/create-food-item-mod.md)
 - [Animal](docs/templates/create-animal-mod.md)
 - More to come in the future!
 

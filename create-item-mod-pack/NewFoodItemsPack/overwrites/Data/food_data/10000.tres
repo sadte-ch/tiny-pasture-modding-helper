@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=2 format=3 uid="uid://hdivt1putp3t"]
+
+[ext_resource type="Script" path="res://Data/food_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+type_id = 10000
+food_name = "new item food"
+price = 100
+food_value = 10
+unlock_condition = 0
+shop_tex_p = "res://mods-unpacked/NewFoodItemsPack/overwrites/Assets/UI/PopupUI/Shop/item/new_food_items_pack_0.png"
+icon_tex_p = "res://mods-unpacked/NewFoodItemsPack/overwrites/Assets/Drops/icon_new_food_items_pack_0.png"
+drop_tex_p = "res://mods-unpacked/NewFoodItemsPack/overwrites/Assets/Drops/drop_new_food_items_pack_0.png"

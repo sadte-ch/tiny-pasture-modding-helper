@@ -31,8 +31,8 @@ ${descKey},${descValues.join(',')}`
 // update translations for a mod containing multiple items
 export const updateTranslationsPack = (newModInnerPath, data, prefix, suffix) => {
   const translationsPath = path.join(newModInnerPath, 'translations/translations.csv')
-
-  if (Object.values(translations).length < 1) {
+  
+  if (Object.values(data.pack_items[0].translations).length < 1) {
     console.error('No translations found.')
     return
   }

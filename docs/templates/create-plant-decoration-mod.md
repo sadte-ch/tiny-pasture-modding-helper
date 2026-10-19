@@ -38,6 +38,8 @@ At the end of this you should end up with the following assets:
 - a single shop image, ie: `my_new_plant_decoration_mod.png`
 - a single food image, ie: `my_new_plant_decoration_mod.png`
 
+<img width="1136" height="212" alt="Screenshot 2026-10-13 at 8 19 05 pm" src="https://github.com/user-attachments/assets/88a56383-c43d-46fd-99fb-1257fccbd853" />
+
 ## Create and configure your mod
 Once your assets are ready you can create your mod.
 
@@ -58,19 +60,21 @@ You can then copy the new mod folder created by the script and open it in Godot 
 2. Update the values you want to change
 3. I have tried to add as much info about these values below:
 
-**modName** - choose a name for your mod, needs to be in PascalCase
-**modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
-**authorName** - your author name
-**codeName** - should be your mod name in snake_case
-**description** - add a short description for what's included in the mod
-**translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
-**edible plant** - an object containing values to configure your plant
+**Values:**
+
+- **modName** - choose a name for your mod, needs to be in PascalCase
+- **modId** - choose a unique id for your mod, needs to be different from all other mods. (The longer the number, the more likely it will be unique)
+- **authorName** - your author name
+- **codeName** - should be your mod name in snake_case
+- **description** - add a short description for what's included in the mod
+- **translations** - an object containing values (name and description) for each language you want to support [more info here](./translations.md)
+- **edible plant** - an object containing values to configure your plant
     - **width** - the width (in px) of your plant decoration images (the ones you put [here](/create-plant-decoration-mod/new-assets/decoration))
     - **sway** - true or false - whether you want your plant decoration to use the sway animation (I turn this off for things like trees, etc)
     - **drop_no** - a number to indicate how many food items you want your plant to drop when you click on it
     - **plant_stage_time** - an array of 3 numbers (each indicates the amount of time it takes for the plant to progress to the next stage in seconds)
     - **food_value** - a number to indicate how much fullness each food item should provide to an animal when eaten
-**price** - a number for how much you want your item to cost in the Tiny Pasture shop
+- **price** - a number for how much you want your item to cost in the Tiny Pasture shop
 
 ```
 {
@@ -88,7 +92,7 @@ You can then copy the new mod folder created by the script and open it in Godot 
       "name": "新款植物装饰",
       "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
     },
-    "zh-HK": {
+    "zh_HK": {
       "name": "新款植物装饰",
       "description": "为游戏添加一个新的植物装饰。成熟后可产出可食用食物。"
     }
@@ -119,7 +123,7 @@ You can look at my example data.json files that I used to create my decoration m
 1. Hopefully you didn't get any errors in the terminal (if you did you might have to adjust data.json or your assets and try again)
 2. Open the repo in your file system
 3. Inside the folder [create-plant-decoration-mod](../../create-plant-decoration-mod), you should see a new folder with your authorName and modName ie: AuthorName-ModName
-4. Inside the AuthorName-ModName folder, open the `mods-unpacked` folder and copy the folder inside with the name that matches your new mod (AuthorName-ModName)
+4. Copy that folder, with the name that matches your new mod (AuthorName-ModName)
 
 ### Add your mod to your decompiled game files
 1. Find your decompiled files folder in your files
