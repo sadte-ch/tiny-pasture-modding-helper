@@ -209,7 +209,8 @@ These are the images used in the pasture menu to show each animal you own.
 You need to create a portrait for both the juvenile and adult of every colour variant.
 
 **Image specifications:**
-- 36px x 36px
+- 32px x 32px
+- leave the outer 3 pixels empty for the border
 - transparent background
 - crop the frame you want to use to feature the head of the animal in the portrait
 - the adult version is more zoomed in
